@@ -1,7 +1,7 @@
 # PETMatch
 ## Sobre
 **PETMatch** é um projeto desenvolvido pelo Grupo 2 da TC 31 do curso Introdução a Programação com foco em Front-End & Cloud Practitioner, oferecido pela Proz.  
-O intuito da aplicação é fomentar e facilitar a adoção responsável, aproximando pessoas que desejam dar um novo lar a animais através de ONG's que realizam este tipo de trabalho. A aplicação mostra animais disponíveis para adoção em instituições cadastradas no sistema; o usuário realiza um cadastro ou faz "login" caso tenha um cadastro ativo, escolhe um pet que seja de seu interesse e que esteja disponível em uma ONG cadastrada em sua cidade e solicita a adoção.
+O intuito da aplicação é fomentar e facilitar a adoção responsável, aproximando pessoas que desejam dar um novo lar a animais através de ONG's que realizam este tipo de trabalho. A aplicação mostra animais disponíveis para adoção em instituições cadastradas no sistema; o usuário realiza um cadastro ou faz "login" caso tenha um cadastro ativo, escolhe um pet que seja de seu interesse e que esteja disponível em uma ONG cadastrada em sua cidade e solicita a adoção.  
 Após a solicitação de adoção, a pessoa interessada em dar um novo lar à um pet recebe um e-mail solicitando todas as informações necessárias para a realização da adoção - não é divulgado o endereço das instituições cadastradas por medidas de segurança.
 ### Interface
 Para criação do layout foi utilizado o Figma. Para ver o layout completo, clique [aqui](https://www.figma.com/design/FtGWnNyuqjmempPMuK6UoC/Ado%C3%A7%C3%A3o-de-Pets?node-id=1-2&t=dItSqSQBzkt3cv5i-0).

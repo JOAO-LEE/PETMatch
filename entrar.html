@@ -21,32 +21,46 @@
                 <li><i class="ph ph-heart-straight"></i><a href="#">Adote</a></li>
                 <li><i class="ph ph-hand-heart"></i><a href="#">Doação</a></li>
                 <li><i class="ph ph-phone-call"></i><a href="#">Contato</a></li>
-                <li><a href="#" class="btn-login">Entrar</a></li>
-                <li><a href="#" class="btn-signup">Cadastre-se</a></li>
             </ul>
+            <div>
+                <a href="" class="btn-login">Entrar</a>
+                <a href="cadastre-se.html" class="btn-signup">Cadastre-se</a>
+            </div>
         </nav>
     </header>
-
-    <aside class="side-banner">
-        <p>Já se cadastrou? Então entre aqui!</p>
-    </aside>
-
     <main>
         <section>
-        <div class="login-box">
-            <h2>Login</h2>
-            <form action="#">
-                <div class="input-box">
-                    <i class="fas fa-user"></i>
-                    <input type="text" placeholder="Usuário" required>
+            <div class="container"">
+                <div class="form">
+                    <form action="#">
+                        <div class="form-header">
+                            <div class="botao-pagina-entrar">
+                                <button><a href="entrar.html">Já se cadastrou? Então entre aqui!</a></button>    
+                            </div>
+                            <div class="title">
+                                <h1>Cadastre-se</h1>
+                            </div>                            
+                        </div>
+                        
+                        <div class="input-group">
+                            
+                            <div class="input-box">
+                              <i class="ph ph-user"></i>
+                                <input id="login" type="email" name="login" placeholder="E-mail exemplo@exemplo.com.br" required>
+                            </div>
+                            <div class="input-box">
+                              <i class="ph ph-lock-simple"></i>
+                                <input id="senha" type="password" name="senha" placeholder="Senha" required>
+                            </div>
+    
+                        </div>
+                        <div class="salvar-button">
+                            <button type="submit">Salvar</button>
+                        </div>
+                    </form>                
                 </div>
-                <div class="input-box">
-                    <i class="fas fa-lock"></i>
-                    <input type="password" placeholder="Senha" required>
-                </div>
-                <button type="submit">Entrar</button>
-            </form>
-        </div></section>
+            </div>
+       </section>
         <section>
         <div class="image-box">
             <img src="assets/entrar/gato-entrar.png" alt="Cute Cat">

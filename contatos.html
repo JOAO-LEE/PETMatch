@@ -8,16 +8,23 @@
   type="text/css"
   href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"
   />
+  <link
+  rel="stylesheet"
+  href="/common/style/common.css"
+  />
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
   <title>Contatos - PETMatch</title>
 </head>
 <body>
-  <header>
-    <div>
-      <img src="assets/common/petmatchlogo.png" alt="">
+  <header class="cabecalho">
+    <div class="logo-container">
+      <img class="logo" src="assets/common/petmatchlogo.png" alt="">
       <h1>PETMatch</h1>
     </div>
-    <nav>
-      <ul>
+    <nav class="navegacao">
+      <ul class="lista-navegacao">
         <li>
           <a href="quem-somos.html"><i class="ph ph-paw-print"></i> Quem somos</a>
         </li>
@@ -32,7 +39,7 @@
         </li>
       </ul>
     </nav>
-    <div>
+    <div class="container-autenticacao">
       <a href="entrar.html" class="btn-login">Entrar</a>
       <a href="cadastre-se.html" class="btn-signup">Cadastre-se</a>
   </div>

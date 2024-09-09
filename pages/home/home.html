@@ -12,6 +12,8 @@
   rel="stylesheet"
   href="/common/style/common.css"
   />
+  <link rel="stylesheet" href="home.css" />
+  <link rel="stylesheet" href="/common/style/reset.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -20,7 +22,7 @@
 <body>
   <header class="cabecalho">
     <div class="logo-container">
-      <img class="logo" src="assets/common/petmatchlogo.png" alt="">
+      <img class="logo" src="/assets/common/petmatchlogo.png" alt="">
       <h1>PETMatch</h1>
     </div>
     <nav class="navegacao">
@@ -45,16 +47,23 @@
   </div>
   </header>
   <main>
-    <section>
-      <div>
-        <img src="assets/home/cat-home.png" alt="">
-        <h2>Seja bem-vindo a PETMatch</h2>
-        <h3></h3>
-        <h4>Adote um pet! Faça parte da <strong>S O L U Ç Ã O</strong>, não do <strong>P R O B L E M A</strong>!</h4>
+    <section class="inicio-container">
+      <div class="">
+        <img
+        class="imagem-gato" 
+        src="/assets/home/cat-home.png" alt="imagem gato deitado">
+        <div class="mensagem-container">
+          <div class="mensagem-texto">
+            <h2>Seja bem-vindo a PETMatch!</h2>
+            <h3 class="hashtag">#adotarÉAmor</h3>
+            <h4>Adote um pet! Faça parte da <strong>SOLUÇÃO</strong>, não do <strong>PROBLEMA</strong>!</h4>
+          </div>
+          <div class="container-cachorro">
+            <img src="/assets/home/dog-home.png" alt="imagem cachorro preto">
+          </div>
+        </div>
       </div>
-      <div>
-        <img src="assets/home/dog-home.png" alt="">
-      </div>
+      
     </section>
   </main>
 </body>

@@ -1,5 +1,23 @@
 .inicio-container {
-  padding: 2rem;
+  padding: 1rem;
+  overflow: hidden;
+  position: relative;
+  height: 100;
+}
+
+.inicio-container::after {
+  display: block;
+  position: absolute;
+  content: "";
+  background-color: var(--dourado);
+  width: 2000px;
+  height: 2000px;
+  transform: rotate(45deg);
+  transform-origin: right;
+  bottom: 0;
+  left: 60rem;
+  top: 700px;
+  z-index: -3
 }
 
 .imagem-gato {
@@ -15,10 +33,12 @@
 
 .mensagem-container {
   display: flex;
-  font-size: 1.4rem;
+  font-size: 2.2rem;
   padding: 10px 20px;
   display: flex;
   gap: 0.85rem;
+  align-items: center;
+  justify-content: space-between;
 }
 
 .mensagem-texto:nth-child(1) h2 {
@@ -27,9 +47,16 @@
 
 .mensagem-texto:nth-child(1) h4 {
   margin-top: 20px;
+  font-size: 1.2rem;
+}
+
+.container-cachorro {
+  justify-items: end;
+  position: relative;
+  width: 33%;
 }
 
 .container-cachorro img {
   object-fit: contain;
-  width: 28rem;
+  width: 30rem;
 }

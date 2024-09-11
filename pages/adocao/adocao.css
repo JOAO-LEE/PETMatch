@@ -1,6 +1,18 @@
 .container-informacoes{
-    background-color: var(--dourado);
+    background-color: var(--corSecundaria);
     width: 50%;
     padding: 0.75rem;
     margin: 0 auto;
+    border-radius: 5%;
+    
+}
+.informacoes-pet{
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+.lista-informacoes{
+    border: 1.5px solid black;
+    border-radius: 5%;
+    padding: 1rem;
 }

@@ -1,7 +1,7 @@
 .container-informacoes{
     background-color: var(--corSecundaria);
     width: 50%;
-    padding: 0.75rem;
+    padding: 1.25rem;
     margin: 0 auto;
     border-radius: 5%;
     
@@ -12,7 +12,21 @@
     gap: 25px;
 }
 .lista-informacoes{
-    border: 1.5px solid black;
+    background-color: var(--corBotaoSecundario);
+    border: 1.5px solid white;
     border-radius: 5%;
     padding: 1rem;
+}
+.botao-adotar{
+    background-color: var(--corBotaoSecundario);
+    margin: 0 auto;
+    text-align: center;
+    padding: 5px 35px;
+    border: 0.5px solid black;
+    border-radius: 5%;
+    font-size: 10px;
+}
+.container-botao{
+    display: flex;
+    justify-content: center;
 }

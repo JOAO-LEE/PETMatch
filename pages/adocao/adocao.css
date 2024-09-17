@@ -1,32 +1,42 @@
-.container-informacoes{
-    background-color: var(--corSecundaria);
-    width: 50%;
-    padding: 1.25rem;
-    margin: 0 auto;
-    border-radius: 5%;
-    
+.container-principal {
+    padding: 10px;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
 }
-.informacoes-pet{
+
+.container-informacoes {
+    background-color: var(--corSecundaria);
+    padding: 1.25rem;
+    border-radius: 15px;
+    height: min-content;
+}
+
+.informacoes-pet {
     display: flex;
     align-items: center;
     gap: 25px;
 }
-.lista-informacoes{
+
+.lista-informacoes {
     background-color: var(--corBotaoSecundario);
-    border: 1.5px solid white;
-    border-radius: 5%;
+    border-radius: 15px;
     padding: 1rem;
 }
-.botao-adotar{
+
+.botao-adotar {
     background-color: var(--corBotaoSecundario);
     margin: 0 auto;
     text-align: center;
-    padding: 5px 35px;
     border: 0.5px solid black;
-    border-radius: 5%;
-    font-size: 10px;
+    border-radius: 5px;
+    font-size: 15px;
+    width: 120px;
+    height: 25.5px;
 }
-.container-botao{
+
+.container-botao {
     display: flex;
     justify-content: center;
 }

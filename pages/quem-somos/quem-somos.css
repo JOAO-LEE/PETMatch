@@ -1,0 +1,25 @@
+.container-principal {
+  padding: 1rem;
+}
+
+ .quem-somos-container, .missao-container {
+  display: flex;
+  padding: .5rem;
+  align-items: center;
+  justify-content: space-around;
+}
+
+.missao-container {
+  flex-direction: row-reverse;
+}
+
+.text-container {
+  width: 40%;
+  text-align: center;
+}
+
+.titulos {
+  font-size: 1.75rem;
+  font-weight: normal;
+  text-transform: uppercase;
+}

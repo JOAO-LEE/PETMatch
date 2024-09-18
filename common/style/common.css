@@ -10,6 +10,7 @@ body {
     font-family: "Inter", sans-serif,system-ui;
     margin: 0;
     padding: 0;
+   
 }
 
 .cabecalho {
@@ -50,7 +51,6 @@ body {
     color: black;
     transition: all 250ms ease-in-out;
 }
-
 
 .lista-navegacao li a:hover {
     color: var(--dourado);

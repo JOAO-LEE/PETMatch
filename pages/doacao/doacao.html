@@ -10,7 +10,15 @@
   />
   <link
   rel="stylesheet"
+  href="/common/style/reset.css"
+  />
+  <link
+  rel="stylesheet"
   href="/common/style/common.css"
+  />
+  <link
+  rel="stylesheet"
+  href="doacao.css"
   />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
@@ -20,7 +28,7 @@
 <body>
   <header class="cabecalho">
     <div class="logo-container">
-      <img class="logo" src="assets/common/petmatchlogo.png" alt="">
+      <img class="logo" src="/assets/common/petmatchlogo.png" alt="">
       <h1>PETMatch</h1>
     </div>
     <nav class="navegacao">
@@ -45,16 +53,20 @@
   </div>
   </header>
   <main>
-    <section>
-            <h2><strong>Como ajudar!</strong></h2>
-            <h3><strong>#adotarÉamor</strong></h3>
-            <a>DOE COM PIX</a>
-    </section>
-    <section>
-            <img src="assets/doacao/qrcode-pix2.png" alt="" width="560" height="405">
-    </section>
-    <section>
-            <img src="assets/doacao/patinhas.png" alt="" width="600" height="260">
+    <section class="container-doacao">
+      <div class="informacao-doacao">
+        <div class="doacao-textos">
+          <h2>Como ajudar!</h2>
+          <h3>#adotarÉamor</h3>
+          <a href="https://github.com/JOAO-LEE/PETMatch">DOE COM PIX</a>
+        </div>
+        <div class="container-patas">
+          <img src="/assets/doacao/patinhas.png" alt="desenho de patas" class="imagem-patas">
+        </div>
+      </div>
+      <div class="container-qrcode">
+        <img src="/assets/doacao/qrcode-pix2.png" alt="mão segurando celular com qr code" class="mao-qrcode">
+      </div>
     </section>
   </main>
 </body>

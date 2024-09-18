@@ -8,13 +8,19 @@
     type="text/css"
     href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"
     />
-    <link rel="stylesheet" href="common/style/common.css"/>
+    <link
+    rel="stylesheet"
+    href="/common/style/common.css"
+    />
+    <link rel="stylesheet" href="quem-somos.css" />
+    <link rel="stylesheet" href="/common/style/reset.css" />
+    
     <title>Quem somos - PETMatch</title>
 </head>
 <body>
   <header class="cabecalho">
     <div class="logo-container">
-      <img class="logo" src="assets/common/petmatchlogo.png" alt="">
+      <img class="logo" src="/assets/common/petmatchlogo.png" alt="">
       <h1>PETMatch</h1>
     </div>
     <nav class="navegacao">
@@ -38,16 +44,24 @@
       <a href="cadastre-se.html" class="btn-signup">Cadastre-se</a>
   </div>
   </header> 
-        <main>
+        <main class="container-principal">
             <section>
-                <h2>Quem somos</h2>
-                <article> Somos apaixonados por conectar animais carentes com lares amorosos. Nossa missão é proporcionar uma segunda chance para cães, gatos e outros animais de estimação que precisam de um novo começo. Cada animal em nosso site foi resgatado e está à procura de uma família que lhe dê carinho e atenção.</article>
-                <img src="assets/quem-somos/gato-quem-somos.png" alt="gato deitado">
+              <div class="quem-somos-container">
+                <div class="text-container">
+                  <h2 class="titulos">Quem somos</h2>
+                  <article> Somos apaixonados por conectar animais carentes com lares amorosos. Nossa missão é proporcionar uma segunda chance para cães, gatos e outros animais de estimação que precisam de um novo começo. Cada animal em nosso site foi resgatado e está à procura de uma família que lhe dê carinho e atenção.</article>
+                </div>
+                <img src="/assets/quem-somos/gato-quem-somos.png" alt="gato deitado">
+              </div>
             </section>
             <section>
-                <h2>Nossa missão</h2>
-                <article>Acreditamos que todos os animais recebam um lar seguro e amoroso. Trabalhamos incansavelmente para resgatar animais de situações de risco e fornecer-lhes cuidados veterinários, alimentação adequada e muito amor até que encontrem sua família definitiva.</article>
-                <img src="assets/quem-somos/cachorros quem somos.png" alt="turma de cachorros">
+              <div class="missao-container">
+                <div class="text-container">
+                  <h2 class="titulos">Nossa missão</h2>
+                  <article>Acreditamos que todos os animais recebam um lar seguro e amoroso. Trabalhamos incansavelmente para resgatar animais de situações de risco e fornecer-lhes cuidados veterinários, alimentação adequada e muito amor até que encontrem sua família definitiva.</article>
+                </div>
+                <img src="/assets/quem-somos/cachorros quem somos.png" alt="turma de cachorros">
+              </div>
             </section>
         </main>
 </body>

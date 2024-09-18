@@ -1,26 +1,28 @@
 <!DOCTYPE html>
 <html lang="pt-BR">
 <head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
-    <link
-    rel="stylesheet"
-    type="text/css"
-    href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"
-    />
-    <link
-    rel="stylesheet"
-    href="/common/style/common.css"
-    />
-    <link rel="preconnect" href="https://fonts.googleapis.com">
-    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
-    <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-    <title>Adoção - PETMatch</title>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link
+  rel="stylesheet"
+  type="text/css"
+  href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"
+  />
+  <link
+  rel="stylesheet"
+  href="/common/style/common.css"
+  />
+  <link rel="stylesheet" href="adocao.css">
+  <link rel="stylesheet" href="/common/style/reset.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <title>Adoção - PETMatch</title>
 </head>
 <body>
   <header class="cabecalho">
     <div class="logo-container">
-      <img class="logo" src="assets/common/petmatchlogo.png" alt="">
+      <img class="logo" src="/assets/common/petmatchlogo.png" alt="">
       <h1>PETMatch</h1>
     </div>
     <nav class="navegacao">
@@ -44,28 +46,32 @@
       <a href="cadastre-se.html" class="btn-signup">Cadastre-se</a>
   </div>
   </header>
-    <main>
-        <section>
+    <main  class="container-principal">
+        <section class="container-informacoes">
+          <div class="informacoes-pet">
             <div>
-                <img src="assets/adocao/gato-adocao.png" alt="imagem.gato.adocao">
-            </div>
-            <div>
-                <ul>
-                    <li>Nome: Amelia</li>
-                    <li>Peso: 5kg</li>
-                    <li>Idade aproximada: 3 meses</li>
-                    <li>Microchip: 963003100143246</li>
-                    <li>Espécie: Gato</li>
-                    <li>Porte: P</li>
-                    <li>Raça: SRD - Peq</li>
-                    <li>Carecterística: Pelo curto e olhos verdes</li>
-                    <li>Local: Petz Salvador Paralela, SALVADOR, BA</li>
-                    <li>Sobre: Dócil e sociável</li>
-                </ul>
-            </div>
-            <button>
-                Adote
-            </button>
+              <img src="/assets/adocao/gato-adocao.png" alt="imagem.gato.adocao">
+          </div>
+          <div class="lista-informacoes">
+              <ul>
+                  <li>Nome: Amelia</li>
+                  <li>Peso: 5kg</li>
+                  <li>Idade aproximada: 3 meses</li>
+                  <li>Microchip: 963003100143246</li>
+                  <li>Espécie: Gato</li>
+                  <li>Porte: P</li>
+                  <li>Raça: SRD - Peq</li>
+                  <li>Carecterística: Pelo curto e olhos verdes</li>
+                  <li>Local: Petz Salvador Paralela, SALVADOR, BA</li>
+                  <li>Sobre: Dócil e sociável</li>
+              </ul>
+          </div>
+          </div>
+          <div class="container-botao">
+            <button class="botao-adotar">
+              Adote
+          </button>
+          </div>
         </section>
     </main>
 </body>

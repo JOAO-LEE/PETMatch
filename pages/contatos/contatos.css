@@ -29,12 +29,18 @@ footer {
     font-size: 1rem;
 }
 
+.info-box {
+    line-height: 25px;
+    vertical-align: bottom;
+}
+
 .info-box i {
     vertical-align: bottom;
 }
 
 .info-box a {
-    color: white
+    color: white;
+    font-weight: bold;
 }
 
 
@@ -44,9 +50,20 @@ footer {
 
 .rodape-animais {
     position: fixed;
-    bottom: 25px; 
+    bottom: 59px; 
     transform: translateX(50%);
     right: 50%;
     object-fit: contain;
     z-index: 1;
+}
+
+.lista-colaboradores  {
+    text-align: end;
+    line-height: 20px;
+}
+
+.lista-colaboradores ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
 }

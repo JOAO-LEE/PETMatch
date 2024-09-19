@@ -1,5 +1,6 @@
-.container-principal{
+.container-principal {
     padding: 1.25rem;
+    position: relative;
 }
 
 .mapa {
@@ -10,18 +11,27 @@
 
 h3 {
   color:#72B5A4;
-  font-family: "Inter", sans-serif,system-ui;
-
+  font-size: 1.5rem;
 }
 
 footer {
     background-color:#72B5A4;
     display: flex;
-    margin-top: 100px;
+    margin-top: 100px; 
     padding: 1rem;
     justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
 }
 
 .rodape-animais {
-    margin: 0 auto;
+    position: fixed;
+    bottom: 25px; 
+    transform: translateX(50%);
+    right: 50%;
+    object-fit: contain;
+    z-index: 1;
 }

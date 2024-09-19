@@ -1,0 +1,29 @@
+.container-principal{
+    padding: 1.25rem;
+
+}
+
+.mapa{
+    min-width: 100%;
+    min-height: 350px;
+    margin-top: 25px;
+}
+
+h3{
+  color:#72B5A4;
+  font-family: "Inter", sans-serif,system-ui;
+
+}
+
+footer{
+    background-color:#72B5A4;
+    display: flex;
+    margin-top: 100px;
+    padding: 1rem;
+    justify-content: space-between;
+}
+
+.rodape-animais{
+    margin: 0auto;
+
+}

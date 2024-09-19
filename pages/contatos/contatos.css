@@ -25,6 +25,21 @@ footer {
     position: fixed;
     bottom: 0;
     width: 100%;
+    color: white;
+    font-size: 1rem;
+}
+
+.info-box i {
+    vertical-align: bottom;
+}
+
+.info-box a {
+    color: white
+}
+
+
+.rodape-icones {
+    font-size: 1.25rem;
 }
 
 .rodape-animais {

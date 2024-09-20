@@ -43,7 +43,6 @@ footer {
     font-weight: bold;
 }
 
-
 .rodape-icones {
     font-size: 1.25rem;
 }
@@ -55,7 +54,6 @@ footer {
     right: 50%;
     object-fit: contain;
     z-index: 1;
-    
 }
 
 .lista-colaboradores  {

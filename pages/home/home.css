@@ -1,8 +1,14 @@
+main {
+  position: relative;
+  overflow: hidden;
+}
+
 .inicio-container {
   padding: 1rem;
   overflow: hidden;
-  position: relative;
+  /* position: relative; */
   height: 100;
+  z-index: 1;
 }
 
 .imagem-gato {
@@ -39,9 +45,22 @@
   justify-items: end;
   position: relative;
   width: 33%;
+  z-index: 10;
 }
 
 .container-cachorro img {
   object-fit: contain;
   width: 30rem;
+}
+
+.triangulo {
+  background-color: #72B5A4;
+  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
+  width: 2500px;
+  height: 2500px;
+  position: absolute;
+  left: 400px;
+  top: 0;
+  transform: rotate(16deg) translateX(-250px);
+
 }

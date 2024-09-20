@@ -114,19 +114,22 @@ body {
 @keyframes heartbeat {
     0% {
         transform: scale(1);
+        opacity: 1
     }
     50% {
         transform: scale(1.1); 
-        background-clip: border-box;
+        opacity: .8
     }
     55% {
         transform: scale(1.2); 
+        opacity: .7
     }
-    75% {
+   75% {
         transform: scale(1.1);
+        opacity: .8
     }
-
     100% {
         transform: scale(1); 
+        opacity: 1
     }
 }

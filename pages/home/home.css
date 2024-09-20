@@ -19,6 +19,8 @@ main {
   width: 45rem;
   opacity: 0;
   animation: mostra-animal 2s ease-in-out 1s forwards;
+  filter: blur(1.2rem);
+
 }
 
 .hashtag {
@@ -72,6 +74,8 @@ main {
   width: 29.2rem;
   animation: mostra-animal 2s ease-in-out 1s forwards;
   opacity: 0;
+  filter: blur(1.2rem);
+
   
 }
 
@@ -92,7 +96,6 @@ main {
     opacity: 1;
     filter: none;
     translate: 0
-
   }
 }
 
@@ -106,5 +109,6 @@ main {
 @keyframes mostra-animal {
   to {
     opacity: 1;
+    filter: none;
   }
 }

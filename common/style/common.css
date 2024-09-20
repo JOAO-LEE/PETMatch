@@ -10,7 +10,6 @@ body {
     font-family: "Inter", sans-serif,system-ui;
     margin: 0;
     padding: 0;
-   
 }
 
 .cabecalho {
@@ -20,6 +19,9 @@ body {
     border-bottom: solid 2px var(--corBorda);
     box-shadow: 0 2px 5px var(--corBorda);
     padding: 1rem;
+    position: fixed;
+    width: 100%;
+    z-index: 10;
 }
 
 .logo-container {

@@ -6,7 +6,6 @@ main {
 .inicio-container {
   padding: 1rem;
   overflow: hidden;
-  /* position: relative; */
   height: 100;
   z-index: 1;
 }
@@ -20,6 +19,12 @@ main {
   color: var(--dourado);
   font-weight: bold;
   font-size: 3ch;
+}
+
+.hashtag::before {
+  content: "#";
+  color: #72B5A4;
+  font-size: 1.5ch;
 }
 
 .mensagem-container {

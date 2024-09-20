@@ -1,10 +1,26 @@
+main {
+  position: relative;
+  height: 100vh;
+  overflow: hidden;
+}
+
 .inicio-container {
-  padding: 2rem;
+  padding: 1rem;
+  overflow: hidden;
+  height: 100;
+}
+
+.nome-empresa-destaque {
+  color: #72B5A4;
 }
 
 .imagem-gato {
   object-fit: contain;
   width: 45rem;
+  opacity: 0;
+  animation: mostra-animal 2s ease-in-out 1s forwards;
+  filter: blur(1.2rem);
+
 }
 
 .hashtag {
@@ -13,12 +29,28 @@
   font-size: 3ch;
 }
 
+.hashtag::before {
+  content: "#";
+  color: #72B5A4;
+  font-size: 1.5ch;
+}
+
 .mensagem-container {
   display: flex;
-  font-size: 1.4rem;
+  font-size: 2.2rem;
   padding: 10px 20px;
   display: flex;
   gap: 0.85rem;
+  align-items: center;
+  justify-content: space-between;
+  
+}
+
+.saudacao-container {
+  animation: saudacao 2s ease-out forwards;
+  opacity: 0;
+  filter: blur(1.2rem);
+  translate: -20rem;
 }
 
 .mensagem-texto:nth-child(1) h2 {
@@ -27,9 +59,56 @@
 
 .mensagem-texto:nth-child(1) h4 {
   margin-top: 20px;
+  font-size: 1.2rem;
+}
+
+.container-cachorro {
+  justify-items: end;
+  position: relative;
+  width: 33%;
+  z-index: 10;
 }
 
 .container-cachorro img {
   object-fit: contain;
-  width: 28rem;
+  width: 29.2rem;
+  animation: mostra-animal 2s ease-in-out 1s forwards;
+  opacity: 0;
+  filter: blur(1.2rem);
+
+  
+}
+
+.triangulo {
+  background-color: var(--douradoClaro);
+  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+  width: 900px;
+  height: 900px;
+  position: absolute;
+  right: -250px;
+  top: 80px;
+  z-index: 9;
+  animation: muda-cor-triangulo 2s ease-in-out forwards;
+}
+
+@keyframes saudacao {
+  to {
+    opacity: 1;
+    filter: none;
+    translate: 0
+  }
+}
+
+@keyframes muda-cor-triangulo {
+  to {
+    background-color: #72B5A4;
+    right: 0;
+  }
+}
+
+@keyframes mostra-animal {
+  to {
+    opacity: 1;
+    filter: none;
+  }
 }

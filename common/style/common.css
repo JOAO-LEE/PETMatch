@@ -12,10 +12,6 @@ body {
     padding: 0;
 }
 
-.inicio-button {
-    text-decoration: none;
-}
-
 .cabecalho {
     display: flex;
     justify-content: space-between;
@@ -23,6 +19,26 @@ body {
     border-bottom: solid 2px var(--corBorda);
     box-shadow: 0 2px 5px var(--corBorda);
     padding: 1rem;
+}
+
+.inicio-button {
+    text-decoration: none;
+    transition: transform 1s ease;
+}
+
+.inicio-button:hover .logo-container .logo {
+    transform: scale(1.1);  
+}
+
+.inicio-button .logo-container h1 {
+    transition: color 500ms ease-in;
+    color:var(--dourado);
+    font-size: 1.75rem;
+}
+
+.inicio-button:hover .logo-container h1 {
+    color: #72B5A4;
+    transition: color 500ms ease-in;
 }
 
 .logo-container {
@@ -34,11 +50,6 @@ body {
 .logo {
     object-fit: contain;
     width: 25%;
-}
-
-.logo-container h1 {
-    color:var(--dourado);
-    font-size: 1.75rem;
 }
 
 .lista-navegacao {

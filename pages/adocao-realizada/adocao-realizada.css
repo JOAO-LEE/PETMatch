@@ -1,0 +1,74 @@
+.container-principal {
+  padding: 1rem;
+  min-height: 100%;
+}
+
+.secao {
+  margin-top: 100px;
+}
+
+h2 {
+  color: #72B5A4;
+  text-transform: uppercase;
+  text-align: center;
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+.aviso-adocao {
+  text-align: center;
+  font-size: 1.1246rem;
+}
+
+.informacao-adocao {
+  margin-top: 10px;
+  display: flex;
+  flex-direction: column;
+  gap: .75rem;
+  position: relative;
+}
+
+.container-pet {
+  margin: 0 auto;
+  display: flex;
+  padding: 2rem;
+  align-items: center;
+  gap: 2rem;
+}
+
+.imagem-pet {
+  border: 3px solid var(--dourado);
+  border-radius: 15px;
+  object-fit: contain;
+  width: 300px;
+  transition: transform 250ms ease, border-color 500ms ease;
+}
+
+.imagem-pet:hover {
+  transform: scale(1.1);
+  border-color: #72B5A4
+}
+
+.informacao-pet {
+  line-height: 22.5px;
+  border: 3px solid #72B5A4;
+  border-radius: 15px;
+  padding: 10px;
+  transition: transform 250ms ease, border-color 500ms ease;
+}
+
+.informacao-pet:hover {
+  transform: scale(1.1);
+  border-color: var(--dourado);
+}
+
+.orientacoes {
+  text-align: center;
+  line-height: 25px;
+  padding: 10px;
+  font-size: 1.125rem;
+}
+
+.orientacoes ul {
+  color: var(--dourado)
+}

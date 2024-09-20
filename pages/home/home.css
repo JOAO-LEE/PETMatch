@@ -1,5 +1,6 @@
 main {
   position: relative;
+  height: 100%;
   overflow: hidden;
 }
 
@@ -7,14 +8,13 @@ main {
   padding: 1rem;
   overflow: hidden;
   height: 100;
-  z-index: 1;
 }
 
 .imagem-gato {
   object-fit: contain;
   width: 45rem;
 }
-
+ǵ
 .hashtag {
   color: var(--dourado);
   font-weight: bold;
@@ -55,17 +55,16 @@ main {
 
 .container-cachorro img {
   object-fit: contain;
-  width: 30rem;
+  width: 29.2rem;
 }
 
 .triangulo {
   background-color: #72B5A4;
-  clip-path: polygon(50% 0%, 0% 100%, 100% 100%);
-  width: 2500px;
-  height: 2500px;
+  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+  width: 900px;
+  height: 900px;
   position: absolute;
-  left: 400px;
-  top: 0;
-  transform: rotate(16deg) translateX(-250px);
-
+  right: 0;
+  top: 80px;
+  z-index: 9;/
 }

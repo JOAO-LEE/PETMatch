@@ -1,0 +1,54 @@
+ .container-doacao {
+  display: flex;
+  justify-content: space-between;
+}
+
+.informacao-doacao {
+  display: flex;
+  flex-direction: column;
+  justify-content: end;
+  padding: 2rem;
+}
+
+.doacao-textos:nth-child(1) h2 {
+  margin-bottom: 1rem;
+  font-size: 20px;
+}
+
+.doacao-textos:nth-child(1) h3 {
+  color: var(--dourado);
+  font-size: 2.5rem;
+  margin-bottom: 1rem;
+}
+
+.doacao-textos:nth-child(1) a {
+  font-size: 20px;
+  color: black;
+  text-decoration: none;
+  transition: color 250ms ease-in-out
+}
+
+.doacao-textos:nth-child(1) a:hover {
+  color: var(--dourado);
+}
+
+.imagem-patas {
+  object-fit: contain;
+  width: 800px;
+}
+
+.container-qrcode {
+  background-color: var(--dourado);
+  z-index: -1;
+  width: 22%;
+  min-height: 100vh;
+}
+
+.mao-qrcode {
+  object-fit: contain;
+  max-width: 60vw;
+  max-height: 80vh;
+  position: absolute;
+  right: 0;
+} 
+

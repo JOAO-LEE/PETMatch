@@ -1,0 +1,75 @@
+.container-principal {
+    padding: 1.25rem;
+    position: relative;
+}
+
+.mapa {
+    min-width: 100%;
+    min-height: 350px;
+    margin-top: 25px;
+}
+
+h3 {
+  color:#72B5A4;
+  font-size: 1.5rem;
+}
+
+footer {
+    background-color:#72B5A4;
+    display: flex;
+    margin-top: 100px; 
+    padding: 1rem;
+    justify-content: space-between;
+    align-items: center;
+    margin-top: 25px;
+    position: fixed;
+    bottom: 0;
+    width: 100%;
+    color: white;
+    font-size: 1rem;
+}
+
+.info-box {
+    line-height: 25px;
+    vertical-align: bottom;
+}
+
+.info-box i {
+    vertical-align: bottom;
+}
+
+.info-box a {
+    color: white;
+    font-weight: bold;
+}
+
+.rodape-icones {
+    font-size: 1.25rem;
+}
+
+.rodape-animais {
+    position: fixed;
+    bottom: 67px; 
+    transform: translateX(50%);
+    right: 50%;
+    object-fit: contain;
+    z-index: 1;
+}
+
+.lista-colaboradores  {
+    text-align: end;
+    line-height: 20px;
+}
+
+.lista-colaboradores ul li a {
+    color: white;
+    text-decoration: none;
+    font-weight: bold;
+}
+
+footer div p {
+    margin-bottom: 10px;
+    font-size: 20px;
+    color: black;
+    font-weight: bolder;
+}

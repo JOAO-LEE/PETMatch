@@ -1,0 +1,42 @@
+.container-principal {
+    padding: 10px;
+    display: flex;
+    height: 100%;
+    align-items: center;
+    justify-content: center;
+}
+
+.container-informacoes {
+    background-color: var(--corSecundaria);
+    padding: 1.25rem;
+    border-radius: 15px;
+    height: min-content;
+}
+
+.informacoes-pet {
+    display: flex;
+    align-items: center;
+    gap: 25px;
+}
+
+.lista-informacoes {
+    background-color: var(--corBotaoSecundario);
+    border-radius: 15px;
+    padding: 1rem;
+}
+
+.botao-adotar {
+    background-color: var(--corBotaoSecundario);
+    margin: 0 auto;
+    text-align: center;
+    border: 0.5px solid black;
+    border-radius: 5px;
+    font-size: 15px;
+    width: 120px;
+    height: 25.5px;
+}
+
+.container-botao {
+    display: flex;
+    justify-content: center;
+}

@@ -1,16 +1,15 @@
 :root {
     --dourado:#C9B06D;
-    --douradoClaro:#D9D9D9;
+    --douradoClaro:#E8DEC2;
     --corBorda:#757575;
     --corSecundaria:hsl(44, 53%, 72%);
     --corBotaoSecundario: #e8b931;
 }
 
 body {
-    font-family: "Inter", sans-serif,system-ui;
+    font-family: "Inter", sans-serif, system-ui;
     margin: 0;
     padding: 0;
-   
 }
 
 .cabecalho {
@@ -20,6 +19,29 @@ body {
     border-bottom: solid 2px var(--corBorda);
     box-shadow: 0 2px 5px var(--corBorda);
     padding: 1rem;
+    position: fixed;
+    width: 100%;
+    z-index: 14;
+}
+
+.inicio-button {
+    text-decoration: none;
+    transition: transform 1s ease;
+}
+
+.inicio-button:hover .logo-container .logo {
+    transform: scale(1.1);  
+}
+
+.inicio-button .logo-container h1 {
+    transition: color 500ms ease-in;
+    color:var(--dourado);
+    font-size: 1.75rem;
+}
+
+.inicio-button:hover .logo-container h1 {
+    color: #72B5A4;
+    transition: color 500ms ease-in;
 }
 
 .logo-container {
@@ -31,11 +53,6 @@ body {
 .logo {
     object-fit: contain;
     width: 25%;
-}
-
-.logo-container h1 {
-    color:var(--dourado);
-    font-size: 1.75rem;
 }
 
 .lista-navegacao {

@@ -7,10 +7,13 @@
 }
 
 body {
-    font-family: "Inter", sans-serif,system-ui;
+    font-family: "Inter", sans-serif, system-ui;
     margin: 0;
     padding: 0;
-   
+}
+
+.inicio-button {
+    text-decoration: none;
 }
 
 .cabecalho {

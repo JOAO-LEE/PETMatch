@@ -14,6 +14,20 @@ main {
   text-align: center;
 }
 
+.deu-match-container h2 {
+  color: #72B5A4;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+.deu-match-container p {
+  color: var(--dourado);
+  font-size: 1.5rem;
+  font-weight: 300;
+  padding-top: 10px;
+}
+
 .filtro-lista {
   display: flex;
   justify-content: center;
@@ -28,7 +42,6 @@ main {
   outline: 2.5px solid var(--dourado);
   outline-offset: 5px;
   transition: outline-color 1s ease;
-  /* padding: 10px; */
 }
 
 .filtro:hover {
@@ -69,13 +82,22 @@ main {
   flex: 1;
 }
 
-.checkbox-customizado {
+/* .checkbox-customizado {
   position: absolute;
   opacity: 0;
   cursor: pointer;
   height: 0;
   width: 0;
 }
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+} */
 
 .botao-buscar {
   background-color: var(--dourado);
@@ -89,3 +111,14 @@ main {
   color: white;
 }
 
+.lista-pet {
+  width: 100%;
+  display: grid;
+  grid-template-columns: auto auto auto;
+}
+
+.pet-info img {
+  object-fit: cover;
+  width: 300px;
+  height: 300px;
+}

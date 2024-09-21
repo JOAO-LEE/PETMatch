@@ -4,16 +4,18 @@
     --corBorda:#757575;
     --corSecundaria:hsl(44, 53%, 72%);
     --corBotaoSecundario: #e8b931;
+    --corFundo: #e8f1f2
 }
 
 body {
     font-family: "Inter", sans-serif, system-ui;
     margin: 0;
     padding: 0;
+    background-color: var(--corFundo);
 }
 
 .cabecalho {
-    background-color: white;
+    background-color: var(--corFundo);
     display: flex;
     justify-content: space-between;
     align-items: center;

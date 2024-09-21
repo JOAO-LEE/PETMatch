@@ -4,7 +4,8 @@
     --corBorda:#757575;
     --corSecundaria:hsl(44, 53%, 72%);
     --corBotaoSecundario: #e8b931;
-    --corFundo: #e8f1f2
+    --corFundo: #e8f1f2;
+    --transicaoCor: color 500ms ease-in;
 }
 /* 
 html, body {
@@ -36,19 +37,25 @@ body {
     transition: transform 1s ease;
 }
 
+.inicio-button .logo-container .logo {
+   transition: filter 500ms ease-in-out;
+   background-clip: border-box;
+   
+}
+
 .inicio-button:hover .logo-container .logo {
-    transform: scale(1.1);  
+    animation: heartbeat 2s ease-in-out infinite;
+    filter: hue-rotate(80deg) 
 }
 
 .inicio-button .logo-container h1 {
-    transition: color 500ms ease-in;
-    color:var(--dourado);
+    color: var(--dourado);
     font-size: 1.75rem;
 }
 
 .inicio-button:hover .logo-container h1 {
     color: #72B5A4;
-    transition: color 500ms ease-in;
+    transition: var(--transicaoCor);
 }
 
 .logo-container {
@@ -70,15 +77,22 @@ body {
     position: relative;
 }
 
-.lista-navegacao li a {
-    text-decoration:none;
-    color: black;
-    transition: all 250ms ease-in-out;
+.lista-navegacao li {
+    color:#72B5A4;
+    transition: var(--transicaoCor), transform 125ms ease-in;
 }
 
-.lista-navegacao li a:hover {
-    color: var(--dourado);
-    transform: rotate(30deg)
+.lista-navegacao li:hover {
+    transform: scale(1.08);
+}
+
+.lista-navegacao li:hover i {
+    color: #72B5A4;
+    transition:  var(--transicaoCor), font-size 300ms ease;
+}
+
+.lista-navegacao li a {
+    text-decoration: none;
 }
 
 .container-autenticacao {
@@ -95,4 +109,33 @@ body {
     padding: 0.30rem;
     flex-grow: 1;
     border-radius: 0.5rem;   
+    transition:  var(--transicaoCor), transform 300ms ease-in-out;
+}
+
+.container-autenticacao a:hover {
+    background-color: #72B5A4;
+    transform: scale(1.08);  
+}
+
+@keyframes heartbeat {
+    0% {
+        transform: scale(1);
+        opacity: 1
+    }
+    50% {
+        transform: scale(1.1); 
+        opacity: .8
+    }
+    55% {
+        transform: scale(1.2); 
+        opacity: .7
+    }
+   75% {
+        transform: scale(1.1);
+        opacity: .8
+    }
+    100% {
+        transform: scale(1); 
+        opacity: 1
+    }
 }

@@ -1,0 +1,149 @@
+main {
+  padding-top: 50px; 
+  height: 100vh;
+  z-index: 13;
+}
+
+.container-adote {
+  padding: 1rem;
+  margin-top: 250px;
+}
+
+.deu-match-container {
+  margin-bottom: 100px;
+  text-align: center;
+}
+
+.deu-match-container h2 {
+  color: #72B5A4;
+  text-transform: uppercase;
+  font-size: 2.5rem;
+  font-weight: 300;
+}
+
+.deu-match-container p {
+  color: var(--dourado);
+  font-size: 1.5rem;
+  font-weight: 300;
+  padding-top: 10px;
+}
+
+.filtro-lista {
+  display: flex;
+  justify-content: center;
+  gap: 3.5rem;
+}
+
+.filtro {
+  background-color: #72B5A4;
+  height: 500px;
+  border-radius: 10px;
+  padding: 2rem;
+  outline: 2.5px solid var(--dourado);
+  outline-offset: 5px;
+  transition: outline-color 1s ease;
+}
+
+.filtro:hover {
+  outline-color: #72B5A4;
+}
+
+.filtro p {
+  text-align: center;
+  font-size: 1.25rem;
+  background-color: var(--dourado);
+  padding: 5px;
+  border-radius: 10px;
+  color: white;
+  margin-bottom: 10px;
+}
+
+.opcoes-de-filtro {
+  height: 100%;
+  display: flex;
+  flex-direction: column;
+  padding: 1.24rem;
+}
+
+.checkboxes {
+  color: white;
+  flex: 1;
+  display: flex;
+  flex-direction: column;
+  gap: 20px;
+}
+
+.checkbox-container {
+  display: flex;
+  gap: 2rem;
+}
+
+.checkbox-container label {
+  flex: 1;
+}
+
+/* .checkbox-customizado {
+  position: absolute;
+  opacity: 0;
+  cursor: pointer;
+  height: 0;
+  width: 0;
+}
+
+.checkmark {
+  position: absolute;
+  top: 0;
+  left: 0;
+  height: 25px;
+  width: 25px;
+  background-color: #eee;
+} */
+
+.botao-buscar {
+  background-color: var(--dourado);
+  margin: 0 auto;
+  text-align: center;
+  border: 0.5px solid white;
+  border-radius: 5px;
+  font-size: 15px;
+  width: 120px;
+  height: 25.5px;
+  color: white;
+}
+
+.lista-pet {
+  /* padding: 1rem; */
+  /* width: 70%; */
+  background-color: aquamarine;
+  display: grid;
+  grid-template-columns: auto auto auto;
+  gap: 25px;
+  /* justify-content: baseline; */
+}
+
+.pet-info {
+  background-color: white;
+  /* height: 100%; */
+  padding: 50px;
+}
+
+.pet-info img {
+  object-fit: cover;
+  width: 300px;
+  height: 300px;
+}
+
+.botao-adotar {
+  background-color: var(--dourado);
+  /* margin: 0 auto; */
+  text-align: center;
+  border: 0.5px solid white;
+  border-radius: 5px;
+  font-size: 15px;
+  width: 120px;
+  height: 25.5px;
+  color: white;
+  /* text-align: center; */
+  /* padding: 5px; */
+  margin-top: 100px;
+}

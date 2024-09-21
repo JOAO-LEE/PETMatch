@@ -31,7 +31,7 @@ main {
 .filtro-lista {
   display: flex;
   justify-content: center;
-  gap: 7.5rem;
+  gap: 3.5rem;
 }
 
 .filtro {
@@ -112,13 +112,38 @@ main {
 }
 
 .lista-pet {
-  width: 100%;
+  /* padding: 1rem; */
+  /* width: 70%; */
+  background-color: aquamarine;
   display: grid;
   grid-template-columns: auto auto auto;
+  gap: 25px;
+  /* justify-content: baseline; */
+}
+
+.pet-info {
+  background-color: white;
+  /* height: 100%; */
+  padding: 50px;
 }
 
 .pet-info img {
   object-fit: cover;
   width: 300px;
   height: 300px;
+}
+
+.botao-adotar {
+  background-color: var(--dourado);
+  /* margin: 0 auto; */
+  text-align: center;
+  border: 0.5px solid white;
+  border-radius: 5px;
+  font-size: 15px;
+  width: 120px;
+  height: 25.5px;
+  color: white;
+  /* text-align: center; */
+  /* padding: 5px; */
+  margin-top: 100px;
 }

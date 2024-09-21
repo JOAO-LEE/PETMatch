@@ -10,8 +10,13 @@
   />
   <link
   rel="stylesheet"
+  href="/common/style/reset.css"
+  />
+  <link
+  rel="stylesheet"
   href="/common/style/common.css"
   />
+  <link rel="stylesheet" href="adote.css" />
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -19,10 +24,12 @@
 </head>
 <body>
   <header class="cabecalho">
-    <div class="logo-container">
-      <img class="logo" src="assets/common/petmatchlogo.png" alt="">
-      <h1>PETMatch</h1>
-    </div>
+    <a href="/pages/home/home.html" class="inicio-button">
+      <div class="logo-container">
+        <img class="logo" src="/assets/common/petmatchlogo.png" alt="">
+        <h1>PETMatch</h1>
+      </div>
+    </a>
     <nav class="navegacao">
       <ul class="lista-navegacao">
         <li>
@@ -40,70 +47,82 @@
       </ul>
     </nav>
     <div class="container-autenticacao">
-      <a href="entrar.html" class="btn-login">Entrar</a>
-      <a href="cadastre-se.html" class="btn-signup">Cadastre-se</a>
+      <a href="/pages/entrar/" class="btn-login">Entrar</a>
+      <a href="/pages/cadastre-se/" class="btn-signup">Cadastre-se</a>
   </div>
   </header>
   <main>
-    <section>
-      <div>
-        <h2>Deu <strong>MATCH?</strong></h2>
+    <section class="container-adote">
+      <div class="deu-match-container">
+        <h2>Deu <strong>MATCH</strong>?</h2>
         <p>Uma seleção especial de peludinhos que buscam um lar para chamar de seu:</p>
       </div>
-      <div>
-        <aside>
+      <div class="filtro-lista">
+        <aside class="filtro">
           <p>Filtro de Busca</p>
-          <div>
-            <label for="todos">Todos</label>
-            <input type="checkbox" id="todos">
+          <div class="opcoes-de-filtro">
+            <div class="checkboxes">
+              <div class="checkbox-container">
+                <label for="todos">Todos</label>
+                <input type="checkbox" id="todos" class="checkbox-customizado">
+                <!-- <span class="checkmark"></span> -->
+              </div>
+              <div class="checkbox-container">
+                <label for="macho">Macho</label>
+                <input type="checkbox" id="macho" class="checkbox-customizado">
+                <!-- <span class="checkmark"></span> -->
+              </div>
+              <div class="checkbox-container">
+                <label for="femea">Fêmea</label>
+                <input type="checkbox" id="femea" class="checkbox-customizado">
+                <!-- <span class="checkmark"></span> -->
+              </div>
+              <div class="checkbox-container">
+                <label for="cachorro">Cachorro</label>
+                <input type="checkbox" id="cachorro" class="checkbox-customizado">
+                <!-- <span class="checkmark"></span> -->
+              </div>
+              <div class="checkbox-container">
+                <label for="gato">Gato</label>
+                <input type="checkbox" id="gato" class="checkbox-customizado">
+                <!-- <span class="checkmark"></span> -->
+              </div>
           </div>
-          <div>
-            <label for="macho">Macho</label>
-            <input type="checkbox" id="macho">
-          </div>
-          <div>
-            <label for="femea">Fêmea</label>
-            <input type="checkbox" id="femea">
-          </div>
-          <div>
-            <label for="cachorro">Cachorro</label>
-            <input type="checkbox" id="cachorro">
-          </div>
-          <div>
-            <label for="gato">Gato</label>
-            <input type="checkbox" id="gato">
-          </div>
+            <!-- <div> -->
+              <button class="botao-buscar">Buscar</button>
+            </div>
+          <!-- </div> -->
         </aside>
-        <div>
-          <div>
-            <img src="assets/adote/image 1.png" alt="">
-            <p>Alfredo</p>
-            <a href="adocao-realizada.html">Adotar</a>
+        <div class="lista-pet">
+          <div class="pet-info">
+            <img src="/assets/adote/image 1.png" alt="">
+            <p>Alfredo</p><br>
+            <a class="botao-adotar" href="adocao-realizada.html">Adotar</a>
           </div>
-          <div>
-            <img src="assets/adote/image 2.png" alt="">
+          <div class="pet-info">
+            <img src="/assets/adote/image 2.png" alt="">
             <p>Amelia</p>
-            <a href="adocao-realizada.html">Adotar</a>
+            <a class="botao-adotar" href="adocao-realizada.html">Adotar</a>
           </div>
-          <div>
-            <img src="assets/adote/image 3.png" alt="">
+          <div class="pet-info">
+            <img src="/assets/adote/image 3.png" alt="">
             <p>Thor</p>
-            <a href="adocao-realizada.html">Adotar</a>
+            <a class="botao-adotar" href="adocao-realizada.html">Adotar</a>
           </div>
-          <div>
-            <img src="assets/adote/image 4.png" alt="">
+          <div class="pet-info">
+            <img src="/assets/adote/image 4.png" alt="">
             <p>Chica</p>
             <a>Adotar</a>
           </div>
-          <div>
-            <img src="assets/adote/image 5.png" alt="">
+          <div class="pet-info">
+            <img src="/assets/adote/image 5.png" alt="">
             <p>George</p>
-            <a href="adocao-realizada.html">Adotar</a>
+            <a class="botao-adotar" href="adocao-realizada.html">Adotar</a>
           </div> 
-          <div>
-            <img src="assets/adote/image 6.png" alt="">
+          <div class="pet-info">
+            <img src="/assets/adote/image 6.png" alt="">
             <p>Doroty</p>
-            <a href="adocao-realizada.html">Adotar</a>
+            <a class="botao-adotar" href="adocao-realizada.html">Adotar</a>
           </div>
         </div>
       </div>

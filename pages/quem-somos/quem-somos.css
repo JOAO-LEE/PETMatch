@@ -1,10 +1,11 @@
 .container-principal {
   padding: 1rem;
+  position: relative;
+  top: 120px;
 }
 
  .quem-somos-container, .missao-container {
   display: flex;
-  padding: .5rem;
   align-items: center;
   justify-content: space-around;
 }
@@ -16,10 +17,26 @@
 .text-container {
   width: 40%;
   text-align: center;
+  color: var(--secundaria);
+  animation: muda-cor-texto 1s ease-in-out 500ms forwards;
 }
 
 .titulos {
   font-size: 1.75rem;
   font-weight: normal;
   text-transform: uppercase;
+  animation: muda-cor-titulo 1s ease-in-out forwards;
+  color: var(--dourado);
+}
+
+@keyframes muda-cor-titulo {
+  to {
+    color: var(--secundaria);
+  }
+}
+
+@keyframes muda-cor-texto {
+  to {
+    color: var(--dourado);
+  }
 }

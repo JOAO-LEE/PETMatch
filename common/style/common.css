@@ -114,6 +114,25 @@ body {
     transform: scale(1.08);  
 }
 
+
+::-webkit-scrollbar {
+    width: 10px;
+
+}
+
+::-webkit-scrollbar-track {
+    background: #f1f1f1;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--dourado)
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #72B5A4;
+}
+
+
 @keyframes heartbeat {
     0% {
         transform: scale(1);

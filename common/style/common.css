@@ -7,16 +7,13 @@
     --corFundo: #e8f1f2;
     --transicaoCor: color 500ms ease-in;
 }
-/* 
-html, body {
-    min-height: 100vh;
-} */
 
 body {
     font-family: "Inter", sans-serif, system-ui;
     margin: 0;
     padding: 0;
     background-color: var(--corFundo);
+    /* position: relative; */
 }
 
 .cabecalho {

@@ -10,7 +10,7 @@ main {
 
 .botao-pagina-entrar {
     position: absolute;
-    transform: rotate(-90deg) translateY(190px);
+    transform: rotate(-90deg) translateY(195px);
     background-color: var(--dourado);
     padding: 20px;
     border-radius: 8px 8px 0 0;
@@ -45,6 +45,7 @@ main {
     display: flex;
     align-items: center;
     top: 100px;
+    /* height: 500px; */
 }
 
 .title {

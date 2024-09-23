@@ -1,0 +1,39 @@
+.form-entrar {
+  position: relative;
+  background-color: white;
+  padding: 30px;
+  border-radius: 10px;
+  box-shadow: 0 10px 15px rgba(0, 0, 0, 0.1);
+  width: 100%;
+  max-width: 550px;
+  text-align: center;
+  margin-left: 400px;
+  width: 658px;
+  height: 436px;
+}
+
+.botao-pagina-entrar {
+  position: absolute;
+  transform: rotate(-90deg) translateY(200px);
+  background-color: var(--dourado);
+  padding: 20px;
+  border-radius: 8px 8px 0 0;
+  font-size: 20px;
+  font-weight: bold;
+  transition: background-color 250ms ease-in-out;
+  
+}
+
+.input-group-entrar {
+  margin-top: 100px;
+}
+
+.botao-pagina-entrar:hover {
+  background-color: var(--secundaria);
+}
+
+.botao-pagina-entrar a {
+  color: white;
+  text-decoration: none;
+}
+

@@ -10,8 +10,14 @@
     />
     <link
     rel="stylesheet"
-    href="/common/style/common.css"
+    href="/common/style/reset.css"
     />
+    <link
+    rel="stylesheet"
+    href="/common/style/common.css" />
+    <link rel="stylesheet"
+    href="/pages/cadastre-se/cadastre-se.css"/>
+    <link rel="stylesheet" href="entrar.css" />
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
@@ -46,7 +52,43 @@
           <a href="/pages/cadastre-se/cadastre-se.html" class="btn-signup">Cadastre-se</a>
       </div>
       </header>
-    <main>
+      <main>
+        <section>
+          <div class="form-wrapper">
+            <div class="botao-pagina-entrar">
+                <a href="/pages/entrar/entrar.html">Novo usuário? Cadastre-se aqui!</a>  
+            </div>
+            <div class="form-entrar">
+              <form>
+                <div class="form-header">
+                  <div class="title">
+                    <h1>Entrar</h1>
+                  </div>                              
+                </div>
+                <div class="input-group-entrar">
+                  <div class="input-box">
+                    <i class="ph ph-user"></i>
+                      <input id="login" type="email" name="login" placeholder="E-mail exemplo@exemplo.com.br" required>
+                  </div>
+                  <div class="input-box">
+                    <i class="ph ph-lock-simple"></i>
+                      <input id="senha" type="password" name="senha" placeholder="Senha" required>
+                  </div>
+
+              </div>
+              <div class="login-box">
+                <button type="submit">Salvar</button>
+            </div>
+                  </form>                
+              </div>
+            </div>
+    
+        </section>
+        <div class="image-box">
+          <img src="/assets/common/pngtree-mutt-pure-bred-dog-png-image_10054959.png" alt="Cachorro Branco">
+        </div>
+      </main>
+    <!-- <main>
         <section>
             <div class="container">
                 <div class="form">
@@ -82,6 +124,6 @@
         <div class="image-box">
             <img src="assets/common/pngtree-mutt-pure-bred-dog-png-image_10054959.png" alt="Cachorro Branco">
         </div>
-    </main>
+    </main> -->
 </body>
 </html>

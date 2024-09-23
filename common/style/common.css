@@ -6,6 +6,7 @@
     --corBotaoSecundario: #e8b931;
     --corFundo: #e8f1f2;
     --transicaoCor: color 500ms ease-in;
+    --secundaria:  #72B5A4;
 }
 
 body {
@@ -13,7 +14,6 @@ body {
     margin: 0;
     padding: 0;
     background-color: var(--corFundo);
-    /* position: relative; */
 }
 
 .cabecalho {
@@ -83,13 +83,23 @@ body {
     transform: scale(1.08);
 }
 
+.lista-navegacao li:hover a {
+    color: var(--dourado);
+}
+
 .lista-navegacao li:hover i {
-    color: #72B5A4;
-    transition:  var(--transicaoCor), font-size 300ms ease;
+    color: var(--secundaria);
+}
+
+
+.lista-navegacao i {
+    font-size: 1.25rem;
+    color: var(--dourado);
 }
 
 .lista-navegacao li a {
     text-decoration: none;
+    color: var(--secundaria);
 }
 
 .container-autenticacao {
@@ -117,21 +127,21 @@ body {
 
 ::-webkit-scrollbar {
     width: 10px;
-
 }
 
 ::-webkit-scrollbar-track {
-    background: #f1f1f1;
+    background: var(--douradoClaro);
+    border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--dourado)
+    background: var(--dourado);
+    border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
     background: #72B5A4;
 }
-
 
 @keyframes heartbeat {
     0% {

@@ -143,6 +143,12 @@ main {
   color: white;
   align-self: center;
   border-radius: 10px;
+  transition: transform 250ms ease-in-out, background-color 200ms ease;
+}
+
+.link-adotar:hover {
+  transform: scale(1.1);
+  background-color: var(--dourado);
 }
 
 /* .checkbox-customizado {

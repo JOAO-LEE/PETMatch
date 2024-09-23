@@ -1,48 +1,55 @@
 main {
+    position: relative;
+    top: 120px;
+    min-height: 100vh;
     display: flex;
-    justify-content: space-between;
-    align-items: center;
-    padding: 40px 20px;
-    flex-wrap: wrap;
+    flex-direction: column;
 }
+
 .botao-pagina-entrar {
     position: absolute;
-    min-height: 440px;
+    transform: rotate(-90deg) translateY(190px);
     background-color: var(--dourado);
-    color: white;
     padding: 20px;
-    border-radius: 8px 0 0 8px;
-    font-size: 25px;
+    border-radius: 8px 8px 0 0;
+    font-size: 20px;
     font-weight: bold;
-    writing-mode: vertical-rl;
-    text-orientation: mixed;
-    z-index: 1;
-    margin-left: 327px;
+    transition: background-color 250ms ease-in-out;
 }
+
+.botao-pagina-entrar:hover {
+    background-color: var(--secundaria);
+}
+
+.botao-pagina-entrar a {
+    color: white;
+    text-decoration: none;
+}
+
 .form {
     position: relative;
     background-color: white;
     padding: 30px;
+
     border-radius: 10px;
     box-shadow: 0 0 10px rgba(0, 0, 0, 0.1);
     width: 100%;
     max-width: 400px;
     text-align: center;
-    margin-bottom: 20px;
     margin-left: 400px;
-    margin-top: 112px;
 }
-.form {
-    margin-bottom: 20px;
-    font-size: 24px;
-    color: #333;
+
+.form-wrapper {
+    position: relative;
+    display: flex;
+    align-items: center;
 }
 
 .input-box {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    border: 1px solid #ccc;
+    border: 1px solid var(--secundaria);
     border-radius: 8px;
     padding: 10px;
 }
@@ -83,15 +90,23 @@ main {
 .image-box img {
     width: 100%;
     border-radius: 20px;
+    z-index: 10;
+    position: relative;
 }
 
 .image-box {
-    position: absolute;
-    left: 77.5%;
-    top: 76%;
-    transform: translateY(-50%);
+    align-self: self-end;
+    clip-path: circle();
+    z-index: -9;
+    /* mix-blend-mode: ; */
+    /* position: absolute; */
+    /* left: 77.5%; */
+    /* top: 76%; */
+    /* transform: translateY(-50%); */
     background-color: #b59f68;
-    padding: 20px;
-    border-radius: 150% 0% 0% 0%;
-    z-index: 1;    
+    height: 1000px;
+    width: 1000px;
+    /* padding: 20px; */
+    /* border-radius: 150% 0% 0% 0%; */
+    /* z-index: 1;     */
 }

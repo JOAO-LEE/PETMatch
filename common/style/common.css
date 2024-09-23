@@ -75,22 +75,13 @@ body {
 }
 
 .lista-navegacao li {
-    color:#72B5A4;
+    color: #72B5A4;
     transition: var(--transicaoCor), transform 125ms ease-in;
 }
 
 .lista-navegacao li:hover {
     transform: scale(1.08);
 }
-
-.lista-navegacao li:hover a {
-    color: var(--dourado);
-}
-
-.lista-navegacao li:hover i {
-    color: var(--secundaria);
-}
-
 
 .lista-navegacao i {
     font-size: 1.25rem;
@@ -99,6 +90,14 @@ body {
 
 .lista-navegacao li a {
     text-decoration: none;
+    color: var(--secundaria);
+}
+
+.lista-navegacao li:hover a {
+    color: var(--dourado);
+}
+
+.lista-navegacao li:hover i {
     color: var(--secundaria);
 }
 
@@ -123,7 +122,6 @@ body {
     background-color: #72B5A4;
     transform: scale(1.08);  
 }
-
 
 ::-webkit-scrollbar {
     width: 10px;

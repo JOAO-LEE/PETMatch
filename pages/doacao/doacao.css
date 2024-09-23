@@ -1,18 +1,23 @@
  .container-doacao {
   display: flex;
   justify-content: space-between;
+  top: 120px;
 }
 
 .informacao-doacao {
   display: flex;
   flex-direction: column;
   justify-content: end;
+}
+
+.doacao-textos {
   padding: 2rem;
 }
 
 .doacao-textos:nth-child(1) h2 {
   margin-bottom: 1rem;
   font-size: 20px;
+  color: var(--secundaria);
 }
 
 .doacao-textos:nth-child(1) h3 {
@@ -23,7 +28,7 @@
 
 .doacao-textos:nth-child(1) a {
   font-size: 20px;
-  color: black;
+  color: var(--secundaria);
   text-decoration: none;
   transition: color 250ms ease-in-out
 }
@@ -50,5 +55,17 @@
   max-height: 80vh;
   position: absolute;
   right: 0;
+  top: 150px;
 } 
 
+.hashtag {
+  color: var(--dourado);
+  font-weight: bold;
+  font-size: 3ch;
+}
+
+.hashtag::before {
+  content: "#";
+  color: #72B5A4;
+  font-size: 1.5ch;
+}

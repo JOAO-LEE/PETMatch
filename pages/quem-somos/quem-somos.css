@@ -1,25 +1,103 @@
 .container-principal {
   padding: 1rem;
+  position: relative;
+  top: 25px;
+  z-index: 10;
+  overflow: hidden;
 }
 
- .quem-somos-container, .missao-container {
+.triangulo {
+  background-color: var(--secundaria);
+  clip-path: polygon(100% 0, 0% 100%, 100% 100%);
+  width: 1500px;
+  height: 1500px;
+  position: absolute;
+  left: -1000px;
+  top: -200px;
+  transform: rotate(-100deg);
+  z-index: -1;
+  animation: muda-cor-triangulo 2s ease-in-out forwards, move-triangulo-l-r 2s ease-in-out forwards;
+}
+
+.quem-somos-container, .missao-container {
   display: flex;
-  padding: .5rem;
   align-items: center;
   justify-content: space-around;
+  z-index: 10;
+  filter: blur(.5rem);
+  animation: remove-blur 2s ease-in-out 250ms forwards;
 }
 
 .missao-container {
   flex-direction: row-reverse;
 }
 
+.quem-somos-container img {
+  object-fit: contain;
+  width: 600px;
+  height: 600px;
+  transform: translateX(800px);
+  animation: move-imagens 4s ease  forwards;
+}
+
+.missao-container img {
+  object-fit: contain;
+  width: 600px;
+  height: 290px;
+  transform: translateX(-700px);
+  animation: move-imagens 4s ease 250ms forwards;
+
+}
+
 .text-container {
   width: 40%;
   text-align: center;
+  color: var(--secundaria);
+  animation: muda-cor-texto 2s ease-in-out 1.5s forwards;
 }
 
 .titulos {
-  font-size: 1.75rem;
+  margin-bottom: 10px;
+  font-size: 2rem;
   font-weight: normal;
   text-transform: uppercase;
+  animation: muda-cor-titulo 2s ease-in-out 2s forwards;
+  color: var(--dourado);
+}
+
+@keyframes muda-cor-titulo {
+  to {
+    color: var(--secundaria);
+  }
+}
+
+@keyframes muda-cor-texto {
+  to {
+    color: var(--dourado);
+  }
+}
+
+@keyframes muda-cor-triangulo {
+  to {
+    background-color: var(--douradoClaro);
+  }
+}
+
+@keyframes move-triangulo-l-r {
+  to {
+    left: -800px;
+
+  }
+}
+
+@keyframes remove-blur {
+  to {
+    filter: none;
+  }
+}
+
+@keyframes move-imagens {
+  to {
+    transform: translateX(0px);
+  }
 }

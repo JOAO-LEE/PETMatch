@@ -7,7 +7,6 @@ main {
 .inicio-container {
   padding: 1rem;
   overflow: hidden;
-  /* height: 100; */
 }
 
 .nome-empresa-destaque {
@@ -20,6 +19,7 @@ main {
   opacity: 0;
   animation: mostra-animal 2s ease-in-out 1s forwards;
   filter: blur(1.2rem);
+  margin-top: 50px;
 }
 
 .hashtag {
@@ -74,8 +74,6 @@ main {
   animation: mostra-animal 2s ease-in-out 1s forwards;
   opacity: 0;
   filter: blur(1.2rem);
-
-  
 }
 
 .triangulo {

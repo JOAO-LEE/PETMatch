@@ -6,11 +6,8 @@
     --corBotaoSecundario: #e8b931;
     --corFundo: #e8f1f2;
     --transicaoCor: color 500ms ease-in;
+    --secundaria:  #72B5A4;
 }
-/* 
-html, body {
-    min-height: 100vh;
-} */
 
 body {
     font-family: "Inter", sans-serif, system-ui;
@@ -78,7 +75,7 @@ body {
 }
 
 .lista-navegacao li {
-    color:#72B5A4;
+    color: #72B5A4;
     transition: var(--transicaoCor), transform 125ms ease-in;
 }
 
@@ -86,13 +83,22 @@ body {
     transform: scale(1.08);
 }
 
-.lista-navegacao li:hover i {
-    color: #72B5A4;
-    transition:  var(--transicaoCor), font-size 300ms ease;
+.lista-navegacao i {
+    font-size: 1.25rem;
+    color: var(--dourado);
 }
 
 .lista-navegacao li a {
     text-decoration: none;
+    color: var(--secundaria);
+}
+
+.lista-navegacao li:hover a {
+    color: var(--dourado);
+}
+
+.lista-navegacao li:hover i {
+    color: var(--secundaria);
 }
 
 .container-autenticacao {
@@ -115,6 +121,24 @@ body {
 .container-autenticacao a:hover {
     background-color: #72B5A4;
     transform: scale(1.08);  
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-track {
+    background: var(--douradoClaro);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    background: var(--dourado);
+    border-radius: 10px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background: #72B5A4;
 }
 
 @keyframes heartbeat {

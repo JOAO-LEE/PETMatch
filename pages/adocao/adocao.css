@@ -29,14 +29,16 @@
 }
 
 .lista-informacoes {
-    background-color: var(--corSecundaria);
+    background-color: var(--corPrimaria);
+    outline: 2px solid white;
+    outline-offset: 5px;
     border-radius: 15px;
     padding: 1rem;
     color: white
 }
 
 .botao-adotar {
-    background-color: var(--dourado);
+    background-color: var(--corPrimaria);
     text-align: center;
     border: 0.5px solid white;
     border-radius: 5px;
@@ -51,6 +53,6 @@
 
 .botao-adotar:hover {
     background-color: var(--corSecundaria);
-    border-color: var(--dourado);
+    border-color: var(--corPrimaria);
     scale: 1.1
 }

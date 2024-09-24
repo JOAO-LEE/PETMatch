@@ -13,17 +13,20 @@
 
 .doacao-textos {
   padding: 2rem;
+  animation: move-texto-doacao 1.75s ease-in-out 250ms forwards;
+  translate: -450px;
+  filter: blur(50px);
 }
 
 .doacao-textos:nth-child(1) h2 {
   margin-bottom: 1rem;
-  font-size: 20px;
+  font-size: 3ch;
   color: var(--secundaria);
 }
 
 .doacao-textos:nth-child(1) h3 {
   color: var(--dourado);
-  font-size: 2.5rem;
+  font-size: 6ch;
   margin-bottom: 1rem;
 }
 
@@ -78,5 +81,12 @@
   to {
     transform: translateX(0);
     background-color: var(--dourado);
+  }
+}
+
+@keyframes move-texto-doacao {
+  to {
+    translate: 0;
+    filter: none;
   }
 }

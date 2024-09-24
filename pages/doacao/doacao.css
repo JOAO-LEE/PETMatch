@@ -2,6 +2,7 @@
   display: flex;
   justify-content: space-between;
   top: 120px;
+  overflow: hidden;
 }
 
 .informacao-doacao {
@@ -43,10 +44,13 @@
 }
 
 .container-qrcode {
-  background-color: var(--dourado);
   z-index: -1;
   width: 22%;
   min-height: 100vh;
+  transform: translateX(400px);
+  animation: move-container-qr-code 2s ease-in-out 250ms forwards;
+  background-color: var(--secundaria);
+
 }
 
 .mao-qrcode {
@@ -68,4 +72,11 @@
   content: "#";
   color: #72B5A4;
   font-size: 1.5ch;
+}
+
+@keyframes move-container-qr-code {
+  to {
+    transform: translateX(0);
+    background-color: var(--dourado);
+  }
 }

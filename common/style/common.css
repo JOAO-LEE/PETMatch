@@ -1,12 +1,11 @@
 :root {
-    --dourado:#C9B06D;
-    --douradoClaro:#E8DEC2;
-    --corBorda:#757575;
-    --corSecundaria:hsl(44, 53%, 72%);
+    --corPrimaria: #C9B06D;
+    --corPrimariaClaro: #E8DEC2;
+    --corSecundaria: #72B5A4;
+    --corBorda: #757575;
     --corBotaoSecundario: #e8b931;
     --corFundo: #e8f1f2;
     --transicaoCor: color 500ms ease-in;
-    --secundaria:  #72B5A4;
 }
 
 body {
@@ -46,12 +45,12 @@ body {
 }
 
 .inicio-button .logo-container h1 {
-    color: var(--dourado);
+    color: var(--corPrimaria);
     font-size: 1.75rem;
 }
 
 .inicio-button:hover .logo-container h1 {
-    color: #72B5A4;
+    color: var(--corSecundaria);
     transition: var(--transicaoCor);
 }
 
@@ -75,7 +74,7 @@ body {
 }
 
 .lista-navegacao li {
-    color: #72B5A4;
+    color: var(--corSecundaria);
     transition: var(--transicaoCor), transform 125ms ease-in;
 }
 
@@ -85,20 +84,20 @@ body {
 
 .lista-navegacao i {
     font-size: 1.25rem;
-    color: var(--dourado);
+    color: var(--corPrimaria);
 }
 
 .lista-navegacao li a {
     text-decoration: none;
-    color: var(--secundaria);
+    color: var(--corSecundaria);
 }
 
 .lista-navegacao li:hover a {
-    color: var(--dourado);
+    color: var(--corPrimaria);
 }
 
 .lista-navegacao li:hover i {
-    color: var(--secundaria);
+    color: var(--corSecundaria);
 }
 
 .container-autenticacao {
@@ -109,8 +108,8 @@ body {
 }
 
 .container-autenticacao a {
-    text-decoration:none;
-    color:white;
+    text-decoration: none;
+    color: white;
     background-color: #C9B06D;
     padding: 0.30rem;
     flex-grow: 1;
@@ -119,7 +118,7 @@ body {
 }
 
 .container-autenticacao a:hover {
-    background-color: #72B5A4;
+    background-color: var(--corSecundaria);
     transform: scale(1.08);  
 }
 
@@ -128,38 +127,38 @@ body {
 }
 
 ::-webkit-scrollbar-track {
-    background: var(--douradoClaro);
+    background: var(--corPrimariaClaro);
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb {
-    background: var(--dourado);
+    background: var(--corPrimaria);
     border-radius: 10px;
 }
 
 ::-webkit-scrollbar-thumb:hover {
-    background: #72B5A4;
+    background: var(--corSecundaria);
 }
 
 @keyframes heartbeat {
     0% {
         transform: scale(1);
-        opacity: 1
+        opacity: 1;
     }
     50% {
         transform: scale(1.1); 
-        opacity: .8
+        opacity: .8;
     }
     55% {
         transform: scale(1.2); 
-        opacity: .7
+        opacity: .7;
     }
    75% {
         transform: scale(1.1);
-        opacity: .8
+        opacity: .8;
     }
     100% {
         transform: scale(1); 
-        opacity: 1
+        opacity: 1;
     }
 }

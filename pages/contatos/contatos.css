@@ -1,7 +1,7 @@
 .container-principal {
     padding: 1.25rem;
     position: relative;
-    top: 120px;
+    top: 110px;
 }
 
 .mapa {
@@ -11,12 +11,12 @@
 }
 
 h3 {
-  color:#72B5A4;
+  color:var(--corSecundaria);
   font-size: 1.5rem;
 }
 
 footer {
-    background-color:#72B5A4;
+    background-color:var(--corSecundaria);
     display: flex;
     margin-top: 100px; 
     padding: 1rem;

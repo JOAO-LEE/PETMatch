@@ -1,7 +1,7 @@
 .container-principal {
     padding: 10px;
-    display: flex;
     height: 100%;
+    display: flex;
     align-items: center;
     justify-content: center;
     position: relative;
@@ -9,12 +9,17 @@
 }
 
 .container-informacoes {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    flex-direction: column;
     background-color: var(--corSecundaria);
-    outline: 2px solid var(--secundaria);
+    outline: 2px solid var(--corSecundaria);
     outline-offset: 5px;
     padding: 1.25rem;
     border-radius: 15px;
     height: min-content;
+    gap: 2rem;
 }
 
 .informacoes-pet {
@@ -24,7 +29,7 @@
 }
 
 .lista-informacoes {
-    background-color: var(--secundaria);
+    background-color: var(--corSecundaria);
     border-radius: 15px;
     padding: 1rem;
     color: white
@@ -39,11 +44,13 @@
     width: 120px;
     height: 25.5px;
     color: white;
-    margin-top: 100px;
-  }
-  
+    cursor: pointer;
+    margin: 0 auto;
+    transition: background-color 250ms ease, border-color 500ms ease, scale 250ms ease;
+}
 
-.container-botao {
-    display: flex;
-    justify-content: center;
+.botao-adotar:hover {
+    background-color: var(--corSecundaria);
+    border-color: var(--dourado);
+    scale: 1.1
 }

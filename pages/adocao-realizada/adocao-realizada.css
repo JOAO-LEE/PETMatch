@@ -4,17 +4,22 @@ main {
 }
 
 h2 {
-  color: #72B5A4;
+  color: var(--corSecundaria);
   text-transform: uppercase;
   text-align: center;
   font-size: 2.5rem;
   font-weight: 300;
+  translate: 0 -80px;
+  filter: blur(15px);
+  animation: mostra-gratulacao 1s ease 250ms forwards;
 }
 
 .aviso-adocao {
   text-align: center;
   font-size: 1.1246rem;
-  color: var(--dourado)
+  color: var(--corPrimaria);
+  opacity: 0;
+  animation: mostra-aviso 1.25s ease-in-out 300ms forwards;
 }
 
 .informacao-adocao {
@@ -31,24 +36,26 @@ h2 {
   padding: 2rem;
   align-items: center;
   gap: 2rem;
+  scale: 1.2;
+  animation: redimensionamento-pet-info 1s ease 250ms forwards;
 }
 
 .imagem-pet {
-  border: 3px solid var(--dourado);
+  border: 3px solid var(--corPrimaria);
   border-radius: 15px;
   object-fit: contain;
   width: 300px;
-  transition: transform 250ms ease, border-color 500ms ease;
+  transition: transform 1s ease, border-color 500ms ease;
 }
 
 .imagem-pet:hover {
   transform: scale(1.1);
-  border-color: #72B5A4
+  border-color: var(--corSecundaria);
 }
 
 .informacao-pet {
   line-height: 22.5px;
-  border: 3px solid #72B5A4;
+  border: 3px solid var(--corSecundaria);
   border-radius: 15px;
   padding: 10px;
   transition: transform 250ms ease, border-color 500ms ease;
@@ -56,7 +63,7 @@ h2 {
 
 .informacao-pet:hover {
   transform: scale(1.1);
-  border-color: var(--dourado);
+  border-color: var(--corPrimaria);
 }
 
 .orientacoes {
@@ -67,5 +74,24 @@ h2 {
 }
 
 .orientacoes ul {
-  color: var(--dourado)
+  color: var(--corPrimaria);
+}
+
+@keyframes mostra-gratulacao {
+  to {
+    translate: 0 0;
+    filter: none
+  }
+}
+
+@keyframes mostra-aviso {
+  to {
+    opacity: 1;
+  }
+}
+
+@keyframes redimensionamento-pet-info {
+  to {
+    scale: 1;
+  }
 }

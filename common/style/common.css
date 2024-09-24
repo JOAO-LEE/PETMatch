@@ -4,7 +4,8 @@
     --corSecundaria: #72B5A4;
     --corBorda: #757575;
     --corBotaoSecundario: #e8b931;
-    --corFundo: #e8f1f2;
+    --corFundoClaro: #e8f1f2;
+    --corFundoEscuro: #282828;
     --transicaoCor: color 500ms ease-in;
 }
 
@@ -12,7 +13,8 @@ body {
     font-family: "Inter", sans-serif, system-ui;
     margin: 0;
     padding: 0;
-    background-color: var(--corFundo);
+    background-color: var(--corFundoEscuro);
+    color: white;
 }
 
 .cabecalho {

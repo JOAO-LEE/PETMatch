@@ -15,13 +15,14 @@
 .botao-pagina-entrar {
   position: absolute;
   transform: rotate(-90deg) translateY(200px);
-  background-color: var(--dourado);
+  background-color: var(--corPrimaria);
   padding: 20px;
   border-radius: 8px 8px 0 0;
   font-size: 20px;
   font-weight: bold;
   transition: background-color 250ms ease-in-out;
-  
+  color: white;
+  text-decoration: none;
 }
 
 .input-group-entrar {

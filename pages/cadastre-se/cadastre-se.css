@@ -16,6 +16,8 @@ main {
     font-size: 20px;
     font-weight: bold;
     transition: background-color 250ms ease-in-out;
+    color: white;
+    text-decoration: none;
 }
 
 .botao-pagina-entrar:hover {
@@ -88,10 +90,11 @@ main {
     border-radius: 8px;
     font-size: 16px;
     cursor: pointer;
-    transition: background-color 0.3s ease, outline-color 750ms ease;
+    transition: background-color 0.3s ease, outline-color 750ms ease, scale 250ms ease-in-out;
 }
 
 .login-box button:hover {
+    scale: 1.1;
     background-color: var(--corSecundaria);
     outline-color: var(--corPrimaria);
 }
@@ -125,8 +128,7 @@ main {
         height: 600px;
         right: 0;
         background-color: var(--corPrimaria);
-        transform: translateY(400px) translateX(200px); 
+        transform: translateY(300px) translateX(100px); 
         filter: none;
-
     }
 }

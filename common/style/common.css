@@ -13,12 +13,15 @@ body {
     font-family: "Inter", sans-serif, system-ui;
     margin: 0;
     padding: 0;
-    background-color: var(--corFundoEscuro);
-    color: white;
+    background-color: var(--corFundoClaro);
+    color: var(--corFundoEscuro);
+    /* background-color: var(--corFundoEscuro);
+    color: var(--corFundoClaro); */
 }
 
 .cabecalho {
-    background-color: var(--corFundo);
+    /* background-color: var(--corFundoEscuro); */
+    background-color: var(--corFundoClaro);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -107,6 +110,12 @@ body {
     gap: 1rem;
     text-align: center;
     align-items: center;
+}
+
+.switch-tema {
+    color: var(--corFundoClaro);
+    font-size: 1.25rem;
+    cursor: pointer;
 }
 
 .container-autenticacao a {

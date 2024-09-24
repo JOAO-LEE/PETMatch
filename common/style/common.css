@@ -1,8 +1,8 @@
 :root {
-    --corPrimaria:#C9B06D;
-    --corPrimariaClaro:#E8DEC2;
-    --corSecundaria:  #72B5A4;
-    --corBorda:#757575;
+    --corPrimaria: #C9B06D;
+    --corPrimariaClaro: #E8DEC2;
+    --corSecundaria: #72B5A4;
+    --corBorda: #757575;
     --corBotaoSecundario: #e8b931;
     --corFundo: #e8f1f2;
     --transicaoCor: color 500ms ease-in;

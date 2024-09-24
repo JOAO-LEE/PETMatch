@@ -12,8 +12,16 @@ main {
   gap: 1rem;
 }
 
+.deu-match-wrapper {
+  height: 75px;
+}
+
 .deu-match-container {
   text-align: center;
+  height: 5px;
+  overflow: hidden;
+  filter: blur(8px);
+  animation: move-container-deu-match 1s ease 250ms forwards;
 }
 
 .deu-match-container h2 {
@@ -92,6 +100,14 @@ main {
   width: 120px;
   height: 25.5px;
   color: white;
+  cursor: pointer;
+  transition: background-color 250ms ease, border-color 500ms ease, scale 250ms ease;
+}
+
+.botao-buscar:hover {
+  background-color: var(--secundaria);
+  border-color: var(--dourado);
+  scale: 1.1
 }
 
 .lista-pet {
@@ -149,6 +165,13 @@ main {
 .link-adotar:hover {
   transform: scale(1.1);
   background-color: var(--dourado);
+}
+
+@keyframes  move-container-deu-match {
+  to {
+    height: 75px;
+    filter: none;
+  }
 }
 
 /* .checkbox-customizado {

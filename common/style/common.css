@@ -15,8 +15,18 @@ body {
     padding: 0;
     background-color: var(--corFundoClaro);
     color: var(--corFundoEscuro);
-    /* background-color: var(--corFundoEscuro);
-    color: var(--corFundoClaro); */
+} 
+
+.dark {
+    background-color: var(--corFundoEscuro);
+    color: var(--corFundoClaro);
+    transition: all 100ms ease-in-out
+}
+
+.light {
+    background-color: var(--corFundoClaro);
+    color: var(--corFundoEscuro);
+    transition: all 100ms ease-in-out
 }
 
 .cabecalho {
@@ -112,10 +122,27 @@ body {
     align-items: center;
 }
 
+input[data-js="change-theme"] {
+    display: none;
+}
+
+.dark .ph-moon {
+    display: none;
+}
+
+.ph-sun {
+    display: none;
+}
+
 .switch-tema {
-    color: var(--corFundoClaro);
+    color: var(--corSecundaria);
     font-size: 1.25rem;
-    cursor: pointer;
+    transition: color 250ms ease-in-out, scale 500ms ease-in-out;
+}
+
+.switch-tema:hover {
+    scale: 1.1;
+    color: var(--corPrimaria);
 }
 
 .container-autenticacao a {

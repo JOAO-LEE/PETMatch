@@ -3,6 +3,7 @@
 <head>
   <meta charset="UTF-8">
   <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <meta name="theme-color" content="light">
   <link
   rel="stylesheet"
   type="text/css"
@@ -17,6 +18,8 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+
+  <script src="/scripts/general/theme-switch.js"></script>
   <title>PETMatch</title>
 </head>
 <body>
@@ -44,8 +47,14 @@
       </ul>
     </nav>
     <div class="container-autenticacao">
-      <i class="ph ph-sun switch-tema"></i>
-      <i class="ph ph-moon switch-tema"></i>
+
+      <div class="theme-switcher-container">
+        <input type="checkbox" data-js="change-theme" id="change-theme">
+        <label for="change-theme">
+          <i class="ph ph-sun switch-tema"></i>
+          <i class="ph ph-moon switch-tema"></i>
+        </label>
+        </div>
       <a href="/pages/entrar/entrar.html" class="btn-login">Entrar</a>
       <a href="/pages/cadastre-se/cadastre-se.html" class="btn-signup">Cadastre-se</a>
   </div>

@@ -2,7 +2,6 @@ main {
     position: relative;
     top: 120px;
     height: 87.25vh;
-    /* background-color: #666; */
     display: flex;
     flex-direction: column;
     overflow: hidden;
@@ -11,7 +10,7 @@ main {
 .botao-pagina-entrar {
     position: absolute;
     transform: rotate(-90deg) translateY(195px);
-    background-color: var(--dourado);
+    background-color: var(--corPrimaria);
     padding: 20px;
     border-radius: 8px 8px 0 0;
     font-size: 20px;
@@ -20,7 +19,7 @@ main {
 }
 
 .botao-pagina-entrar:hover {
-    background-color: var(--secundaria);
+    background-color: var(--corSecundaria);
 }
 
 .botao-pagina-entrar a {
@@ -45,12 +44,11 @@ main {
     display: flex;
     align-items: center;
     top: 100px;
-    /* height: 500px; */
 }
 
 .title {
     font-size: 1.75rem;
-    color: var(--secundaria);
+    color: var(--corSecundaria);
     margin-bottom: 20px;
 }
 
@@ -58,7 +56,7 @@ main {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    border: 1px solid var(--secundaria);
+    border: 1px solid var(--corSecundaria);
     border-radius: 8px;
     padding: 10px;
 }
@@ -82,9 +80,9 @@ main {
 .login-box button {
     width: 100px;
     padding: 10px;
-    background-color: var(--dourado);
+    background-color: var(--corPrimaria);
     color: white;
-    outline: 2px solid var(--secundaria);
+    outline: 2px solid var(--corSecundaria);
     outline-offset: 2px;
     border: none;
     border-radius: 8px;
@@ -94,13 +92,13 @@ main {
 }
 
 .login-box button:hover {
-    background-color: var(--secundaria);
-    outline-color: var(--dourado);
+    background-color: var(--corSecundaria);
+    outline-color: var(--corPrimaria);
 }
 
 .image-box {
     clip-path: circle();
-    background-color: var(--secundaria);
+    background-color: var(--corSecundaria);
     width: 300px;
     height: 300px;
     position: absolute;
@@ -126,26 +124,9 @@ main {
         width: 600px;
         height: 600px;
         right: 0;
-        background-color: var(--dourado);
+        background-color: var(--corPrimaria);
         transform: translateY(400px) translateX(200px); 
         filter: none;
 
     }
 }
-
-/* .image-box {
-    align-self: self-end;
-    clip-path: circle();
-    z-index: -9; */
-    /* mix-blend-mode: ; */
-    /* position: absolute; */
-    /* left: 77.5%; */
-    /* top: 76%; */
-    /* transform: translateY(-50%); */
-    /* background-color: #b59f68;
-    height: 1000px;
-    width: 1000px; */
-    /* padding: 20px; */
-    /* border-radius: 150% 0% 0% 0%; */
-    /* z-index: 1;     */
-/* } */

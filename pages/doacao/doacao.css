@@ -21,24 +21,24 @@
 .doacao-textos:nth-child(1) h2 {
   margin-bottom: 1rem;
   font-size: 3ch;
-  color: var(--secundaria);
+  color: var(--corSecundaria);
 }
 
 .doacao-textos:nth-child(1) h3 {
-  color: var(--dourado);
+  color: var(--corPrimaria);
   font-size: 6ch;
   margin-bottom: 1rem;
 }
 
 .doacao-textos:nth-child(1) a {
   font-size: 20px;
-  color: var(--secundaria);
+  color: var(--corSecundaria);
   text-decoration: none;
   transition: color 250ms ease-in-out
 }
 
 .doacao-textos:nth-child(1) a:hover {
-  color: var(--dourado);
+  color: var(--corPrimaria);
 }
 
 .imagem-patas {
@@ -52,8 +52,7 @@
   min-height: 100vh;
   transform: translateX(400px);
   animation: move-container-qr-code 2s ease-in-out 250ms forwards;
-  background-color: var(--secundaria);
-
+  background-color: var(--corSecundaria);
 }
 
 .mao-qrcode {
@@ -66,21 +65,22 @@
 } 
 
 .hashtag {
-  color: var(--dourado);
+  color: var(--corPrimaria);
   font-weight: bold;
   font-size: 3ch;
 }
 
 .hashtag::before {
   content: "#";
-  color: #72B5A4;
+  color: var(--corSecundaria);
   font-size: 1.5ch;
+  
 }
 
 @keyframes move-container-qr-code {
   to {
     transform: translateX(0);
-    background-color: var(--dourado);
+    background-color: var(--corPrimaria);
   }
 }
 

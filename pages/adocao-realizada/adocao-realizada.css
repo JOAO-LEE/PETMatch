@@ -4,7 +4,7 @@ main {
 }
 
 h2 {
-  color: #72B5A4;
+  color: var(--corSecundaria);
   text-transform: uppercase;
   text-align: center;
   font-size: 2.5rem;
@@ -14,7 +14,7 @@ h2 {
 .aviso-adocao {
   text-align: center;
   font-size: 1.1246rem;
-  color: var(--dourado)
+  color: var(--corPrimaria);
 }
 
 .informacao-adocao {
@@ -34,7 +34,7 @@ h2 {
 }
 
 .imagem-pet {
-  border: 3px solid var(--dourado);
+  border: 3px solid var(--corPrimaria);
   border-radius: 15px;
   object-fit: contain;
   width: 300px;
@@ -43,12 +43,12 @@ h2 {
 
 .imagem-pet:hover {
   transform: scale(1.1);
-  border-color: #72B5A4
+  border-color: var(--corSecundaria);
 }
 
 .informacao-pet {
   line-height: 22.5px;
-  border: 3px solid #72B5A4;
+  border: 3px solid var(--corSecundaria);;
   border-radius: 15px;
   padding: 10px;
   transition: transform 250ms ease, border-color 500ms ease;
@@ -56,7 +56,7 @@ h2 {
 
 .informacao-pet:hover {
   transform: scale(1.1);
-  border-color: var(--dourado);
+  border-color: var(--corPrimaria);
 }
 
 .orientacoes {
@@ -67,5 +67,5 @@ h2 {
 }
 
 .orientacoes ul {
-  color: var(--dourado)
+  color: var(--corPrimaria);
 }

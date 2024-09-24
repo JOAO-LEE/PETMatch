@@ -29,7 +29,7 @@
 }
 
 .botao-pagina-entrar:hover {
-  background-color: var(--secundaria);
+  background-color: var(--corSecundaria);
 }
 
 .botao-pagina-entrar a {

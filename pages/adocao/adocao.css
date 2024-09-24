@@ -14,7 +14,7 @@
     justify-content: center;
     flex-direction: column;
     background-color: var(--corSecundaria);
-    outline: 2px solid var(--secundaria);
+    outline: 2px solid var(--corSecundaria);
     outline-offset: 5px;
     padding: 1.25rem;
     border-radius: 15px;
@@ -29,7 +29,7 @@
 }
 
 .lista-informacoes {
-    background-color: var(--secundaria);
+    background-color: var(--corSecundaria);
     border-radius: 15px;
     padding: 1rem;
     color: white
@@ -50,7 +50,7 @@
 }
 
 .botao-adotar:hover {
-    background-color: var(--secundaria);
+    background-color: var(--corSecundaria);
     border-color: var(--dourado);
     scale: 1.1
 }

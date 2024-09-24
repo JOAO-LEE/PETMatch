@@ -7,7 +7,7 @@
 }
 
 .triangulo {
-  background-color: var(--secundaria);
+  background-color: var(--corSecundaria);
   clip-path: polygon(100% 0, 0% 100%, 100% 100%);
   width: 1500px;
   height: 1500px;
@@ -46,13 +46,12 @@
   height: 290px;
   transform: translateX(-700px);
   animation: move-imagens 4s ease 250ms forwards;
-
 }
 
 .text-container {
   width: 40%;
   text-align: center;
-  color: var(--secundaria);
+  color: var(--corSecundaria);
   animation: muda-cor-texto 2s ease-in-out 1.5s forwards;
 }
 
@@ -62,31 +61,30 @@
   font-weight: normal;
   text-transform: uppercase;
   animation: muda-cor-titulo 2s ease-in-out 2s forwards;
-  color: var(--dourado);
+  color: var(--corPrimaria);
 }
 
 @keyframes muda-cor-titulo {
   to {
-    color: var(--secundaria);
+    color: var(--corSecundaria);
   }
 }
 
 @keyframes muda-cor-texto {
   to {
-    color: var(--dourado);
+    color: var(--corPrimaria);
   }
 }
 
 @keyframes muda-cor-triangulo {
   to {
-    background-color: var(--douradoClaro);
+    background-color: var(--corPrimariaClaro);
   }
 }
 
 @keyframes move-triangulo-l-r {
   to {
     left: -800px;
-
   }
 }
 

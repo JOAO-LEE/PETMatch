@@ -6,6 +6,7 @@
     --corBotaoSecundario: #e8b931;
     --corFundo: #e8f1f2;
     --transicaoCor: color 500ms ease-in;
+    --corErroFormulario: #d00000;
 }
 
 body {
@@ -161,4 +162,9 @@ body {
         transform: scale(1); 
         opacity: 1;
     }
+}
+
+.erro-autenticacao-login {
+    color: var(--corErroFormulario);
+    text-align: start;
 }

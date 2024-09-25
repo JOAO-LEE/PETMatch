@@ -41,3 +41,26 @@ main {
   line-height: 50px;
   align-self: center;
 }
+
+.logout {
+  text-align: center;
+}
+
+.logout button {
+  background-color: var(--corPrimaria);
+  outline: 2px solid var(--corSecundaria);
+  outline-offset: 5px;
+  border-radius: 15px;
+  border: none;
+  color: white;
+  padding: 10px;
+  width: 100px;
+  cursor: pointer;
+  transition: background-color 250ms ease-in-out, outline-color 300ms ease-in-out, scale 350ms ease;
+}
+
+.logout button:hover {
+  background-color: #c1121f;
+  outline-color: #c1121f95;
+  scale: 1.1;
+}

@@ -13,9 +13,7 @@ body {
     font-family: "Inter", sans-serif, system-ui;
     margin: 0;
     padding: 0;
-    background-color: var(--corFundoClaro);
-    color: var(--corFundoEscuro);
-} 
+}
 
 .dark {
     background-color: var(--corFundoEscuro);
@@ -30,8 +28,6 @@ body {
 }
 
 .cabecalho {
-    /* background-color: var(--corFundoEscuro); */
-    background-color: var(--corFundoClaro);
     display: flex;
     justify-content: space-between;
     align-items: center;
@@ -130,7 +126,15 @@ input[data-js="change-theme"] {
     display: none;
 }
 
-.ph-sun {
+.light .ph-moon {
+    display: inline;
+}
+
+.dark .ph-sun {
+    display: inline;
+}
+
+.light .ph-sun {
     display: none;
 }
 

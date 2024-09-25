@@ -1,67 +1,32 @@
-document.addEventListener("DOMContentLoaded", function () {
-  const metaTheme = document.head.querySelector("[name=theme-color]");
-  const changeThemeButton = document.body.querySelector(
-    '[data-js="change-theme"]'
-  );
-  console.log(changeThemeButton);
+const inputSwitchTheme = document.getElementById("change-theme");
+const headerElement = document.getElementsByTagName("header");
+const themeLocalStorage = () => localStorage.getItem("theme");
+
+inputSwitchTheme.addEventListener("change", () => {
+  const themePreference = themeLocalStorage();
+  if (themePreference === "dark") {
+    console.log("oi");
+    document.body.classList.remove("dark");
+    localStorage.setItem("theme", "light");
+    document.body.classList.add("light");
+    headerElement[0].classList.remove("dark");
+    headerElement[0].classList.add("light");
+    return;
+  }
+
+  localStorage.setItem("theme", "dark");
+  document.body.classList.remove("light");
+  document.body.classList.add("dark");
+  headerElement[0].classList.remove("light");
+
+  headerElement[0].classList.add("dark");
 });
 
-// const metaTheme = document.head.querySelector("[name=theme-color]");
-// const changeThemeButton = document.body.querySelector(
-//   '[data-js="change-theme"]'
-// );
-// console.log(changeThemeButton);
-
-const switchTheme = () => {
-  document.body.classList.toggle("dark");
-  const prefersDarkMetaTheme = metaTheme.content === "light" ? "dark" : "light";
-  metaTheme.content = prefersDarkMetaTheme;
+window.onload = () => {
+  const themePreference = themeLocalStorage();
+  if (themePreference === "dark") {
+    document.body.classList.add("dark");
+    return;
+  }
+  document.body.classList.add("light");
 };
-
-const loadTheme = () => localStorage.getItem("theme") && switchTheme();
-
-// changeThemeButton.addEventListener("change", () => {
-//   switchTheme();
-//   localStorage.removeItem("dark");
-//   const prefersDarkTheme = document.body.classList.contains("dark");
-//   prefersDarkTheme && localStorage.setItem("dark", true);
-// });
-
-// window.onload = (e) => {
-//   console.log(e);
-//   // const headerEl = document.getElementsByClassName("cabecalho")[0];
-//   // const themeSwitch = document.getElementsByClassName("switch-tema");
-//   // const hasThemeInfo = localStorage.getItem("theme");
-//   // const isDark = hasThemeInfo === "dark";
-//   // if (isDark) {
-//   //   themeSwitch[1].remove();
-//   //   document.body.classList.add("dark");
-//   //   headerEl.classList.add("dark");
-//   //   return;
-//   // }
-//   // themeSwitch[0].remove();
-//   // document.body.classList.add("light");
-//   // headerEl.classList.add("light");
-// };
-
-// console.log(themeSwitch[0]);
-
-// themeSwitch.
-
-// if (isDark) {
-//
-//   console.log("oi");
-//   return;
-
-// document.body.classList("light");
-
-// themeSwitch[0].addEventListener("click", (e) => {
-//   console.log("oi");
-//   //   console.log(isDark);
-// });
-
-// themeSwitch[0].addEventListener("click", (e) => {
-//   console.log(e);
-// });
-// console.log(parsedThemeInfo);
-// if (hasThemeInfo)

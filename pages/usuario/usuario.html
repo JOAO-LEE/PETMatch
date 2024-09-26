@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+  <meta charset="UTF-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <link rel="stylesheet" href="/common/style/reset.css" />
+  <link
+  rel="stylesheet"
+  href="/common/style/common.css"
+  />
+  <link
+  rel="stylesheet"
+  type="text/css"
+  href="https://unpkg.com/@phosphor-icons/web@2.1.1/src/regular/style.css"
+  />
+  <link rel="stylesheet" type="text/css" href="usuario.css">
+  <link rel="preconnect" href="https://fonts.googleapis.com">
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+  <title>PETMatch</title>
+</head>
+<body>
+  <header class="cabecalho">
+    <a href="/pages/home/home.html" class="inicio-button">
+      <div class="logo-container">
+        <img class="logo" src="/assets/common/petmatchlogo.png" alt="">
+        <h1>PETMatch</h1>
+      </div>
+    </a>
+    <nav class="navegacao">
+      <ul class="lista-navegacao">
+        <li>
+          <a href="/pages/quem-somos/quem-somos.html"><i class="ph ph-paw-print"></i> Quem somos</a>
+        </li>
+        <li>
+          <a href="/pages/adote/adote.html"><i class="ph ph-heart-straight"></i> Adote</a>
+        </li>
+        <li>
+          <a href="/pages/doacao/doacao.html"><i class="ph ph-hand-heart"> </i>Doação</a>
+        </li>
+        <li>
+          <a href="/pages/contatos/contatos.html"><i class="ph ph-phone-call"></i> Contato</a>
+        </li>
+      </ul>
+    </nav>
+    <div class="container-autenticacao">
+      <a href="/pages/entrar/entrar.html" class="btn-login">Entrar</a>
+      <a href="/pages/cadastre-se/cadastre-se.html" class="btn-signup">Cadastre-se</a>
+  </div>
+  </header>
+  <main>
+    <h2 id="boas-vindas">Olá, <span>João</span>!</h2>
+    <section class="container-info-usuario">
+      <div class="info-usuario">
+        <img src="https://avatars.githubusercontent.com/u/100000031?v=4" alt="imagem usuário" id="imagem-usuario">
+        <ul class="informacao-lista">
+          <li>Nome completo: <span>João Vitor Ferreira Lima</span></li>
+          <li>CPF: <span>999.999.999.99</span></li>
+          <li>Email: <span>jxonthebeat@gmail.com</span></li>
+          <li>Endereço: <span>Rua das Garças, n92, Maria da Graça, Rio de Janeiro<span></li>
+        </ul>
+      </div>
+      <div class="logout">
+        <button>Sair</button>
+      </div>
+    </section>
+    <section class="container-info-pets">
+      <h3>Pets que você agendou visita:</h3>
+        <ul class="lista-pets-agendados">
+          <li>
+            <div class="info-pet">
+              <img src="/assets/adote/image 1.png" alt="mini imagem do pet" class="pet-mini-foto">
+              <p>Alfredo</p>
+            </div>
+          </li>
+          <li>
+            <div class="info-pet">
+              <img src="/assets/adote/image 2.png" alt="mini imagem do pet" class="pet-mini-foto">
+              <p>Amelia</p>
+            </div>
+          </li>
+        </ul>
+    </section>
+  </main>
+</body>
+</html>

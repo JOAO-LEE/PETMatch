@@ -1,0 +1,109 @@
+main {
+  position: relative;
+  top: 110px;
+  padding: 1rem;
+  display: flex;
+  flex-direction: column;
+  gap: 2rem;
+}
+
+#boas-vindas {
+  color: var(--corSecundaria);
+  font-size: 2.5rem;
+
+}
+
+#boas-vindas span {
+  color: var(--corPrimaria);
+  font-size: 2.5rem;
+}
+
+.container-info-pets, .container-info-usuario {
+  border-radius: 15px; 
+  padding: 1rem;
+  width: 80%;
+  margin: 0 auto;
+}
+
+.container-info-usuario {
+  outline: 3px solid var(--corSecundaria);
+}
+
+.container-info-pets {
+  outline: 3px solid var(--corPrimaria);
+}
+
+#imagem-usuario {
+  border-radius: 50%;
+  object-fit: cover;
+  width: 300px;
+  height: 300px;
+}
+
+.info-usuario {
+  display: flex;
+  justify-content: center;
+  gap: 2.5rem;
+  font-size: 1.90rem;
+}
+
+.informacao-lista {
+  line-height: 50px;
+  align-self: center;
+}
+
+.informacao-lista li span {
+  color: var(--corPrimaria);
+}
+
+.logout {
+  text-align: center;
+}
+
+.logout button {
+  background-color: var(--corPrimaria);
+  outline: 2px solid var(--corSecundaria);
+  outline-offset: 5px;
+  border-radius: 15px;
+  border: none;
+  color: white;
+  padding: 10px;
+  width: 100px;
+  cursor: pointer;
+  transition: background-color 250ms ease-in-out, outline-color 300ms ease-in-out, scale 350ms ease;
+}
+
+.logout button:hover {
+  background-color: #c1121f;
+  outline-color: #c1121f95;
+  scale: 1.1;
+}
+
+.container-info-pets h3 {
+  color: var(--corSecundaria);
+  font-size: 1.25rem;
+  margin-bottom: 10px;
+}
+
+.lista-pets-agendados {
+  display: flex;
+  gap: 4rem;
+}
+
+.pet-mini-foto {
+  border-radius: 25%;
+  object-fit: fill;
+  width: 200px;
+  height: 200px;
+}
+
+.info-pet {
+  padding: .5rem;
+
+}
+.info-pet p {
+  font-size: 1.25rem;
+  color: var(--corSecundaria);
+  font-weight: 500;
+  
+}

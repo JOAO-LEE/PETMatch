@@ -19,14 +19,25 @@ function getAuthentication(email, password) {
     return { error: "email" };
   }
 }
+const disableButton = (button) => {
+  button.innerText = "";
+  button.disabled = true;
+};
+
+const createAndAppendLoadingSpinner = (button) => {
+  const loadingSpinner = document.createElement("div");
+  loadingSpinner.classList.add("spinner-carregando");
+  button.appendChild(loadingSpinner);
+};
 
 formLogin.addEventListener("submit", (ev) => {
   ev.preventDefault();
-  const email = ev.target[0];
-  const password = ev.target[1];
-  const submitButton = ev.target[2];
+  const [email, password, submitButton] = ev.target;
+  disableButton(submitButton);
+  console.log(submitButton);
+  createAndAppendLoadingSpinner(submitButton);
   setTimeout(() => {
     const hasAuthError = getAuthentication(email, password);
     console.log(hasAuthError);
-  }, 1500);
+  }, 2000);
 });

@@ -171,12 +171,12 @@ body {
 
 .spinner-carregando {
     margin: 0 auto;
-    border: 2px solid var(--corPrimariaClaro); 
-    border-top: 2px solid var(--corSecundaria);
+    border: 2px solid var(--corFundo); 
+    border-top: 4px solid var(--corSecundaria);
     border-radius: 50%;
     width: 20px;
     height: 20px;
-    animation: gira-spinner 2s linear 250ms infinite, pulsa-spinner 4s ease-in-out 125ms infinite;
+    animation: gira-spinner 2s linear 250ms infinite;
 }
 
 @keyframes pulsa-spinner {

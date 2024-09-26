@@ -1,8 +1,7 @@
+import { authenticateUser } from "./authentication.js";
+
 const formLogin = document.querySelector("#form-login");
 const inputContainer = document.querySelector(".input-group-entrar");
-const loginInfo = localStorage.getItem("auth");
-const parsedLoginInfo = JSON.parse(loginInfo);
-
 const getUsers = () => JSON.parse(localStorage.getItem("users"));
 const usersList = getUsers();
 
@@ -41,13 +40,13 @@ const showErrorMessage = (errorType) => {
   }
 };
 
-function getAuthentication(email, password) {
+function getUser(email, password) {
   for (let i = 0; i < usersList.length; i++) {
     const { email: registeredEmail, senha: registeredPassword } = usersList[i];
     if (email.value === registeredEmail) {
       if (password.value === registeredPassword) {
         console.log("tá tudo certo");
-        return;
+        return usersList[i];
       }
       console.log("senha tá errada");
       return { error: "password" };
@@ -75,11 +74,13 @@ formLogin.addEventListener("submit", (ev) => {
   controlButtonDisablement(submitButton);
   createAndAppendLoadingSpinner(submitButton);
   setTimeout(() => {
-    const hasAuthError = getAuthentication(email, password);
-    if (hasAuthError) {
+    const response = getUser(email, password);
+    if (response.error) {
       controlButtonDisablement(submitButton);
-      showErrorMessage(hasAuthError);
+      showErrorMessage(response);
       return;
     }
+    authenticateUser(response);
+    window.location.assign("/pages/home/home.html");
   }, 2000);
 });

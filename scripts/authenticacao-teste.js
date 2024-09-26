@@ -1,12 +1,16 @@
 const formLogin = document.querySelector("#form-login");
 const inputContainer = document.querySelector(".input-group-entrar");
-// console.log(inputContainer.children);
-
 const loginInfo = localStorage.getItem("auth");
 const parsedLoginInfo = JSON.parse(loginInfo);
 
 const getUsers = () => JSON.parse(localStorage.getItem("users"));
 const usersList = getUsers();
+
+const errorMessageHandler = (element, text) => {
+  element.innerText = text;
+  element.classList.add("erro-autenticacao-login");
+  return element;
+};
 
 const hasErrorMessage = (element) =>
   element.querySelector(".erro-autenticacao-login");
@@ -17,23 +21,21 @@ const showErrorMessage = (errorType) => {
     existentError && existentError.remove();
     return;
   }
-
   const errorSpan = document.createElement("span");
   const [inputEmail, inputPassword] = inputContainer.children;
-  const existentError = hasErrorMessage(inputPassword);
-  console.log("não tem erro");
-
   const { error } = errorType;
+
   switch (error) {
     case "password":
-      errorSpan.innerText = "A senha está incorreta.";
-      errorSpan.classList.add("erro-autenticacao-login");
-      inputPassword.appendChild(errorSpan);
+      const errorPassword = errorMessageHandler(errorSpan, "Senha incorreta.");
+      inputPassword.appendChild(errorPassword);
       break;
     case "email":
-      errorSpan.innerText = "O e-mail está incorreto.";
-      errorSpan.classList.add("erro-autenticacao-login");
-      inputEmail.appendChild(errorSpan);
+      const errorEmail = errorMessageHandler(
+        errorSpan,
+        "Email não cadastrado."
+      );
+      inputEmail.appendChild(errorEmail);
     default:
       break;
   }
@@ -68,7 +70,6 @@ const createAndAppendLoadingSpinner = (button) => {
 
 formLogin.addEventListener("submit", (ev) => {
   ev.preventDefault();
-  console.log("remove");
   showErrorMessage();
   const [email, password, submitButton] = ev.target;
   controlButtonDisablement(submitButton);
@@ -80,6 +81,5 @@ formLogin.addEventListener("submit", (ev) => {
       showErrorMessage(hasAuthError);
       return;
     }
-    // showErrorMessage();
   }, 2000);
 });

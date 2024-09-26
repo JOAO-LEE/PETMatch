@@ -168,3 +168,37 @@ body {
     color: var(--corErroFormulario);
     text-align: start;
 }
+
+.spinner-carregando {
+    margin: 0 auto;
+    border: 2px solid var(--corPrimariaClaro); 
+    border-top: 2px solid var(--corSecundaria);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: gira-spinner 2s linear 250ms infinite, pulsa-spinner 4s ease-in-out 125ms infinite;
+}
+
+@keyframes pulsa-spinner {
+    0% {
+        opacity: 1;
+        color: var(--corPrimariaClaro);
+    }
+    50% {
+        opacity: 0.5;
+        color: var(--corSecundaria);
+    }
+   100% {
+        opacity: 1;
+        color: var(--corFundo);
+    }
+}
+
+@keyframes gira-spinner {
+    0% { 
+        transform: rotate(0deg); 
+    }
+    100% {
+        transform: rotate(360deg); 
+    }
+}

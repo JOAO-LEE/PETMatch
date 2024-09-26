@@ -6,6 +6,7 @@
     --corBotaoSecundario: #e8b931;
     --corFundo: #e8f1f2;
     --transicaoCor: color 500ms ease-in;
+    --corErroFormulario: #d00000;
 }
 
 body {
@@ -160,5 +161,44 @@ body {
     100% {
         transform: scale(1); 
         opacity: 1;
+    }
+}
+
+.erro-autenticacao-login {
+    color: var(--corErroFormulario);
+    font-size: 15px;
+}
+
+.spinner-carregando {
+    margin: 0 auto;
+    border: 2px solid var(--corFundo); 
+    border-top: 4px solid var(--corSecundaria);
+    border-radius: 50%;
+    width: 20px;
+    height: 20px;
+    animation: gira-spinner 2s linear 250ms infinite;
+}
+
+@keyframes pulsa-spinner {
+    0% {
+        opacity: 1;
+        color: var(--corPrimariaClaro);
+    }
+    50% {
+        opacity: 0.5;
+        color: var(--corSecundaria);
+    }
+   100% {
+        opacity: 1;
+        color: var(--corFundo);
+    }
+}
+
+@keyframes gira-spinner {
+    0% { 
+        transform: rotate(0deg); 
+    }
+    100% {
+        transform: rotate(360deg); 
     }
 }

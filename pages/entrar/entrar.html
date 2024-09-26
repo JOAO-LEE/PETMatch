@@ -21,6 +21,9 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
+    <script type="module" src="/scripts/common/auth/login.js" defer></script>
+    <script type="module" src="/scripts/common/auth/authentication.js" defer></script>
+
     <title>Entrar - PETMatch</title>
 </head>
 <body>
@@ -57,32 +60,33 @@
           <div class="form-wrapper">
             <a class="botao-pagina-entrar" href="/pages/cadastre-se/cadastre-se.html">Novo usuário? Cadastre-se aqui!</a>  
             <div class="form-entrar">
-              <form>
+              <form id="form-login">
                 <div class="form-header">
                   <div class="title">
                     <h1>Entrar</h1>
                   </div>                              
                 </div>
                 <div class="input-group-entrar">
-                  <div class="input-box">
-                    <i class="ph ph-user"></i>
-                      <input id="login" type="email" name="login" placeholder="E-mail exemplo@exemplo.com.br" required>
-                  </div>
-                  <div class="input-box">
+                  <label for="email" class="input-box">
+                      <i class="ph ph-user"></i>
+                        <input id="email" type="email" name="login" placeholder="E-mail exemplo@exemplo.com.br" required>
+                    </label>
+                  <label for="senha" class="input-box">
                     <i class="ph ph-lock-simple"></i>
                       <input id="senha" type="password" name="senha" placeholder="Senha" required>
-                  </div>
-                </div>
+                  </label>
                 <div class="login-box">
-                  <button type="submit">Entrar</button>
+                  <button type="submit">
+                    Entrar
+                  </button>
                 </div>
               </form>                
             </div>
           </div>
         </section>
-        <div class="image-box">
+        <!-- <div class="image-box">
           <img src="/assets/common/pngtree-mutt-pure-bred-dog-png-image_10054959.png" alt="Cachorro Branco">
-        </div>
+        </div> -->
       </main>
 </body>
 </html>

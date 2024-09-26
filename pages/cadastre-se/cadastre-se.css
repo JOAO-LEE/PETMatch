@@ -99,6 +99,16 @@ main {
     outline-color: var(--corPrimaria);
 }
 
+.login-box button:disabled {
+    background-color: var(--corPrimariaClaro);
+    outline-color: var(--corSecundaria);
+    cursor: not-allowed;
+}
+
+.login-box button:disabled:hover {
+    scale: none;
+}
+
 .image-box {
     clip-path: circle();
     background-color: var(--corSecundaria);

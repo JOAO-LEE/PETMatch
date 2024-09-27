@@ -6,7 +6,7 @@
     --corBotaoSecundario: #e8b931;
     --corFundo: #e8f1f2;
     --transicaoCor: color 500ms ease-in;
-    --corErroFormulario: #d00000;
+    --corErroFormulario: #ff6961;
 }
 
 body {

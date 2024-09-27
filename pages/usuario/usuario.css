@@ -60,7 +60,7 @@ main {
   text-align: center;
 }
 
-.logout button {
+#logout-botao {
   background-color: var(--corPrimaria);
   outline: 2px solid var(--corSecundaria);
   outline-offset: 5px;
@@ -73,10 +73,16 @@ main {
   transition: background-color 250ms ease-in-out, outline-color 300ms ease-in-out, scale 350ms ease;
 }
 
-.logout button:hover {
-  background-color: #c1121f;
-  outline-color: #c1121f95;
-  scale: 1.1;
+#logout-botao:not(.loging-out):hover {
+  scale: 1.050;
+  background-color: var(--corErroFormulario);
+  outline-color: var(--corErroFormulario);
+}
+
+#logout-botao.loging-out {
+  background-color: var(--corErroFormulario);
+  outline-color: var(--corErroFormulario);
+  cursor: not-allowed;
 }
 
 .container-info-pets h3 {
@@ -105,5 +111,5 @@ main {
   font-size: 1.25rem;
   color: var(--corSecundaria);
   font-weight: 500;
-  
 }
+

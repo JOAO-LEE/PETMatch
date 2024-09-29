@@ -108,7 +108,7 @@ body {
     align-items: center;
 }
 
-.container-autenticacao a {
+.container-autenticacao .auth-buttons {
     text-decoration: none;
     color: white;
     background-color: #C9B06D;
@@ -118,10 +118,49 @@ body {
     transition:  var(--transicaoCor), transform 300ms ease-in-out;
 }
 
-.container-autenticacao a:hover {
+.container-autenticacao .auth-buttons:hover {
     background-color: var(--corSecundaria);
     transform: scale(1.08);  
 }
+
+.user-container {
+    display: flex;
+    align-items: center;
+    gap: 1rem;
+    span {
+        color: var(--corPrimaria)
+    }
+}
+
+.info-usuario-header {
+    height: 50px;
+    width: 50px;
+    outline: 2px solid var(--corSecundaria);
+    outline-offset: 2px;
+    background-color: var(--corPrimaria);
+    border-radius: 50%;
+    font-size: 30px;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    transition: outline-offset 750ms ease-in-out, scale 250ms ease-in, background-color 250ms linear, outline 250ms ease;
+    img {
+        object-fit: fill;
+        color: var(--corFundo);
+        max-height: min-content !important;
+        height: 45px;
+        width: 45px;
+        border-radius: 50%;
+    }
+}
+
+.info-usuario-header:hover {
+    scale: 1.05;
+    outline-offset: 4px;
+    background-color: #72B5A4;
+    outline: 2px dotted var(--corPrimaria);
+}
+
 
 ::-webkit-scrollbar {
     width: 10px;

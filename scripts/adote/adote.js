@@ -9,17 +9,17 @@ window.addEventListener("DOMContentLoaded", () => {
     const divPetInfo = document.createElement("div");
     divPetInfo.classList.add("pet-info");
     divPetInfo.innerHTML = `
-            <img src="${element.imagem}" alt="">
+            <img src="${element.imagem}" alt="imagem do pet ${element.nome}">
             <p>${element.nome}</p>
             <p>${element.peso}</p>
             <p>${element.idadeAproximada}</p>
             <p>${element.sobre}</p>
-            <button class="link-adotar" id="${element.id}">Adotar</button>
+            <button class="link-adotar" id=${element.id}>Adotar</button>
         `;
 
     const botaoAdotar = divPetInfo.querySelector(".link-adotar");
     botaoAdotar.addEventListener("click", () => {
-      localStorage.setItem("adocao", JSON.stringify(element));
+      localStorage.setItem("adocao-id", JSON.stringify(botaoAdotar.id));
       window.location.assign("/pages/adocao/adocao.html");
     });
 

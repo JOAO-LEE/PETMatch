@@ -3,23 +3,31 @@ const containerListaDeInformacoes =
   document.querySelector(".lista-informacoes");
 
 window.addEventListener("DOMContentLoaded", () => {
-  const petSelecionado = localStorage.getItem("adocao");
-  const petSelecionadoConvertido = JSON.parse(petSelecionado);
+  const selectedPet = JSON.parse(localStorage.getItem("adocao-id"));
+  const allPets = JSON.parse(localStorage.getItem("pets"));
+  let foundPet;
+
+  for (let index = 0; index < allPets.length; index++) {
+    const pet = allPets[index];
+    if (pet.id === +selectedPet) {
+      foundPet = pet;
+      break;
+    }
+  }
 
   const imagemPet = document.createElement("img");
-  imagemPet.src = petSelecionadoConvertido.imagem;
+  imagemPet.src = foundPet.imagem;
   containerInformacao.appendChild(imagemPet);
   containerListaDeInformacoes.innerHTML = `
-        <li>${petSelecionadoConvertido.nome}</li>
-        <li>${petSelecionadoConvertido.peso}</li>
-        <li>${petSelecionadoConvertido.idadeAproximada}</li>
-        <li>${petSelecionadoConvertido.microchip}</li>
-        <li>${petSelecionadoConvertido.especie}</li>
-        <li>${petSelecionadoConvertido.porte}</li>
-        <li>${petSelecionadoConvertido.raca}</li>
-        <li>${petSelecionadoConvertido.caracteristica}</li>
-        <li>${petSelecionadoConvertido.local}</li>
-        <li>${petSelecionadoConvertido.sobre}</li>
-    
-    `;
+          <li>${foundPet.nome}</li>
+          <li>${foundPet.peso}</li>
+          <li>${foundPet.idadeAproximada}</li>
+          <li>${foundPet.microchip}</li>
+          <li>${foundPet.especie}</li>
+          <li>${foundPet.porte}</li>
+          <li>${foundPet.raca}</li>
+          <li>${foundPet.caracteristica}</li>
+          <li>${foundPet.local}</li>
+          <li>${foundPet.sobre}</li>
+      `;
 });

@@ -1,15 +1,15 @@
-const containerInformacao = document.querySelector(".informacoes-pet")
-const containerListaDeInformacoes = document.querySelector(".lista-informacoes")
+const containerInformacao = document.querySelector(".informacoes-pet");
+const containerListaDeInformacoes =
+  document.querySelector(".lista-informacoes");
 
-window.addEventListener("DOMContentLoaded", ()=>{
-    const petSelecionado = localStorage.getItem("adocao")
-    const petSelecionadoConvertido = JSON.parse(petSelecionado)
+window.addEventListener("DOMContentLoaded", () => {
+  const petSelecionado = localStorage.getItem("adocao");
+  const petSelecionadoConvertido = JSON.parse(petSelecionado);
 
-    const imagemPet = document.createElement("img")
-    imagemPet.src = petSelecionadoConvertido.imagem
-    containerInformacao.appendChild(imagemPet)
-
-    containerListaDeInformacoes.innerHTML = `
+  const imagemPet = document.createElement("img");
+  imagemPet.src = petSelecionadoConvertido.imagem;
+  containerInformacao.appendChild(imagemPet);
+  containerListaDeInformacoes.innerHTML = `
         <li>${petSelecionadoConvertido.nome}</li>
         <li>${petSelecionadoConvertido.peso}</li>
         <li>${petSelecionadoConvertido.idadeAproximada}</li>
@@ -21,5 +21,5 @@ window.addEventListener("DOMContentLoaded", ()=>{
         <li>${petSelecionadoConvertido.local}</li>
         <li>${petSelecionadoConvertido.sobre}</li>
     
-    `
-})
+    `;
+});

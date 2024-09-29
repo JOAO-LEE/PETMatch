@@ -21,7 +21,6 @@ window.addEventListener("DOMContentLoaded", ()=>{
             <button class="link-adotar" id="${element.id}">Adotar</button>
         `;
         
-        // Adiciona o botão de adotar e o evento dentro do loop
         const botaoAdotar = divPetInfo.querySelector(".link-adotar");
         botaoAdotar.addEventListener("click", () => {
             localStorage.setItem("adocao", JSON.stringify(element))

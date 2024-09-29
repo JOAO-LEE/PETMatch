@@ -10,7 +10,8 @@ export const pets = [
       raca: "SRD - Peq",
       caracteristica: "Pelo curto e olhos verdes",
       local: "Petz Salvador Paralela, SALVADOR, BA",
-      sobre: "Dócil e sociável"
+      sobre: "Dócil e sociável",
+      imagem: "/assets/adote/gato 1.jpeg"
     },
     {
       id: 2,
@@ -23,7 +24,8 @@ export const pets = [
       raca: "SRD - Med",
       caracteristica: "Pelo longo e marrom",
       local: "Pet Shop Feliz, SÃO PAULO, SP",
-      sobre: "Brincalhão e ativo"
+      sobre: "Brincalhão e ativo",
+      imagem: "/assets/adote/cao 1.jpg"
     },
     {
       id: 3,
@@ -36,7 +38,8 @@ export const pets = [
       raca: "SRD - Peq",
       caracteristica: "Pelo cinza e olhos azuis",
       local: "Amigos dos Bichos, RIO DE JANEIRO, RJ",
-      sobre: "Curiosa e carinhosa"
+      sobre: "Curiosa e carinhosa",
+      imagem: "/assets/adote/gato 2.jpeg"
     },
     {
       id: 4,
@@ -49,7 +52,8 @@ export const pets = [
       raca: "Labrador",
       caracteristica: "Pelo amarelo e olhos castanhos",
       local: "Clínica PetCare, CURITIBA, PR",
-      sobre: "Muito inteligente e adestrado"
+      sobre: "Muito inteligente e adestrado",
+      imagem: "/assets/adote/cao 2. jpg"
     },
     {
       id: 5,
@@ -62,7 +66,8 @@ export const pets = [
       raca: "SRD - Peq",
       caracteristica: "Pelo preto e branco",
       local: "Vet&Pet, PORTO ALEGRE, RS",
-      sobre: "Sociável e brincalhona"
+      sobre: "Sociável e brincalhona",
+      imagem: "/assets/adote/gato 3.jpeg"
     },
     {
       id: 6,
@@ -75,7 +80,8 @@ export const pets = [
       raca: "Pastor Alemão",
       caracteristica: "Pelo preto e dourado",
       local: "Petz Brasília Norte, BRASÍLIA, DF",
-      sobre: "Leal e protetor"
+      sobre: "Leal e protetor",
+      imagem: "/assets/adote/cao 3.jpeg"
     },
     {
       id: 7,
@@ -88,7 +94,8 @@ export const pets = [
       raca: "SRD - Med",
       caracteristica: "Pelo liso e bege",
       local: "Pet Lovers, BELO HORIZONTE, MG",
-      sobre: "Amigável e dócil"
+      sobre: "Amigável e dócil",
+      imagem: "/assets/adote/cao 4.jpeg"
     },
     {
       id: 8,
@@ -101,7 +108,8 @@ export const pets = [
       raca: "SRD - Peq",
       caracteristica: "Pelo tigrado e olhos âmbar",
       local: "Petz Centro, SÃO PAULO, SP",
-      sobre: "Independente e curioso"
+      sobre: "Independente e curioso",
+      imagem: "/assets/adote/gato 4.jpg"
     },
     {
       id: 9,
@@ -114,7 +122,8 @@ export const pets = [
       raca: "Golden Retriever",
       caracteristica: "Pelo dourado",
       local: "Centro Veterinário Animal, RECIFE, PE",
-      sobre: "Amável e muito ativo"
+      sobre: "Amável e muito ativo",
+      imagem: "/assets/adote/cao 5.jpg"
     },
     {
       id: 10,
@@ -127,7 +136,8 @@ export const pets = [
       raca: "SRD - Peq",
       caracteristica: "Pelo branco e olhos verdes",
       local: "Petz Salvador Shopping, SALVADOR, BA",
-      sobre: "Calma e carinhosa"
+      sobre: "Calma e carinhosa",
+      imagem: "/assets/adote/gato 5.jpg"
     },
     {
       id: 11,
@@ -140,7 +150,8 @@ export const pets = [
       raca: "Rottweiler",
       caracteristica: "Pelo preto com manchas marrons",
       local: "Pet&Vet, FLORIANÓPOLIS, SC",
-      sobre: "Protetor e leal"
+      sobre: "Protetor e leal",
+      imagem: "/assets/adote/cao 6.jpg"
     },
     {
       id: 12,
@@ -153,7 +164,8 @@ export const pets = [
       raca: "SRD - Peq",
       caracteristica: "Pelo longo e cinza",
       local: "Mundo Animal, GOIÂNIA, GO",
-      sobre: "Muito dócil e tranquila"
+      sobre: "Muito dócil e tranquila",
+      imagem: "/assets/adote/gato 6.jpeg"
     },
     {
       id: 13,
@@ -166,7 +178,8 @@ export const pets = [
       raca: "Pitbull",
       caracteristica: "Pelo curto e preto",
       local: "Vet Clínica, MANAUS, AM",
-      sobre: "Forte e protetor"
+      sobre: "Forte e protetor",
+      imagem: "/assets/adote/cao 7.jpg"
     },
     {
       id: 14,
@@ -179,7 +192,8 @@ export const pets = [
       raca: "SRD - Med",
       caracteristica: "Pelo liso e branco com manchas marrons",
       local: "Pet Center, FORTALEZA, CE",
-      sobre: "Muito enérgica e brincalhona"
+      sobre: "Muito enérgica e brincalhona",
+      imagem: "/assets/adote/cao 8.jpeg"
     },
     {
       id: 15,
@@ -192,7 +206,8 @@ export const pets = [
       raca: "SRD - Peq",
       caracteristica: "Pelo preto",
       local: "Petz Jardim Botânico, CURITIBA, PR",
-      sobre: "Independente e afetuoso"
+      sobre: "Independente e afetuoso",
+      imagem: "/assets/adote/gato 7.jpeg"
     },
     {
       id: 16,
@@ -205,7 +220,8 @@ export const pets = [
       raca: "Beagle",
       caracteristica: "Pelo tricolor",
       local: "Animais & Cia, BRASÍLIA, DF",
-      sobre: "Curioso e brincalhão"
+      sobre: "Curioso e brincalhão",
+      imagem: "/assets/adote/cao 9.jpeg"
     },
     {
       id: 17,
@@ -218,7 +234,8 @@ export const pets = [
       raca: "SRD - Peq",
       caracteristica: "Pelo rajado",
       local: "Petz Barra, RIO DE JANEIRO, RJ",
-      sobre: "Carinhosa e tímida"
+      sobre: "Carinhosa e tímida",
+      imagem: "/assets/adote/gato 8.jpeg"
     },
     {
       id: 18,
@@ -231,7 +248,8 @@ export const pets = [
       raca: "Bulldog Francês",
       caracteristica: "Pelo curto e branco com manchas pretas",
       local: "Dog House, SÃO PAULO, SP",
-      sobre: "Divertido e sociável"
+      sobre: "Divertido e sociável",
+      imagem: "/assets/adote/cao 10.jpeg"
     },
     {
       id: 19,
@@ -244,7 +262,8 @@ export const pets = [
       raca: "SRD - Med",
       caracteristica: "Pelo castanho e curto",
       local: "Animal Clinic, PORTO ALEGRE, RS",
-      sobre: "Muito carinhosa"
+      sobre: "Muito carinhosa",
+      imagem: "/assets/adote/cao 11.jpeg"
     },
     {
       id: 20,
@@ -257,7 +276,8 @@ export const pets = [
       raca: "SRD - Peq",
       caracteristica: "Pelo laranja e olhos verdes",
       local: "Vet Care, BELO HORIZONTE, MG",
-      sobre: "Curioso e independente"
+      sobre: "Curioso e independente",
+      imagem: "/assets/adote/gato 9.jpeg"
     },
     {
       id: 21,
@@ -270,7 +290,8 @@ export const pets = [
       raca: "Poodle",
       caracteristica: "Pelo cacheado branco",
       local: "Cão & Gato, CURITIBA, PR",
-      sobre: "Brincalhona e afetuosa"
+      sobre: "Brincalhona e afetuosa",
+      imagem: "/assets/adote/cao 12.jpeg"
     }
   ];
   

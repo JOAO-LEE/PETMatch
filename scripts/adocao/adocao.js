@@ -12,6 +12,7 @@ window.addEventListener("DOMContentLoaded", () => {
       break;
     }
   }
+
   const imagemPet = document.createElement("img");
   imagemPet.src = foundPet.imagem;
   informationContainer.appendChild(imagemPet);

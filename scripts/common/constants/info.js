@@ -11,7 +11,7 @@ export const pets = [
       caracteristica: "Pelo curto e olhos verdes",
       local: "Petz Salvador Paralela, SALVADOR, BA",
       sobre: "Dócil e sociável",
-      imagem: "/assets/adote/gato 1.jpeg"
+      imagem: "/assets/adote/gato-1.jpeg"
     },
     {
       id: 2,
@@ -25,7 +25,7 @@ export const pets = [
       caracteristica: "Pelo longo e marrom",
       local: "Pet Shop Feliz, SÃO PAULO, SP",
       sobre: "Brincalhão e ativo",
-      imagem: "/assets/adote/cao 1.jpg"
+      imagem: "/assets/adote/cao-1.jpg"
     },
     {
       id: 3,
@@ -39,7 +39,7 @@ export const pets = [
       caracteristica: "Pelo cinza e olhos azuis",
       local: "Amigos dos Bichos, RIO DE JANEIRO, RJ",
       sobre: "Curiosa e carinhosa",
-      imagem: "/assets/adote/gato 2.jpeg"
+      imagem: "/assets/adote/gato-2.jpeg"
     },
     {
       id: 4,
@@ -53,7 +53,7 @@ export const pets = [
       caracteristica: "Pelo amarelo e olhos castanhos",
       local: "Clínica PetCare, CURITIBA, PR",
       sobre: "Muito inteligente e adestrado",
-      imagem: "/assets/adote/cao 2. jpg"
+      imagem: "/assets/adote/cao-2.jpeg"
     },
     {
       id: 5,
@@ -67,7 +67,7 @@ export const pets = [
       caracteristica: "Pelo preto e branco",
       local: "Vet&Pet, PORTO ALEGRE, RS",
       sobre: "Sociável e brincalhona",
-      imagem: "/assets/adote/gato 3.jpeg"
+      imagem: "/assets/adote/gato-3.jpeg"
     },
     {
       id: 6,
@@ -81,7 +81,7 @@ export const pets = [
       caracteristica: "Pelo preto e dourado",
       local: "Petz Brasília Norte, BRASÍLIA, DF",
       sobre: "Leal e protetor",
-      imagem: "/assets/adote/cao 3.jpeg"
+      imagem: "/assets/adote/cao-3.jpeg"
     },
     {
       id: 7,
@@ -95,7 +95,7 @@ export const pets = [
       caracteristica: "Pelo liso e bege",
       local: "Pet Lovers, BELO HORIZONTE, MG",
       sobre: "Amigável e dócil",
-      imagem: "/assets/adote/cao 4.jpeg"
+      imagem: "/assets/adote/cao-4.jpeg"
     },
     {
       id: 8,
@@ -109,7 +109,7 @@ export const pets = [
       caracteristica: "Pelo tigrado e olhos âmbar",
       local: "Petz Centro, SÃO PAULO, SP",
       sobre: "Independente e curioso",
-      imagem: "/assets/adote/gato 4.jpg"
+      imagem: "/assets/adote/gato-4.jpg"
     },
     {
       id: 9,
@@ -123,7 +123,7 @@ export const pets = [
       caracteristica: "Pelo dourado",
       local: "Centro Veterinário Animal, RECIFE, PE",
       sobre: "Amável e muito ativo",
-      imagem: "/assets/adote/cao 5.jpg"
+      imagem: "/assets/adote/cao-5.jpg"
     },
     {
       id: 10,
@@ -137,7 +137,7 @@ export const pets = [
       caracteristica: "Pelo branco e olhos verdes",
       local: "Petz Salvador Shopping, SALVADOR, BA",
       sobre: "Calma e carinhosa",
-      imagem: "/assets/adote/gato 5.jpg"
+      imagem: "/assets/adote/gato-5.jpg"
     },
     {
       id: 11,
@@ -151,7 +151,7 @@ export const pets = [
       caracteristica: "Pelo preto com manchas marrons",
       local: "Pet&Vet, FLORIANÓPOLIS, SC",
       sobre: "Protetor e leal",
-      imagem: "/assets/adote/cao 6.jpg"
+      imagem: "/assets/adote/cao-6.jpg"
     },
     {
       id: 12,
@@ -165,7 +165,7 @@ export const pets = [
       caracteristica: "Pelo longo e cinza",
       local: "Mundo Animal, GOIÂNIA, GO",
       sobre: "Muito dócil e tranquila",
-      imagem: "/assets/adote/gato 6.jpeg"
+      imagem: "/assets/adote/gato-6.jpeg"
     },
     {
       id: 13,
@@ -179,7 +179,7 @@ export const pets = [
       caracteristica: "Pelo curto e preto",
       local: "Vet Clínica, MANAUS, AM",
       sobre: "Forte e protetor",
-      imagem: "/assets/adote/cao 7.jpg"
+      imagem: "/assets/adote/cao-7.jpg"
     },
     {
       id: 14,
@@ -193,7 +193,7 @@ export const pets = [
       caracteristica: "Pelo liso e branco com manchas marrons",
       local: "Pet Center, FORTALEZA, CE",
       sobre: "Muito enérgica e brincalhona",
-      imagem: "/assets/adote/cao 8.jpeg"
+      imagem: "/assets/adote/cao-8.jpeg"
     },
     {
       id: 15,
@@ -207,7 +207,7 @@ export const pets = [
       caracteristica: "Pelo preto",
       local: "Petz Jardim Botânico, CURITIBA, PR",
       sobre: "Independente e afetuoso",
-      imagem: "/assets/adote/gato 7.jpeg"
+      imagem: "/assets/adote/gato-7.jpeg"
     },
     {
       id: 16,
@@ -221,7 +221,7 @@ export const pets = [
       caracteristica: "Pelo tricolor",
       local: "Animais & Cia, BRASÍLIA, DF",
       sobre: "Curioso e brincalhão",
-      imagem: "/assets/adote/cao 9.jpeg"
+      imagem: "/assets/adote/cao-9.jpeg"
     },
     {
       id: 17,
@@ -235,7 +235,7 @@ export const pets = [
       caracteristica: "Pelo rajado",
       local: "Petz Barra, RIO DE JANEIRO, RJ",
       sobre: "Carinhosa e tímida",
-      imagem: "/assets/adote/gato 8.jpeg"
+      imagem: "/assets/adote/gato-8.jpeg"
     },
     {
       id: 18,
@@ -249,7 +249,7 @@ export const pets = [
       caracteristica: "Pelo curto e branco com manchas pretas",
       local: "Dog House, SÃO PAULO, SP",
       sobre: "Divertido e sociável",
-      imagem: "/assets/adote/cao 10.jpeg"
+      imagem: "/assets/adote/cao-10.jpeg"
     },
     {
       id: 19,
@@ -263,7 +263,7 @@ export const pets = [
       caracteristica: "Pelo castanho e curto",
       local: "Animal Clinic, PORTO ALEGRE, RS",
       sobre: "Muito carinhosa",
-      imagem: "/assets/adote/cao 11.jpeg"
+      imagem: "/assets/adote/cao-11.jpeg"
     },
     {
       id: 20,
@@ -277,7 +277,7 @@ export const pets = [
       caracteristica: "Pelo laranja e olhos verdes",
       local: "Vet Care, BELO HORIZONTE, MG",
       sobre: "Curioso e independente",
-      imagem: "/assets/adote/gato 9.jpeg"
+      imagem: "/assets/adote/gato-9.jpeg"
     },
     {
       id: 21,
@@ -291,7 +291,7 @@ export const pets = [
       caracteristica: "Pelo cacheado branco",
       local: "Cão & Gato, CURITIBA, PR",
       sobre: "Brincalhona e afetuosa",
-      imagem: "/assets/adote/cao 12.jpeg"
+      imagem: "/assets/adote/cao-12.jpeg"
     }
   ];
   

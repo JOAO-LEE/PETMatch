@@ -1,5 +1,6 @@
-const informationContainer = document.querySelector(".informacoes-pet");
-const informationListContainer = document.querySelector(".lista-informacoes");
+const informationContainer = document.createElement("div");
+const informationListContainer = document.createElement("ul");
+const botaoAdota = document.createElement("button");
 
 window.addEventListener("DOMContentLoaded", () => {
   const selectedPet = JSON.parse(localStorage.getItem("adocao-id"));

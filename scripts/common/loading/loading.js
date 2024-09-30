@@ -3,7 +3,6 @@ export const createLoading = () => {
   loadingContainer.classList.add("loading-container");
   loadingContainer.appendChild(loadingImage());
   loadingContainer.appendChild(loadingText());
-  console.log(loadingContainer);
   return loadingContainer;
 };
 

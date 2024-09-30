@@ -3,7 +3,7 @@ const petListContainer = document.querySelector(".lista-pet");
 window.addEventListener("DOMContentLoaded", () => {
   const petList = JSON.parse(localStorage.getItem("pets"));
 
-  for (let index = 0; index < listaPetsConvertido.length; index++) {
+  for (let index = 0; index < petList.length; index++) {
     const pet = petList[index];
     const petInfoContainer = document.createElement("div");
     petInfoContainer.classList.add("pet-info");

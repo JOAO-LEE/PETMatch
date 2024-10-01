@@ -16,6 +16,34 @@ body {
     background-color: var(--corFundo);
 }
 
+.loading-container {
+    text-align: center;
+    transform: translateY(50%);
+}
+
+
+.loading-texto {
+    color: var(--corSecundaria);
+    font-size: 2rem;
+    margin-top: 30px;
+    width: 500px;
+}
+
+.loading-texto::after {
+    content: "";
+    color: var(--corSecundaria);
+    display: inline-block;
+    width: 1.5rem;
+    text-align: left; 
+    animation: etc-carregando 2s linear infinite;
+}
+
+#loading-logo {
+    animation: heartbeat 2s ease-in-out infinite;
+    filter: hue-rotate(80deg);
+    width: 350px;
+}
+
 .cabecalho {
     background-color: var(--corFundo);
     display: flex;
@@ -239,5 +267,17 @@ body {
     }
     100% {
         transform: rotate(360deg); 
+    }
+}
+
+@keyframes etc-carregando  {
+    33% {
+        content: "."
+    }
+    66% {
+        content: "..";
+    }
+    100%{
+        content: "...";
     }
 }

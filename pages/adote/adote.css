@@ -126,30 +126,42 @@ main {
   display: flex;
   flex-direction: column;
   gap: .5rem;
-}
-
-.pet-info p {
- font-size: 1.1rem;
- color: var(--corPrimaria);
- font-weight: bold;
+  transition: scale 250ms linear, filter 250ms ease-in-out;
 }
 
 .pet-info img {
   object-fit: cover;
   width: 300px;
   height: 300px; 
+  border-radius: 15px;
+  transition: scale 250ms linear, filter 200ms ease;
 }
 
-.botao-adotar {
-  background-color: var(--corPrimaria);
-  text-align: center;
-  border: 0.5px solid white;
-  border-radius: 5px;
-  font-size: 15px;
-  width: 120px;
-  height: 25.5px;
-  color: white;
-  margin-top: 100px;
+.pet-info:hover img {
+  scale: 1.02;
+  filter: drop-shadow(11.5px 0 10px var(--corBorda));
+}
+
+.pet-mini-sobre {
+  margin-top: 15px;
+  display: flex;
+  justify-content: space-between;
+}
+
+.pet-info:hover p {
+  color: var(--corSecundaria);
+  scale: 1.08;
+ }
+ 
+ .pet-info p {
+  font-size: 1.1rem;
+  color: var(--corPrimaria);
+  font-weight: bold;
+  transition: color 250ms ease-in, scale 500ms ease;
+ }
+
+.pet-info:hover .link-adotar {
+  transform: scale(1.1);
 }
 
 .link-adotar {
@@ -159,13 +171,56 @@ main {
   color: white;
   align-self: center;
   border-radius: 10px;
-  transition: transform 250ms ease-in-out, background-color 200ms ease;
+  transition: 
+  background-color 500ms ease, 
+  transform 250ms ease-in-out, 
+  offset 500ms ease;
+  position: relative;
+  outline: 2.5px solid var(--corSecundaria);
+  outline-offset: 1.25px;
+  border: none;
+  cursor: pointer
 }
 
 .link-adotar:hover {
-  transform: scale(1.1);
   background-color: var(--corPrimaria);
+  position: relative;
+  outline-color: var(--corPrimaria);
+  outline-offset: 2.5px
 }
+
+.link-adotar::after {
+  content: "";
+  opacity: 0;
+  background-color: var(--corPrimaria);
+  outline: 2px solid var(--corSecundaria);
+  outline-offset: 2.5px;
+  color: var(--corSecundaria)
+}
+
+
+/* .link-adotar:hover::after {
+  content: attr(data-pet-nome) "\A" attr(data-pet-peso) "\A" attr(data-pet-idade) "\A" attr(data-pet-sobre);
+  padding: 1rem;
+  background-color: var(--corSecundaria);
+  outline: 2px solid var(--corPrimaria);
+  outline-offset: 1.25px;
+  position: absolute; 
+  top: var(--mouseY); 
+  left: var(--mouseX); 
+  transform: translate(-50%, -50%);
+  border-radius: 25px;
+  z-index: 10;
+  pointer-events: none; 
+  border-radius: 25px;
+  opacity: 1;
+  display: block;
+  white-space: pre;
+  text-align: center;
+  font-size: 12px;
+  color: white;
+  transition: opacity 500ms ease, background-color 1s ease-in-out, outline 750ms ease-in-out;
+} */
 
 @keyframes move-container-deu-match {
   to {

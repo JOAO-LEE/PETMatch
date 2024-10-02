@@ -1,14 +1,16 @@
 const petListContainer = document.querySelector(".lista-pet");
 const searchInput = document.querySelector("#busca-pets");
+const searchForm = document.querySelector(".formulario-busca");
 
 window.addEventListener("DOMContentLoaded", () => {
   const petList = JSON.parse(localStorage.getItem("pets"));
   showPets(petList);
 });
 
-searchInput.addEventListener("keyup", (e) => {
-  const searchTerm = e.target.value.trim().toLowerCase();
-  filterPets(searchTerm);
+searchForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const [searchInput] = event.target;
+  filterPets(searchInput.value);
 });
 
 const filterPets = (searchTerm) => {
@@ -24,13 +26,21 @@ const filterPets = (searchTerm) => {
     const matchName = pet.nome.toLowerCase().includes(searchTerm);
     const matchAddress = pet.local.toLowerCase().includes(searchTerm);
     if (matchName || matchAddress) {
-      console.log("oi");
       filteredPets.push(pet);
-    } else {
-      petListContainer.innerHTML = `<p>Nenhum pet encontrado</p>`;
     }
-    showPets(filteredPets);
   }
+
+  if (filteredPets.length) {
+    showPets(filteredPets);
+    return;
+  }
+  petListContainer.innerHTML = `<p>Nenhum pet encontrado</p>`;
+};
+
+const createNotFoundPet = () => {
+  const notFoundWrapper = document.createElement("div");
+  notFoundWrapper.innerHTML = `<p>Nenhum pet encontrado</p>`;
+  return notFoundWrapper;
 };
 
 const showPets = (petList) => {

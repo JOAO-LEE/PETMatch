@@ -37,44 +37,52 @@ main {
   font-weight: 300;
 }
 
-.container-busca-pet {
-  margin: 0 auto;
-  width: 50%;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  gap: .5rem;
+.formulario-busca {
+  min-width: 50%;
+  text-align: center;
 }
 
-.container-busca-pet label {
+.formulario-busca label {
   font-size: 1.25rem;
+  font-weight: 300;
   color: var(--corPrimaria);
+  margin-bottom: 100px;
+}
+
+.filtro-nome-cidade {
+  border: 2px solid var(--corSecundaria);
+  display: flex;
+  border-radius: 15px;
+  padding: 10px;
+  margin-top: 5.5px;
 }
 
 #busca-pets {
+  flex: 1;
   border: none;
   background-color: var(--corFundo);
-  width: 95%;
+  width: 90%;
   font-size: 1.5rem;
   color: var(--corPrimaria);
-  padding: 0.1rem;
+  padding: 0.1rem; 
 }
 
 #busca-pets:focus {
   outline: none;
 }
 
-.container-input {
-  width: 100%;
-  border: 2px solid var(--corSecundaria);
-  padding: .5rem;
-  border-radius: 20px;
-  background-color: var(--corFundo);
+.filtro-nome-cidade button {
+  border: none;
+  cursor: pointer;
 }
 
-.container-input i {
+.filtro-nome-cidade i {
   color: var(--corSecundaria);
   font-size: 1.5rem;
+}
+
+.filtro-nome-cidade i:hover {
+  color: var(--corPrimaria);
 }
 
 .filtro-lista {
@@ -160,7 +168,7 @@ main {
   scroll-behavior: auto;
   overflow-y: auto;
   overflow-x: hidden;
-  max-height: calc(100vh - 525px);
+  max-height: 420px;
   width: 70%;
   overscroll-behavior-block: contain;
   scroll-snap-type: block mandatory;
@@ -239,15 +247,6 @@ main {
   position: relative;
   outline-color: var(--corPrimaria);
   outline-offset: 2.5px
-}
-
-.link-adotar::after {
-  content: "";
-  opacity: 0;
-  background-color: var(--corPrimaria);
-  outline: 2px solid var(--corSecundaria);
-  outline-offset: 2.5px;
-  color: var(--corSecundaria)
 }
 
 

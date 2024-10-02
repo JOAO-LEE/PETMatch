@@ -1,19 +1,64 @@
 const petListContainer = document.querySelector(".lista-pet");
 const searchInput = document.querySelector("#busca-pets");
 const searchForm = document.querySelector(".formulario-busca");
+const checkboxForm = document.querySelector(".opcoes-de-filtro");
 
 window.addEventListener("DOMContentLoaded", () => {
   const petList = JSON.parse(localStorage.getItem("pets"));
   showPets(petList);
 });
 
+checkboxForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const fields = event.target;
+  filterPetsByInfo(fields);
+});
+
 searchForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const [searchInput] = event.target;
-  filterPets(searchInput.value);
+  filterPetsByNameOrCity(searchInput.value);
 });
 
-const filterPets = (searchTerm) => {
+const filterPetsByInfo = (fields) => {
+  const petList = JSON.parse(localStorage.getItem("pets"));
+  const [allPets, malePets, femalePets, dogs, cats] = fields;
+
+  if (allPets.checked) {
+    showPets(petList);
+    return;
+  }
+
+  let filteredPets = [];
+  for (let index = 0; index < petList.length; index++) {
+    let petIsaMatch = true;
+    const pet = petList[index];
+    if (malePets.checked && pet.sexo.toLowerCase() !== malePets.id) {
+      console.log(pet);
+      petIsaMatch = false;
+    }
+
+    if (femalePets.checked && pet.sexo.toLowerCase() !== femalePets.id) {
+      petIsaMatch = false;
+    }
+
+    if (dogs.checked && pet.especie.toLowerCase() !== dogs.id) {
+      petIsaMatch = false;
+    }
+
+    if (cats.checked && pet.especie.toLowerCase() !== cats.id) {
+      petIsaMatch = false;
+    }
+
+    if (petIsaMatch) {
+      console.log(pet);
+      filteredPets.push(pet);
+    }
+  }
+  showPets(filteredPets);
+};
+
+const filterPetsByNameOrCity = (searchTerm) => {
   const petList = JSON.parse(localStorage.getItem("pets"));
   if (!searchTerm) {
     showPets(petList);

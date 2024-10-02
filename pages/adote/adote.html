@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-<script src="/scripts/common/auth/header-handle.js" defer></script>
+  <script src="/scripts/common/auth/header-handle.js" defer></script>
   <script src="/scripts/adote/adote.js" defer></script>
   <title>Adote - PETMatch</title>
 </head>
@@ -69,7 +69,7 @@
       <div class="filtro-lista">
         <aside class="filtro">
           <p>Filtro de Busca</p>
-          <div class="opcoes-de-filtro">
+          <form class="opcoes-de-filtro">
             <div class="checkboxes">
               <div class="checkbox-container">
                 <label for="todos">Todos</label>
@@ -92,8 +92,8 @@
                 <input type="checkbox" id="gato" class="checkbox-customizado">
               </div>
             </div>
-            <button class="botao-buscar">Buscar</button>
-          </div>
+            <button class="botao-buscar" type="submit">Buscar</button>
+          </form>
         </aside>
         <div class="lista-pet">
           <!-- <div class="pet-info">

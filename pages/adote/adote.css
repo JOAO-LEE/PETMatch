@@ -1,5 +1,5 @@
 main {
-  overflow: hidden;
+  /* overflow: hidden; */
   z-index: 13;
   position: relative;
   top: 95px;
@@ -37,11 +37,52 @@ main {
   font-weight: 300;
 }
 
+.container-busca-pet {
+  margin: 0 auto;
+  width: 50%;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: .5rem;
+}
+
+.container-busca-pet label {
+  font-size: 1.25rem;
+  color: var(--corPrimaria);
+}
+
+#busca-pets {
+  border: none;
+  background-color: var(--corFundo);
+  width: 95%;
+  font-size: 1.5rem;
+  color: var(--corPrimaria);
+  padding: 0.1rem;
+}
+
+#busca-pets:focus {
+  outline: none;
+}
+
+.container-input {
+  width: 100%;
+  border: 2px solid var(--corSecundaria);
+  padding: .5rem;
+  border-radius: 20px;
+  background-color: var(--corFundo);
+}
+
+.container-input i {
+  color: var(--corSecundaria);
+  font-size: 1.5rem;
+}
+
 .filtro-lista {
   display: flex;
   justify-content: center;
   gap: 3.5rem;
   position: relative;
+  /* width: 60%; */
 }
 
 .filtro {
@@ -119,6 +160,7 @@ main {
   overflow-y: auto;
   overflow-x: hidden;
   max-height: calc(100vh - 250px);
+  min-width: 1000px;
 }
 
 .pet-info {

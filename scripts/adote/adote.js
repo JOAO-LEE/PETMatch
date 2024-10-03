@@ -8,23 +8,26 @@ window.addEventListener("DOMContentLoaded", () => {
   showPets(petList);
 });
 
-checkboxForm.addEventListener("submit", (event) => {
-  event.preventDefault();
-  const fields = event.target;
-  filterPetsByInfo(fields);
-});
-
 searchForm.addEventListener("submit", (event) => {
   event.preventDefault();
   const [searchInput] = event.target;
   filterPetsByNameOrCity(searchInput.value);
 });
 
+checkboxForm.addEventListener("submit", (event) => {
+  event.preventDefault();
+  const fields = event.target;
+  filterPetsByInfo(fields);
+});
+
 const filterPetsByInfo = (fields) => {
   const petList = JSON.parse(localStorage.getItem("pets"));
   const [allPets, malePets, femalePets, dogs, cats] = fields;
 
-  if (allPets.checked) {
+  const areAllPetsChecked =
+    malePets.checked && femalePets.checked && dogs.checked && cats.checked;
+
+  if (allPets.checked || areAllPetsChecked) {
     showPets(petList);
     return;
   }
@@ -33,8 +36,8 @@ const filterPetsByInfo = (fields) => {
   for (let index = 0; index < petList.length; index++) {
     let petIsaMatch = true;
     const pet = petList[index];
+
     if (malePets.checked && pet.sexo.toLowerCase() !== malePets.id) {
-      console.log(pet);
       petIsaMatch = false;
     }
 
@@ -51,10 +54,10 @@ const filterPetsByInfo = (fields) => {
     }
 
     if (petIsaMatch) {
-      console.log(pet);
       filteredPets.push(pet);
     }
   }
+
   showPets(filteredPets);
 };
 

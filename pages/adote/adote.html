@@ -20,7 +20,7 @@
   <link rel="preconnect" href="https://fonts.googleapis.com">
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-<script src="/scripts/common/auth/header-handle.js" defer></script>
+  <script src="/scripts/common/auth/header-handle.js" defer></script>
   <script src="/scripts/adote/adote.js" defer></script>
   <title>Adote - PETMatch</title>
 </head>
@@ -49,7 +49,6 @@
       </ul>
     </nav>
     <div class="container-autenticacao">
-     
   </div>
   </header>
   <main>
@@ -57,13 +56,20 @@
       <div class="deu-match-wrapper">
         <div class="deu-match-container">
           <h2>Deu <strong>MATCH</strong>?</h2>
-          <p>Uma seleção especial de peludinhos que buscam um lar para chamar de seu:</p>
+          <p>Uma seleção especial de peludinhos que buscam um lar para chamar de seu</p>
         </div>
       </div>
+      <form class="formulario-busca">
+        <label for="busca-pets">Busque um pet por nome ou cidade</label>
+          <div class="filtro-nome-cidade">
+            <input type="text" name="" id="busca-pets" spellcheck="false">
+            <button type="submit"><i class="ph ph-magnifying-glass"></i></button>
+          </div>
+      </form>
       <div class="filtro-lista">
         <aside class="filtro">
           <p>Filtro de Busca</p>
-          <div class="opcoes-de-filtro">
+          <form class="opcoes-de-filtro">
             <div class="checkboxes">
               <div class="checkbox-container">
                 <label for="todos">Todos</label>
@@ -86,8 +92,8 @@
                 <input type="checkbox" id="gato" class="checkbox-customizado">
               </div>
             </div>
-            <button class="botao-buscar">Buscar</button>
-          </div>
+            <button class="botao-buscar" type="submit">Buscar</button>
+          </form>
         </aside>
         <div class="lista-pet">
           <!-- <div class="pet-info">

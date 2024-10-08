@@ -1,27 +1,11 @@
-const userInfoList = document.querySelector(".informacao-lista");
+const userInfoContainer = document.querySelector(".info-usuario");
 const principalContainer = document.getElementsByTagName("main")[0];
 const logoutButton = document.querySelector("#logout-botao");
-
-const infoName = ["Nome completo", "CPF", "Endereço", "E-mail"];
-const { auth, senha, ...userInfo } = JSON.parse(localStorage.getItem("auth"));
-
-const createGreeting = (userInfos) => {
-  const { nomeCompleto } = userInfos;
-  const greeting = document.createElement("h2");
-  greeting.innerText = "Olá,";
-  greeting.innerHTML += ` <span>${nomeCompleto.split(" ")[0]}</span>!`;
-  greeting.id = "boas-vindas";
-  principalContainer.prepend(greeting);
-};
+const infoName = ["Nome completo", "CPF", "Endereço", "E-mail", "Senha"];
+const { auth, imagem, ...userInfo } = JSON.parse(localStorage.getItem("auth"));
 
 document.addEventListener("DOMContentLoaded", () => {
-  const infoList = Object.values(userInfo);
-  for (let i = 0; i < infoList.length; i++) {
-    const listInfoItem = document.createElement("li");
-    listInfoItem.innerText = `${infoName[i]}: ${infoList[i]}`;
-    userInfoList.append(listInfoItem);
-  }
-  createGreeting(userInfo);
+  renderUserInfo();
 });
 
 logoutButton.addEventListener("click", (ev) => {
@@ -35,3 +19,45 @@ logoutButton.addEventListener("click", (ev) => {
     // window.location.assign("/pages/home/home.html");
   }, 2000);
 });
+
+const createGreeting = (userInfos) => {
+  const { nomeCompleto } = userInfos;
+  const greeting = document.createElement("h2");
+  greeting.innerText = "Olá,";
+  greeting.innerHTML += ` <span>${nomeCompleto.split(" ")[0]}</span>!`;
+  greeting.id = "boas-vindas";
+  principalContainer.prepend(greeting);
+};
+
+const createUserInfoList = () => {
+  const infoList = Object.values(userInfo);
+  const userInfoList = document.createElement("ul");
+  userInfoList.classList.add("informacoes-lista");
+  for (let i = 0; i < infoList.length; i++) {
+    const listInfoItem = document.createElement("li");
+    if (!(infoName[i] === "Senha")) {
+      listInfoItem.innerText = `${infoName[i]}: ${infoList[i]}`;
+    } else {
+      const hiddenPassword = generateHiddenPassword(infoList[i]);
+      listInfoItem.innerText = `${infoName[i]}: ${hiddenPassword}`;
+    }
+    userInfoList.appendChild(listInfoItem);
+  }
+  return userInfoList;
+};
+
+const generateHiddenPassword = (password) => {
+  let hiddenPassword = "";
+  for (let index = 0; index <= password.trim().length; index++) {
+    // console.log(password);
+    hiddenPassword += "•";
+  }
+  return hiddenPassword;
+};
+
+const renderUserInfo = () => {
+  createGreeting(userInfo);
+  const userInfoList = createUserInfoList();
+  userInfoContainer.innerHTML = imagem;
+  userInfoContainer.appendChild(userInfoList);
+};

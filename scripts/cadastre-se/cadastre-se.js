@@ -1,4 +1,5 @@
 import { pictureList } from "../common/constants/pictureList.js";
+import { authenticateUser } from "../common/auth/authentication.js";
 const formularioCadastro = document.querySelector("#cadastro");
 const labelCPF = document.querySelector("#etiquetaCPF");
 const labelNome = document.querySelector("#etiquetaNome");
@@ -41,7 +42,6 @@ formularioCadastro.addEventListener("submit", async (e) => {
   const testeCPF = regexCPF.test(inputCPF.value);
   const testeNome = regexNome.test(inputNome.value);
   const testeEmail = regexEmail.test(inputEmail.value);
-  console.log(testeEmail);
 
   if (!testeNome) {
     labelNome.style.borderColor = "var(--corErroFormulario)";
@@ -70,9 +70,11 @@ formularioCadastro.addEventListener("submit", async (e) => {
     imagem: profilePic,
   };
 
-  localStorage.setItem("usuarios", JSON.stringify([...usuarios, novoUsuario]));
-  localStorage.setItem("auth", JSON.stringify(novoUsuario));
-
+  localStorage.setItem(
+    "usuarios",
+    JSON.stringify([...usuarios, { ...novoUsuario }])
+  );
+  authenticateUser(novoUsuario);
   window.location.assign("/pages/usuario/usuario.html");
 });
 

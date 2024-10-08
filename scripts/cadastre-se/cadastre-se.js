@@ -1,3 +1,4 @@
+import { pictureList } from "../common/constants/pictureList.js";
 const formularioCadastro = document.querySelector("#cadastro");
 const labelCPF = document.querySelector("#etiquetaCPF");
 const labelNome = document.querySelector("#etiquetaNome");
@@ -33,7 +34,7 @@ localStorage.setItem(
   ])
 );
 
-formularioCadastro.addEventListener("submit", (e) => {
+formularioCadastro.addEventListener("submit", async (e) => {
   e.preventDefault();
   const usuarios = JSON.parse(localStorage.getItem("usuarios"));
   const [inputNome, inputEndereco, inputCPF, inputEmail, inputSenha] = e.target;
@@ -47,7 +48,7 @@ formularioCadastro.addEventListener("submit", (e) => {
     labelNome.innerHTML += `<span class='erro-autenticacao-login'> O nome não aceita números</span>`;
   }
 
-  if (testeCPF == false) {
+  if (!testeCPF) {
     console.log("teste CPF falso");
     labelCPF.style.borderColor = "red";
     labelCPF.innerHTML += `<span class='erro-autenticacao-login'> CPF invalido</span>`;
@@ -57,6 +58,9 @@ formularioCadastro.addEventListener("submit", (e) => {
     labelEmail.style.borderColor = "red";
     labelEmail.innerHTML += `<span class='erro-autenticacao-login'> Email invalido</span>`;
   }
+
+  const profilePic = await getRandomPic();
+  console.log(profilePic);
 
   localStorage.setItem(
     "usuarios",
@@ -68,9 +72,17 @@ formularioCadastro.addEventListener("submit", (e) => {
         CPF: inputCPF.value,
         email: inputEmail.value,
         senha: inputSenha.value,
+        imagem: profilePic,
       },
     ])
   );
-
-  // console.log(inputNome,inputEndereco,inputCPF, inputEmail,inputSenha)
 });
+
+const getRandomPic = async () => {
+  const randomPosition = Math.floor(Math.random() * pictureList.length);
+  const response = await fetch(
+    `https://api.dicebear.com/9.x/pixel-art/svg?seed=${pictureList[randomPosition]}`
+  );
+  const svgText = await response.text();
+  return svgText.toString();
+};

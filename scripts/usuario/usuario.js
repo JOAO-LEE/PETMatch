@@ -15,6 +15,18 @@ document.addEventListener("DOMContentLoaded", () => {
   renderSchedulePetsInfo();
 });
 
+logoutButton.addEventListener("click", (ev) => {
+  logoutButton.innerText = "Saindo...";
+  logoutButton.disabled = true;
+  logoutButton.classList.add("loging-out");
+  setTimeout(() => {
+    // remove a pessoa logada do
+    localStorage.removeItem("auth");
+    // vai para home
+    window.location.assign("/pages/home/home.html");
+  }, 2000);
+});
+
 const createSchedulePetsList = () => {
   const scheduleList = document.createElement("ul");
   scheduleList.classList.add("lista-pets-agendados");
@@ -32,18 +44,6 @@ const createSchedulePetsList = () => {
   });
   return scheduleList;
 };
-
-logoutButton.addEventListener("click", (ev) => {
-  logoutButton.innerText = "Saindo...";
-  logoutButton.disabled = true;
-  logoutButton.classList.add("loging-out");
-  setTimeout(() => {
-    // remove a pessoa logada do
-    // localStorage.removeItem("auth");
-    // vai para home
-    // window.location.assign("/pages/home/home.html");
-  }, 2000);
-});
 
 const createGreeting = (userInfos) => {
   const { nomeCompleto } = userInfos;

@@ -11,7 +11,7 @@ const errorMessageHandler = (element, text) => {
   return element;
 };
 
-const hasErrorMessage = (element) =>
+export const hasErrorMessage = (element) =>
   element.querySelector(".erro-autenticacao-login");
 
 const showErrorMessage = (errorType) => {

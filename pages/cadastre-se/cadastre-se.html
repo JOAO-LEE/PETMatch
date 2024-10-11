@@ -24,10 +24,9 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
   <script src="/scripts/common/auth/header-handle.js" defer></script>
-  <script type="module" src="/scripts/cadastre-se/cadastre-se.js" defer></script>
   <script type="module" src="/scripts/common/constants/pictureList.js" defer></script>
   <script type="module" src="/scripts/common/auth/authentication.js" defer></script>
-
+  <script type="module" src="/scripts/cadastre-se/cadastre-se.js" defer></script>
   <title>Cadastre-se - PETMatch</title>
 </head>
 <body>
@@ -70,23 +69,23 @@
               </div>                            
             </div>
             <div class="input-group">
-              <label id="etiquetaNome" class="input-box">
+              <label id="etiquetaNome" class="input-box normal-label">
                 <i class="ph ph-identification-badge"></i>
                   <input id="nomecompleto" type="text" name="nomecompleto" placeholder="Nome completo" required>
               </label>
-            <div class="input-box">
+            <label class="input-box normal-label">
               <i class="ph ph-map-pin"></i>
               <input id="enderecocompleto" type="text" name="enderecocompleto" placeholder="Endereço, número e bairro" required>
-            </div>
-            <label id="etiquetaCPF" class="input-box">
+            </label>
+            <label id="etiquetaCPF" class="input-box normal-label">
               <i class="ph ph-identification-card"></i>
                 <input id="cpf" type="text" name="cpf" placeholder="CPF sem pontuação e hífen." required>
             </label>
-            <label id='etiquetaNome' class="input-box">
+            <label id='etiquetaNome' class="input-box normal-label">
               <i class="ph ph-user"></i>
                 <input id="login" type="email" name="login" placeholder="E-mail exemplo@exemplo.com.br" required>
             </label>
-            <div class="input-box">
+            <div class="input-box normal-label">
               <i class="ph ph-lock-simple"></i>
                 <input id="senha" type="password" name="senha" placeholder="Senha" required>
             </div>
@@ -99,9 +98,9 @@
         </div>
 
     </section>
-    <div class="image-box">
+    <!-- <div class="image-box">
       <img src="/assets/common/pngtree-mutt-pure-bred-dog-png-image_10054959.png" alt="Cachorro Branco">
-    </div>
+    </div> -->
   </main>
 </body>
 </html>

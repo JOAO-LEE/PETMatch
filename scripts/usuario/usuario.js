@@ -1,8 +1,13 @@
 const userInfoContainer = document.querySelector(".info-usuario");
 const principalContainer = document.getElementsByTagName("main")[0];
 const logoutButton = document.querySelector("#logout-botao");
+
 const infoName = ["Nome completo", "CPF", "Endereço", "E-mail", "Senha"];
-const { auth, imagem, ...userInfo } = JSON.parse(localStorage.getItem("auth"));
+const { auth, imagem, senha, ...userInfo } = JSON.parse(
+  localStorage.getItem("auth")
+);
+
+let passwordShow = false;
 
 document.addEventListener("DOMContentLoaded", () => {
   renderUserInfo();
@@ -30,26 +35,55 @@ const createGreeting = (userInfos) => {
 };
 
 const createUserInfoList = () => {
-  const infoList = Object.values(userInfo);
   const userInfoList = document.createElement("ul");
   userInfoList.classList.add("informacoes-lista");
+  return userInfoList;
+};
+
+const createInfoListItem = (userInfoList) => {
+  const infoList = Object.values(userInfo);
   for (let i = 0; i < infoList.length; i++) {
     const listInfoItem = document.createElement("li");
-    if (!(infoName[i] === "Senha")) {
-      listInfoItem.innerText = `${infoName[i]}: ${infoList[i]}`;
-    } else {
-      const hiddenPassword = generateHiddenPassword(infoList[i]);
-      listInfoItem.innerText = `${infoName[i]}: ${hiddenPassword}`;
-    }
+    listInfoItem.innerText = `${infoName[i]}: ${infoList[i]}`;
     userInfoList.appendChild(listInfoItem);
   }
-  return userInfoList;
+  showPassword(userInfoList);
+};
+
+const showPassword = (userInfoList) => {
+  let existentPasswordItem = userInfoList.querySelector("#senha");
+  let passwordShower;
+
+  if (!existentPasswordItem) {
+    existentPasswordItem = document.createElement("li");
+    existentPasswordItem.id = "senha";
+    passwordShower = document.createElement("i");
+    passwordShower.id = "mostrar-senha";
+    passwordShower.classList.add("ph");
+    userInfoList.appendChild(existentPasswordItem);
+  } else {
+    passwordShower = existentPasswordItem.querySelector("#mostrar-senha");
+  }
+
+  userInfoList.lastChild.innerText = `Senha: ${
+    !passwordShow ? senha : generateHiddenPassword(senha)
+  }`;
+  existentPasswordItem.appendChild(passwordShower);
+
+  passwordShower.classList.toggle("ph-eye", passwordShow);
+  passwordShower.classList.toggle("ph-eye-closed", !passwordShow);
+
+  passwordShower.addEventListener("click", togglePasswordVisibility);
+};
+
+const togglePasswordVisibility = () => {
+  passwordShow = !passwordShow;
+  showPassword(document.querySelector(".informacoes-lista"));
 };
 
 const generateHiddenPassword = (password) => {
   let hiddenPassword = "";
-  for (let index = 0; index <= password.trim().length; index++) {
-    // console.log(password);
+  for (let index = 0; index < password.trim().length; index++) {
     hiddenPassword += "•";
   }
   return hiddenPassword;
@@ -58,6 +92,7 @@ const generateHiddenPassword = (password) => {
 const renderUserInfo = () => {
   createGreeting(userInfo);
   const userInfoList = createUserInfoList();
+  createInfoListItem(userInfoList);
   userInfoContainer.innerHTML = imagem;
   userInfoContainer.appendChild(userInfoList);
 };

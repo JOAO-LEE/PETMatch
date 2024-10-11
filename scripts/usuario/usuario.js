@@ -1,17 +1,37 @@
 const userInfoContainer = document.querySelector(".info-usuario");
 const principalContainer = document.getElementsByTagName("main")[0];
+const scheduledPetsContainer = document.querySelector(".container-info-pets");
 const logoutButton = document.querySelector("#logout-botao");
 
 const infoName = ["Nome completo", "CPF", "Endereço", "E-mail", "Senha"];
-const { auth, imagem, senha, ...userInfo } = JSON.parse(
+const { auth, imagem, senha, agendamentos, ...userInfo } = JSON.parse(
   localStorage.getItem("auth")
 );
 
-let passwordShow = false;
+let passwordShow = true;
 
 document.addEventListener("DOMContentLoaded", () => {
   renderUserInfo();
+  renderSchedulePetsInfo();
 });
+
+const createSchedulePetsList = () => {
+  const scheduleList = document.createElement("ul");
+  scheduleList.classList.add("lista-pets-agendados");
+  agendamentos.forEach((pet) => {
+    const petScheduleItem = document.createElement("li");
+    const petImage = document.createElement("img");
+    const petName = document.createElement("p");
+    petScheduleItem.classList.add("info-pet");
+    petImage.src = pet.imagem;
+    petImage.alt = `Imagem do pet ${pet.nome}`;
+    petName.innerText = pet.nome;
+    petScheduleItem.appendChild(petImage);
+    petScheduleItem.appendChild(petName);
+    scheduleList.appendChild(petScheduleItem);
+  });
+  return scheduleList;
+};
 
 logoutButton.addEventListener("click", (ev) => {
   logoutButton.innerText = "Saindo...";
@@ -70,8 +90,8 @@ const showPassword = (userInfoList) => {
   }`;
   existentPasswordItem.appendChild(passwordShower);
 
-  passwordShower.classList.toggle("ph-eye", passwordShow);
-  passwordShower.classList.toggle("ph-eye-closed", !passwordShow);
+  passwordShower.classList.toggle("ph-eye", !passwordShow);
+  passwordShower.classList.toggle("ph-eye-closed", passwordShow);
 
   passwordShower.addEventListener("click", togglePasswordVisibility);
 };
@@ -95,4 +115,16 @@ const renderUserInfo = () => {
   createInfoListItem(userInfoList);
   userInfoContainer.innerHTML = imagem;
   userInfoContainer.appendChild(userInfoList);
+};
+
+const renderSchedulePetsInfo = () => {
+  const schedulesHeaderTitle = document.createElement("h3");
+  if (!agendamentos) {
+    schedulesHeaderTitle.innerText = "Não há agendamentos :(";
+    scheduledPetsContainer.appendChild(schedulesHeaderTitle);
+    return;
+  }
+  scheduledPetsContainer.innerText = "Pets que você agendou visita:";
+  const scheduleList = createSchedulePetsList();
+  scheduledPetsContainer.appendChild(scheduleList);
 };

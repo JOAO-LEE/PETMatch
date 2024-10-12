@@ -54,11 +54,18 @@ main {
     margin-bottom: 20px;
 }
 
+.error-label {
+    border: 1px solid var(--corErroFormulario);
+}
+
+.normal-label {
+    border: 1px solid var(--corSecundaria);
+}
+
 .input-box {
     display: flex;
     align-items: center;
     margin-bottom: 20px;
-    border: 1px solid var(--corSecundaria);
     border-radius: 8px;
     padding: 10px;
 }
@@ -75,8 +82,8 @@ main {
     font-size: 16px;
 }
 
-.login-box {
-    margin-top: 50px;
+.erro-campo-cpf-email {
+    height: 50px;
 }
 
 .login-box button {
@@ -132,6 +139,12 @@ main {
     z-index: 16;
     transform: translateX(-50%);
     left: 50%;
+}
+
+.mensagem-erro {
+    padding: 1rem;
+    color: var(--corErroFormulario);
+    font-size: 1.5ch
 }
 
 @keyframes circulo-autenticacao {

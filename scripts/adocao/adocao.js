@@ -35,7 +35,6 @@ window.addEventListener("DOMContentLoaded", () => {
 });
 
 const scheduleVisitation = (foundPet) => {
-  console.log("oi");
   if (!authedUser) {
     window.location.assign("/pages/cadastre-se/cadastre-se.html");
     return;

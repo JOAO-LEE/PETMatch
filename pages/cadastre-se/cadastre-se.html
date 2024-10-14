@@ -29,6 +29,7 @@
   <script type="module" src="/scripts/common/utils/errorHandlers.js" defer></script>
   <script type="module" src="/scripts/common/utils/formRegex.js" defer></script>
   <script type="module" src="/scripts/common/utils/randomPicGenerator.js" defer></script>
+  <script type="module" src="/scripts/common/utils/buttonControl.js" defer></script>
   <title>Cadastre-se - PETMatch</title>
 </head>
 <body>
@@ -70,7 +71,7 @@
               </div>                            
             </div>
             <div class="input-group">
-              <label id="etiquetaNome" class="input-box normal-label">
+              <label  class="input-box normal-label">
                 <i class="ph ph-identification-badge"></i>
                   <input id="nomecompleto" type="text" name="nomecompleto" placeholder="Nome completo" required>
               </label>
@@ -78,11 +79,11 @@
               <i class="ph ph-map-pin"></i>
               <input id="enderecocompleto" type="text" name="enderecocompleto" placeholder="Endereço, número e bairro" required>
             </label>
-            <label id="etiquetaCPF" class="input-box normal-label">
+            <label class="input-box normal-label">
               <i class="ph ph-identification-card"></i>
                 <input id="cpf" type="text" name="cpf" placeholder="CPF sem pontuação e hífen." required>
             </label>
-            <label id='etiquetaNome' class="input-box normal-label">
+            <label class="input-box normal-label">
               <i class="ph ph-user"></i>
               <input id="login" type="email" name="login" placeholder="E-mail exemplo@exemplo.com.br" required>
             </label>
@@ -92,15 +93,13 @@
             </div>
             </div>
             <div class="erro-campo-cpf-email">
-
             </div>
             <div class="login-box">
-                <button type="submit">Cadastrar</button>
+              <button type="submit">Cadastrar</button>
             </div>
             </form>                
           </div>
         </div>
-
     </section>
     <!-- <div class="image-box">
       <img src="/assets/common/pngtree-mutt-pure-bred-dog-png-image_10054959.png" alt="Cachorro Branco">

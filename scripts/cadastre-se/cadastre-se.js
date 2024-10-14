@@ -1,5 +1,9 @@
 import { authenticateUser } from "../common/auth/authentication.js";
 import {
+  controlButtonDisablement,
+  createAndAppendLoadingSpinner,
+} from "../common/utils/buttonControl.js";
+import {
   hasFormError,
   errorMessageHandler,
 } from "../common/utils/errorHandlers.js";
@@ -18,20 +22,37 @@ passwordField.addEventListener("keydown", (ev) => {
 registerForm.addEventListener("submit", async (e) => {
   e.preventDefault();
   handleFormErrorsReset(e.target);
-  const [nameInput, addressInput, cpfInput, emailInput, passwordInput] =
-    e.target;
-  const hasAnyError = verifyFormFields({ nameInput, cpfInput, emailInput });
-  if (hasAnyError) {
-    return;
-  }
-  const userInfo = {
+  const [
     nameInput,
     addressInput,
     cpfInput,
     emailInput,
     passwordInput,
-  };
-  await createUser(userInfo);
+    submitButton,
+  ] = e.target;
+  const hasAnyError = verifyFormFields({ nameInput, cpfInput, emailInput });
+  if (hasAnyError) {
+    return;
+  }
+  controlButtonDisablement(submitButton);
+  createAndAppendLoadingSpinner(submitButton);
+  setTimeout(async () => {
+    const response = verifyUser(cpfInput.value.trim(), emailInput.value.trim());
+    if (!response) {
+      const userInfo = {
+        nameInput,
+        addressInput,
+        cpfInput,
+        emailInput,
+        passwordInput,
+      };
+      await createUser(userInfo);
+      window.location.assign("/pages/home/home.html");
+      return;
+    }
+    registerFormError(response.error);
+    controlButtonDisablement(submitButton, "Cadastrar");
+  }, 2000);
 });
 
 const handleFormErrorsReset = (form) => {
@@ -126,16 +147,6 @@ const createUser = async ({
   emailInput,
   passwordInput,
 }) => {
-  const registeredUser = verifyUser(
-    cpfInput.value.trim(),
-    emailInput.value.trim()
-  );
-
-  if (registeredUser) {
-    registerFormError(registeredUser.error);
-    return;
-  }
-
   const profilePic = await getRandomPic();
 
   const novoUsuario = {
@@ -153,7 +164,6 @@ const createUser = async ({
     JSON.stringify([...usuarios, { ...novoUsuario }])
   );
   authenticateUser(novoUsuario);
-  window.location.assign("/pages/usuario/usuario.html");
 };
 
 const verifyUser = (cpf, email) => {

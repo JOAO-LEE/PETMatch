@@ -47,17 +47,6 @@ function getUser(email, password) {
   }
 }
 
-export const controlButtonDisablement = (button) => {
-  button.disabled = button.disabled ? false : true;
-  button.innerText = !button.disabled ? "Entrar" : "";
-};
-
-const createAndAppendLoadingSpinner = (button) => {
-  const loadingSpinner = document.createElement("div");
-  loadingSpinner.classList.add("spinner-carregando");
-  button.appendChild(loadingSpinner);
-};
-
 formLogin.addEventListener("submit", (ev) => {
   ev.preventDefault();
   showErrorMessage();

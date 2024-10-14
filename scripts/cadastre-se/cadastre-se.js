@@ -152,12 +152,14 @@ const createUser = async ({
     agendamentos: [],
   };
 
-  // localStorage.setItem(
-  //   "usuarios",
-  //   JSON.stringify([usuarios, { ...novoUsuario }])
-  // );
-  // authenticateUser(novoUsuario);
-  // window.location.assign("/pages/usuario/usuario.html");
+  console.log([...usuarios, { ...novoUsuario }]);
+
+  localStorage.setItem(
+    "usuarios",
+    JSON.stringify([...usuarios, { ...novoUsuario }])
+  );
+  authenticateUser(novoUsuario);
+  window.location.assign("/pages/usuario/usuario.html");
 };
 
 const verifyUser = (cpf, email) => {
@@ -171,6 +173,7 @@ const verifyUser = (cpf, email) => {
       return { error: "CPF já cadastrado." };
     }
   }
+  return null;
 };
 
 // localStorage.setItem(

@@ -106,6 +106,21 @@ const handleFieldError = (fieldLabel, errorType) => {
   }
 };
 
+const registerFormError = (errorMessage) => {
+  const errorContainer = document.querySelector(".erro-campo-cpf-email");
+
+  const hasRegisterErrorMessage = errorContainer.hasChildNodes();
+
+  if (hasRegisterErrorMessage) {
+    errorContainer.firstChild.remove();
+  }
+
+  const errorParagraph = document.createElement("p");
+  errorParagraph.innerText = errorMessage;
+  errorParagraph.classList.add("mensagem-erro");
+  errorContainer.appendChild(errorParagraph);
+};
+
 const createUser = async ({
   nameInput,
   addressInput,
@@ -113,17 +128,15 @@ const createUser = async ({
   emailInput,
   passwordInput,
 }) => {
-  const hasRegisteredUser = verifyUser(
+  const registeredUser = verifyUser(
     cpfInput.value.trim(),
     emailInput.value.trim()
   );
 
-  if (hasRegisteredUser) {
-    const errorContainer = document.querySelector(".erro-campo-cpf-email");
-    const errorMessage = document.createElement("p");
-    errorMessage.innerText = hasRegisteredUser.error;
-    errorMessage.classList.add("mensagem-erro");
-    errorContainer.appendChild(errorMessage);
+  console.log(registeredUser);
+
+  if (registeredUser) {
+    registerFormError(registeredUser.error);
     return;
   }
 
@@ -139,51 +152,50 @@ const createUser = async ({
     agendamentos: [],
   };
 
-  localStorage.setItem(
-    "usuarios",
-    JSON.stringify([usuarios, { ...novoUsuario }])
-  );
-  authenticateUser(novoUsuario);
-  window.location.assign("/pages/usuario/usuario.html");
+  // localStorage.setItem(
+  //   "usuarios",
+  //   JSON.stringify([usuarios, { ...novoUsuario }])
+  // );
+  // authenticateUser(novoUsuario);
+  // window.location.assign("/pages/usuario/usuario.html");
 };
 
 const verifyUser = (cpf, email) => {
   const users = JSON.parse(localStorage.getItem("usuarios"));
   for (let index = 0; index < users.length; index++) {
     const user = users[index];
+    if (user.email === email) {
+      return { error: "Email já cadastrado." };
+    }
     if (user.cpf === cpf) {
-      return { error: "CPF já cadastrado" };
-    } else if (user.email === email) {
-      return { error: "Email já cadastrado" };
-    } else {
-      return;
+      return { error: "CPF já cadastrado." };
     }
   }
 };
 
-localStorage.setItem(
-  "usuarios",
-  JSON.stringify([
-    {
-      nomeCompleto: "Katia Silva Veloso",
-      cpf: "12345678910",
-      endereco: "Rua das Garças, n92, Maria da Graça, Rio de Janeiro",
-      email: "katiaveloso@gmail.com",
-      senha: "123456",
-    },
-    {
-      nomeCompleto: "Sergio Buzaranho",
-      cpf: "14991823765",
-      endereco: "Rua das Garças, n92, Maria da Graça, Rio de Janeiro",
-      email: "sergiobuzaranho@gmail.com",
-      senha: "123456",
-    },
-    {
-      nomeCompleto: "João Vitor Ferreira Lima",
-      cpf: "98765432100",
-      endereco: "Rua das Garças, n92, Maria da Graça, Rio de Janeiro",
-      email: "joaovitor_123@gmail.com",
-      senha: "123456",
-    },
-  ])
-);
+// localStorage.setItem(
+//   "usuarios",
+//   JSON.stringify([
+//     {
+//       nomeCompleto: "Katia Silva Veloso",
+//       cpf: "12345678910",
+//       endereco: "Rua das Garças, n92, Maria da Graça, Rio de Janeiro",
+//       email: "katiaveloso@gmail.com",
+//       senha: "123456",
+//     },
+//     {
+//       nomeCompleto: "Sergio Buzaranho",
+//       cpf: "14991823765",
+//       endereco: "Rua das Garças, n92, Maria da Graça, Rio de Janeiro",
+//       email: "sergiobuzaranho@gmail.com",
+//       senha: "123456",
+//     },
+//     {
+//       nomeCompleto: "João Vitor Ferreira Lima",
+//       cpf: "98765432100",
+//       endereco: "Rua das Garças, n92, Maria da Graça, Rio de Janeiro",
+//       email: "joaovitor_123@gmail.com",
+//       senha: "123456",
+//     },
+//   ])
+// );

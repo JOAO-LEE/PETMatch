@@ -119,7 +119,7 @@ const renderUserInfo = () => {
 
 const renderSchedulePetsInfo = () => {
   const schedulesHeaderTitle = document.createElement("h3");
-  if (!agendamentos) {
+  if (!agendamentos.length) {
     schedulesHeaderTitle.innerText = "Não há agendamentos :(";
     scheduledPetsContainer.appendChild(schedulesHeaderTitle);
     return;

@@ -1,84 +1,127 @@
 import { pictureList } from "../common/constants/pictureList.js";
 import { authenticateUser } from "../common/auth/authentication.js";
-// import { hasErrorMessage } from "../common/auth/login.js";
+import { hasFormError } from "../common/utils/utils.js";
+import { regexCPF, regexEmail, regexNome } from "../common/utils/formRegex.js";
 const formularioCadastro = document.querySelector("#cadastro");
-const labelCPF = document.querySelector("#etiquetaCPF");
-const labelNome = document.querySelector("#etiquetaNome");
-const labelEmail = document.querySelector("#etiquetaEmail");
-
-const regexNome = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/;
-const regexCPF = /^\d{11}$/;
-const regexEmail = /^[a-z0-9.]+@[a-z0-9]+.[a-z]{2,}$/i;
-
 const usuarios = JSON.parse(localStorage.getItem("usuarios"));
 
-localStorage.setItem(
-  "usuarios",
-  JSON.stringify([
-    {
-      nomeCompleto: "Katia Silva Veloso",
-      cpf: "12345678910",
-      endereco: "Rua das Garças, n92, Maria da Graça, Rio de Janeiro",
-      email: "katiaveloso@gmail.com",
-      senha: "123456",
-    },
-    {
-      nomeCompleto: "Sergio Buzaranho",
-      cpf: "14991823765",
-      endereco: "Rua das Garças, n92, Maria da Graça, Rio de Janeiro",
-      email: "sergiobuzaranho@gmail.com",
-      senha: "123456",
-    },
-    {
-      nomeCompleto: "João Vitor Ferreira Lima",
-      cpf: "98765432100",
-      endereco: "Rua das Garças, n92, Maria da Graça, Rio de Janeiro",
-      email: "joaovitor_123@gmail.com",
-      senha: "123456",
-    },
-  ])
-);
+// localStorage.setItem(
+//   "usuarios",
+//   JSON.stringify([
+//     {
+//       nomeCompleto: "Katia Silva Veloso",
+//       cpf: "12345678910",
+//       endereco: "Rua das Garças, n92, Maria da Graça, Rio de Janeiro",
+//       email: "katiaveloso@gmail.com",
+//       senha: "123456",
+//     },
+//     {
+//       nomeCompleto: "Sergio Buzaranho",
+//       cpf: "14991823765",
+//       endereco: "Rua das Garças, n92, Maria da Graça, Rio de Janeiro",
+//       email: "sergiobuzaranho@gmail.com",
+//       senha: "123456",
+//     },
+//     {
+//       nomeCompleto: "João Vitor Ferreira Lima",
+//       cpf: "98765432100",
+//       endereco: "Rua das Garças, n92, Maria da Graça, Rio de Janeiro",
+//       email: "joaovitor_123@gmail.com",
+//       senha: "123456",
+//     },
+//   ])
+// );
 
 formularioCadastro.addEventListener("submit", async (e) => {
   e.preventDefault();
-  const formHasError = e.target.querySelectorAll(".erro-autenticacao-login");
-  // const [...formLabels] = e.target.getElementsByTagName("label");
-  if (formHasError.length) {
-    console.log("tem erro");
-    // formLabels.forEach((label) => {
-    //   const hasErrorMessage = label.classList.contains("error-label");
-    //   if (hasErrorMessage) {
-    //     label.classList.remove("error-label");
-    //     label.classList.add("normal-label");
-    //   }
-    // });
-    // formHasError.remove();
+  handleFormErrorsReset(e.target);
+  const [inputNome, inputEndereco, inputCPF, inputEmail, inputSenha] = e.target;
+  const hasAnyError = verifyFormFields({ inputNome, inputCPF, inputEmail });
+  if (hasAnyError) {
+    return;
+  }
+  createUser({
+    inputNome,
+    inputEndereco,
+    inputCPF,
+    inputEmail,
+    inputSenha,
+  });
+});
+
+const handleFormErrorsReset = (form) => {
+  const formErrorMessages = Array.from(
+    hasFormError(form, ".erro-autenticacao-login")
+  );
+
+  if (formErrorMessages.length) {
+    formErrorMessages.forEach((el) => {
+      el.remove();
+    });
   }
 
-  const [inputNome, inputEndereco, inputCPF, inputEmail, inputSenha] = e.target;
-  const testeCPF = regexCPF.test(inputCPF.value);
-  const testeNome = regexNome.test(inputNome.value);
-  const testeEmail = regexEmail.test(inputEmail.value);
+  const formLabelErrors = Array.from(hasFormError(form, ".error-label"));
+
+  if (formLabelErrors.length) {
+    console.log("tem erro");
+    formLabelErrors.forEach((label) => {
+      const hasErrorMessage = label.classList.contains("error-label");
+      if (hasErrorMessage) {
+        label.classList.remove("error-label");
+        label.classList.add("normal-label");
+      }
+    });
+  }
+};
+
+const verifyFormFields = ({ inputNome, inputCPF, inputEmail }) => {
+  const testeNome = regexNome.test(inputNome.value.trim());
+  const testeCPF = regexCPF.test(inputCPF.value.trim());
+  const testeEmail = regexEmail.test(inputEmail.value.trim());
 
   if (!testeNome) {
-    labelNome.classList.remove("normal-label");
-    labelNome.classList.add("error-label");
-    labelNome.innerHTML += `<span class='erro-autenticacao-login'> O nome não aceita números</span>`;
+    handleFieldError(inputNome, "nome");
   }
 
   if (!testeCPF) {
-    console.log("teste CPF falso");
-    labelCPF.classList.remove("normal-label");
-    labelCPF.classList.add("error-label");
-    labelCPF.innerHTML += `<span class='erro-autenticacao-login'> CPF invalido</span>`;
+    handleFieldError(inputCPF, "cpf");
   }
 
   if (!testeEmail) {
-    labelEmail.classList.remove("normal-label");
-    labelEmail.classList.add("error-label");
-    labelEmail.innerHTML += `<span class='erro-autenticacao-login'> Email invalido</span>`;
+    handleFieldError(inputEmail, "email");
   }
 
+  const hasAnyError = !testeNome || !testeCPF || !testeEmail;
+  return hasAnyError;
+};
+
+const handleFieldError = (fieldLabel, errorType) => {
+  fieldLabel.parentNode.classList.remove("normal-label");
+  fieldLabel.parentNode.classList.add("error-label");
+  const errorSpan = document.createElement("span");
+  errorSpan.classList.add("erro-autenticacao-login");
+  switch (errorType) {
+    case "nome":
+      errorSpan.innerText = "O nome não aceita números.";
+      fieldLabel.parentNode.appendChild(errorSpan);
+    case "cpf":
+      errorSpan.innerText = "CPF inválido.";
+      fieldLabel.parentNode.appendChild(errorSpan);
+    case "email":
+      errorSpan.innerText = "Email invalido.";
+      fieldLabel.parentNode.appendChild(errorSpan);
+    default:
+      return { error: false };
+  }
+};
+
+const createUser = async ({
+  inputNome,
+  inputEndereco,
+  inputCPF,
+  inputEmail,
+  inputSenha,
+}) => {
   const hasRegisteredUser = verifyUser(
     inputCPF.value.trim(),
     inputEmail.value.trim()
@@ -111,7 +154,7 @@ formularioCadastro.addEventListener("submit", async (e) => {
   );
   authenticateUser(novoUsuario);
   window.location.assign("/pages/usuario/usuario.html");
-});
+};
 
 const verifyUser = (cpf, email) => {
   const users = JSON.parse(localStorage.getItem("usuarios"));
@@ -135,3 +178,29 @@ const getRandomPic = async () => {
   const svgText = await response.text();
   return svgText.toString();
 };
+
+// const verifyFormErrors = () => {
+//   const [inputNome, inputEndereco, inputCPF, inputEmail, inputSenha] = e.target;
+//   const testeCPF = regexCPF.test(inputCPF.value);
+//   const testeNome = regexNome.test(inputNome.value);
+//   const testeEmail = regexEmail.test(inputEmail.value);
+
+//   if (!testeNome) {
+//     labelNome.classList.remove("normal-label");
+//     labelNome.classList.add("error-label");
+//     labelNome.innerHTML += `<span class='erro-autenticacao-login'> O nome não aceita números</span>`;
+//   }
+
+//   if (!testeCPF) {
+//     console.log("teste CPF falso");
+//     labelCPF.classList.remove("normal-label");
+//     labelCPF.classList.add("error-label");
+//     labelCPF.innerHTML += `<span class='erro-autenticacao-login'> CPF invalido</span>`;
+//   }
+
+//   if (!testeEmail) {
+//     labelEmail.classList.remove("normal-label");
+//     labelEmail.classList.add("error-label");
+//     labelEmail.innerHTML += `<span class='erro-autenticacao-login'> Email invalido</span>`;
+//   }
+// }

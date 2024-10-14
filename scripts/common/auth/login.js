@@ -5,15 +5,6 @@ const inputContainer = document.querySelector(".input-group-entrar");
 const getUsers = () => JSON.parse(localStorage.getItem("users"));
 const usersList = getUsers();
 
-const errorMessageHandler = (element, text) => {
-  element.innerText = text;
-  element.classList.add("erro-autenticacao-login");
-  return element;
-};
-
-export const hasErrorMessage = (element) =>
-  element.querySelector(".erro-autenticacao-login");
-
 const showErrorMessage = (errorType) => {
   if (!errorType) {
     const existentError = hasErrorMessage(inputContainer);

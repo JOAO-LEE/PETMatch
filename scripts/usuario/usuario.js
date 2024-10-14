@@ -3,7 +3,7 @@ const principalContainer = document.getElementsByTagName("main")[0];
 const scheduledPetsContainer = document.querySelector(".container-info-pets");
 const logoutButton = document.querySelector("#logout-botao");
 
-const infoName = ["Nome completo", "CPF", "Endereço", "E-mail", "Senha"];
+const infoName = ["Nome completo", "Endereço", "CPF", "E-mail", "Senha"];
 
 let passwordShow = true;
 
@@ -24,6 +24,7 @@ logoutButton.addEventListener("click", (ev) => {
   logoutButton.innerText = "Saindo...";
   logoutButton.disabled = true;
   logoutButton.classList.add("loging-out");
+  saveUserChanges();
   setTimeout(() => {
     localStorage.removeItem("auth");
     window.location.assign("/pages/home/home.html");
@@ -40,6 +41,7 @@ const createSchedulePetsList = () => {
     petScheduleItem.classList.add("info-pet");
     petImage.src = pet.imagem;
     petImage.alt = `Imagem do pet ${pet.nome}`;
+    petImage.classList.add("pet-mini-foto");
     petName.innerText = pet.nome;
     petScheduleItem.appendChild(petImage);
     petScheduleItem.appendChild(petName);
@@ -130,4 +132,10 @@ const renderSchedulePetsInfo = () => {
   scheduledPetsContainer.innerText = "Pets que você agendou visita:";
   const scheduleList = createSchedulePetsList();
   scheduledPetsContainer.appendChild(scheduleList);
+};
+
+const saveUserChanges = () => {
+  const allUsers = JSON.parse(localStorage.getItem("usuarios"));
+  const otherUsers = allUsers.filter((user) => user.CPF !== userInfo.CPF);
+  localStorage.setItem("usuarios", JSON.stringify([...otherUsers, authedUser]));
 };

@@ -4,15 +4,30 @@ const scheduledPetsContainer = document.querySelector(".container-info-pets");
 const logoutButton = document.querySelector("#logout-botao");
 
 const infoName = ["Nome completo", "CPF", "Endereço", "E-mail", "Senha"];
-const { auth, imagem, senha, agendamentos, ...userInfo } = JSON.parse(
-  localStorage.getItem("auth")
-);
 
 let passwordShow = true;
+
+const authedUser = JSON.parse(localStorage.getItem("auth"));
+
+if (!authedUser) {
+  window.location.assign("/pages/home/home.html");
+}
+
+const { auth, imagem, senha, agendamentos, ...userInfo } = authedUser;
 
 document.addEventListener("DOMContentLoaded", () => {
   renderUserInfo();
   renderSchedulePetsInfo();
+});
+
+logoutButton.addEventListener("click", (ev) => {
+  logoutButton.innerText = "Saindo...";
+  logoutButton.disabled = true;
+  logoutButton.classList.add("loging-out");
+  setTimeout(() => {
+    localStorage.removeItem("auth");
+    window.location.assign("/pages/home/home.html");
+  }, 2000);
 });
 
 const createSchedulePetsList = () => {
@@ -32,18 +47,6 @@ const createSchedulePetsList = () => {
   });
   return scheduleList;
 };
-
-logoutButton.addEventListener("click", (ev) => {
-  logoutButton.innerText = "Saindo...";
-  logoutButton.disabled = true;
-  logoutButton.classList.add("loging-out");
-  setTimeout(() => {
-    // remove a pessoa logada do
-    // localStorage.removeItem("auth");
-    // vai para home
-    // window.location.assign("/pages/home/home.html");
-  }, 2000);
-});
 
 const createGreeting = (userInfos) => {
   const { nomeCompleto } = userInfos;
@@ -119,7 +122,7 @@ const renderUserInfo = () => {
 
 const renderSchedulePetsInfo = () => {
   const schedulesHeaderTitle = document.createElement("h3");
-  if (!agendamentos) {
+  if (!agendamentos.length) {
     schedulesHeaderTitle.innerText = "Não há agendamentos :(";
     scheduledPetsContainer.appendChild(schedulesHeaderTitle);
     return;

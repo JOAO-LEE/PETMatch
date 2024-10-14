@@ -6,7 +6,14 @@ import {
 import { regexCPF, regexEmail, regexNome } from "../common/utils/formRegex.js";
 import { getRandomPic } from "../common/utils/randomPicGenerator.js";
 const registerForm = document.querySelector("#cadastro");
+const passwordField = document.querySelector("#senha");
 const usuarios = JSON.parse(localStorage.getItem("usuarios"));
+
+passwordField.addEventListener("keydown", (ev) => {
+  if (ev.key === " ") {
+    ev.preventDefault();
+  }
+});
 
 registerForm.addEventListener("submit", async (e) => {
   e.preventDefault();
@@ -24,7 +31,7 @@ registerForm.addEventListener("submit", async (e) => {
     emailInput,
     passwordInput,
   };
-  // await createUser(userInfo);
+  await createUser(userInfo);
 });
 
 const handleFormErrorsReset = (form) => {
@@ -100,15 +107,15 @@ const handleFieldError = (fieldLabel, errorType) => {
 };
 
 const createUser = async ({
-  inputNome,
-  inputEndereco,
-  inputCPF,
-  inputEmail,
-  inputSenha,
+  nameInput,
+  addressInput,
+  cpfInput,
+  emailInput,
+  passwordInput,
 }) => {
   const hasRegisteredUser = verifyUser(
-    inputCPF.value.trim(),
-    inputEmail.value.trim()
+    cpfInput.value.trim(),
+    emailInput.value.trim()
   );
 
   if (hasRegisteredUser) {
@@ -123,11 +130,11 @@ const createUser = async ({
   const profilePic = await getRandomPic();
 
   const novoUsuario = {
-    nomeCompleto: inputNome.value,
-    endereco: inputEndereco.value,
-    CPF: inputCPF.value,
-    email: inputEmail.value,
-    senha: inputSenha.value,
+    nomeCompleto: nameInput.value.trim(),
+    endereco: addressInput.value.trim(),
+    CPF: cpfInput.value.trim(),
+    email: emailInput.value.trim(),
+    senha: passwordInput.value.trim(),
     imagem: profilePic,
     agendamentos: [],
   };
@@ -154,29 +161,29 @@ const verifyUser = (cpf, email) => {
   }
 };
 
-// localStorage.setItem(
-//   "usuarios",
-//   JSON.stringify([
-//     {
-//       nomeCompleto: "Katia Silva Veloso",
-//       cpf: "12345678910",
-//       endereco: "Rua das Garças, n92, Maria da Graça, Rio de Janeiro",
-//       email: "katiaveloso@gmail.com",
-//       senha: "123456",
-//     },
-//     {
-//       nomeCompleto: "Sergio Buzaranho",
-//       cpf: "14991823765",
-//       endereco: "Rua das Garças, n92, Maria da Graça, Rio de Janeiro",
-//       email: "sergiobuzaranho@gmail.com",
-//       senha: "123456",
-//     },
-//     {
-//       nomeCompleto: "João Vitor Ferreira Lima",
-//       cpf: "98765432100",
-//       endereco: "Rua das Garças, n92, Maria da Graça, Rio de Janeiro",
-//       email: "joaovitor_123@gmail.com",
-//       senha: "123456",
-//     },
-//   ])
-// );
+localStorage.setItem(
+  "usuarios",
+  JSON.stringify([
+    {
+      nomeCompleto: "Katia Silva Veloso",
+      cpf: "12345678910",
+      endereco: "Rua das Garças, n92, Maria da Graça, Rio de Janeiro",
+      email: "katiaveloso@gmail.com",
+      senha: "123456",
+    },
+    {
+      nomeCompleto: "Sergio Buzaranho",
+      cpf: "14991823765",
+      endereco: "Rua das Garças, n92, Maria da Graça, Rio de Janeiro",
+      email: "sergiobuzaranho@gmail.com",
+      senha: "123456",
+    },
+    {
+      nomeCompleto: "João Vitor Ferreira Lima",
+      cpf: "98765432100",
+      endereco: "Rua das Garças, n92, Maria da Graça, Rio de Janeiro",
+      email: "joaovitor_123@gmail.com",
+      senha: "123456",
+    },
+  ])
+);

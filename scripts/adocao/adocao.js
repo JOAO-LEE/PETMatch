@@ -9,6 +9,8 @@ const mainContainer = document.querySelector(".container-principal");
 const informationContainer = document.createElement("section");
 informationContainer.classList.add("container-informacoes");
 
+const authedUser = localStorage.getItem("auth");
+
 window.addEventListener("DOMContentLoaded", () => {
   const loadingPaw = createLoading();
   mainContainer.appendChild(loadingPaw);
@@ -22,6 +24,7 @@ window.addEventListener("DOMContentLoaded", () => {
     const petImage = createPetImage(foundPet);
     createPetInfo(foundPet);
     const adoptButton = createAdoptButton();
+    adoptButton.addEventListener("click", () => scheduleVisitation(foundPet));
     mainContainer.removeChild(loadingPaw);
     mainContainer.appendChild(informationContainer);
     informationContainer.appendChild(petInformation);
@@ -31,12 +34,27 @@ window.addEventListener("DOMContentLoaded", () => {
   }, 2500);
 });
 
+const scheduleVisitation = (foundPet) => {
+  console.log("oi");
+  if (!authedUser) {
+    window.location.assign("/pages/cadastre-se/cadastre-se.html");
+    return;
+  }
+  localStorage.setItem("scheduled-visitation", JSON.stringify(foundPet));
+  window.location.assign("/pages/adocao-realizada/adocao-realizada.html");
+};
+
 const createAdoptButton = () => {
   const adoptButton = document.createElement("button");
   adoptButton.classList.add("botao-adotar");
-  adoptButton.innerText = "Adotar";
+  adoptButton.innerText = "Agendar visita";
   return adoptButton;
 };
+
+// if (!authedUser) {
+//   window.location.assign("/pages/cadastre-se/cadastre-se.html");
+//   return;
+// }
 
 const createPetImage = (foundPet) => {
   const petImage = document.createElement("img");

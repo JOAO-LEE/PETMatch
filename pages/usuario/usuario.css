@@ -43,13 +43,25 @@ main {
 .info-usuario {
   display: flex;
   justify-content: center;
+  align-items: center;
+
   gap: 2.5rem;
   font-size: 1.90rem;
+  svg {
+    padding: 1rem;
+    background-color: var(--corSecundaria);
+    outline: 2.5px solid var(--corPrimaria);
+    outline-offset: 5px;
+    border-radius: 50%;
+    object-fit: fill;
+    width: 225px;
+    height: 225px;
+  }
 }
 
 .informacao-lista {
   line-height: 50px;
-  align-self: center;
+  border-spacing: 10px;
 }
 
 .informacao-lista li span {

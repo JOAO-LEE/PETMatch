@@ -172,7 +172,7 @@ body {
     align-items: center;
     justify-content: center;
     transition: outline-offset 750ms ease-in-out, scale 250ms ease-in, background-color 250ms linear, outline 250ms ease;
-    img {
+    svg {
         object-fit: fill;
         color: var(--corFundo);
         max-height: min-content !important;

@@ -2,14 +2,13 @@ const authenticationContainer = document.querySelector(
   ".container-autenticacao"
 );
 
-const createUserContainer = ({ nomeCompleto }) => {
+const createUserContainer = ({ nomeCompleto, imagem }) => {
   const userFirstName = nomeCompleto.split(" ")[0];
   const userContainer = document.createElement("div");
   userContainer.classList.add("user-container");
   userContainer.innerHTML = `<span>Olá, ${userFirstName}</span>
     <a class="info-usuario-header" href="/pages/usuario/usuario.html">
-      <img src="https://avatars.githubusercontent.com/u/100000031?v=4"/>
-    </a></div>`;
+      ${imagem}`;
   authenticationContainer.appendChild(userContainer);
 };
 

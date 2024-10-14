@@ -5,15 +5,6 @@ const inputContainer = document.querySelector(".input-group-entrar");
 const getUsers = () => JSON.parse(localStorage.getItem("users"));
 const usersList = getUsers();
 
-const errorMessageHandler = (element, text) => {
-  element.innerText = text;
-  element.classList.add("erro-autenticacao-login");
-  return element;
-};
-
-const hasErrorMessage = (element) =>
-  element.querySelector(".erro-autenticacao-login");
-
 const showErrorMessage = (errorType) => {
   if (!errorType) {
     const existentError = hasErrorMessage(inputContainer);
@@ -55,17 +46,6 @@ function getUser(email, password) {
     return { error: "email" };
   }
 }
-
-const controlButtonDisablement = (button) => {
-  button.disabled = button.disabled ? false : true;
-  button.innerText = !button.disabled ? "Entrar" : "";
-};
-
-const createAndAppendLoadingSpinner = (button) => {
-  const loadingSpinner = document.createElement("div");
-  loadingSpinner.classList.add("spinner-carregando");
-  button.appendChild(loadingSpinner);
-};
 
 formLogin.addEventListener("submit", (ev) => {
   ev.preventDefault();

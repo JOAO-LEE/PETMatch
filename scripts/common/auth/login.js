@@ -56,7 +56,7 @@ function getUser(email, password) {
   }
 }
 
-const controlButtonDisablement = (button) => {
+export const controlButtonDisablement = (button) => {
   button.disabled = button.disabled ? false : true;
   button.innerText = !button.disabled ? "Entrar" : "";
 };

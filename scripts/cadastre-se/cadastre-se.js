@@ -48,7 +48,6 @@ const handleFormErrorsReset = (form) => {
   const formLabelErrors = Array.from(hasFormError(form, ".error-label"));
 
   if (formLabelErrors.length) {
-    console.log("tem erro");
     formLabelErrors.forEach((label) => {
       const hasErrorMessage = label.classList.contains("error-label");
       if (hasErrorMessage) {
@@ -73,7 +72,6 @@ const verifyFormFields = ({ nameInput, cpfInput, emailInput }) => {
   }
 
   if (!emailTest) {
-    console.log("email né não");
     handleFieldError(emailInput, "email");
   }
 
@@ -133,8 +131,6 @@ const createUser = async ({
     emailInput.value.trim()
   );
 
-  console.log(registeredUser);
-
   if (registeredUser) {
     registerFormError(registeredUser.error);
     return;
@@ -151,8 +147,6 @@ const createUser = async ({
     imagem: profilePic,
     agendamentos: [],
   };
-
-  console.log([...usuarios, { ...novoUsuario }]);
 
   localStorage.setItem(
     "usuarios",

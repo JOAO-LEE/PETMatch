@@ -109,10 +109,6 @@ const showPets = (petList) => {
         `;
     const adoptionButton = petInfoContainer.querySelector(".link-adotar");
     adoptionButton.addEventListener("click", () => {
-      if (!authedUser) {
-        window.location.assign("/pages/cadastre-se/cadastre-se.html");
-        return;
-      }
       localStorage.setItem("adocao-id", JSON.stringify(adoptionButton.id));
       window.location.assign("/pages/adocao/adocao.html");
     });

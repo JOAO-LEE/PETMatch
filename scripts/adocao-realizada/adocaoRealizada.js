@@ -14,7 +14,23 @@ if (!authedUser || !scheduledPetInfo) {
 document.addEventListener("DOMContentLoaded", () => {
   const remainingPets = removeScheduledPet();
   updatePetList(remainingPets);
+  updateUserSchedule();
 });
+
+const updateUserSchedule = () => {
+  const isPetScheduled = isPetAlreadyScheduled();
+  !isPetScheduled &&
+    localStorage.setItem(
+      "auth",
+      JSON.stringify({
+        ...authedUser,
+        agendamentos: [...authedUser.agendamentos, scheduledPetInfo],
+      })
+    );
+};
+
+const isPetAlreadyScheduled = () =>
+  authedUser.agendamentos.some((pet) => pet.id === scheduledPetInfo.id);
 
 const removeScheduledPet = () => {
   const remainingPets = [];

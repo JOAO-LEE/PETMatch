@@ -3,8 +3,6 @@ const searchInput = document.querySelector("#busca-pets");
 const searchForm = document.querySelector(".formulario-busca");
 const checkboxForm = document.querySelector(".opcoes-de-filtro");
 
-const authedUser = localStorage.getItem("auth");
-
 window.addEventListener("DOMContentLoaded", () => {
   const petList = JSON.parse(localStorage.getItem("pets"));
   showPets(petList);

@@ -90,12 +90,10 @@ const handleFieldError = (fieldLabel, errorType) => {
       const cpfError = errorMessageHandler(errorSpan, "CPF inválido.");
       fieldLabel.parentNode.appendChild(cpfError);
       break;
-
     case "email":
       const emailError = errorMessageHandler(errorSpan, "Email invalido.");
       fieldLabel.parentNode.appendChild(emailError);
       break;
-
     default:
       return { error: false };
   }

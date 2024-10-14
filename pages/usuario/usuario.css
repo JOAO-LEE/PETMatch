@@ -110,7 +110,7 @@ main {
 
 .pet-mini-foto {
   border-radius: 25%;
-  object-fit: fill;
+  object-fit: cover;
   width: 200px;
   height: 200px;
 }

@@ -1,14 +1,23 @@
-import { authenticateUser } from "./authentication.js";
+import { authenticateUser } from "../common/auth/authentication.js";
+import {
+  controlButtonDisablement,
+  createAndAppendLoadingSpinner,
+} from "../common/utils/buttonControl.js";
+import {
+  hasFormError,
+  errorMessageHandler,
+} from "../common/utils/errorHandlers.js";
 
 const formLogin = document.querySelector("#form-login");
 const inputContainer = document.querySelector(".input-group-entrar");
-const getUsers = () => JSON.parse(localStorage.getItem("users"));
+const getUsers = () => JSON.parse(localStorage.getItem("usuarios"));
 const usersList = getUsers();
 
 const showErrorMessage = (errorType) => {
   if (!errorType) {
-    const existentError = hasErrorMessage(inputContainer);
-    existentError && existentError.remove();
+    const existentError = hasFormError(formLogin);
+    console.log(existentError);
+    // existentError && existentError.remove();
     return;
   }
   const errorSpan = document.createElement("span");
@@ -31,32 +40,32 @@ const showErrorMessage = (errorType) => {
   }
 };
 
-function getUser(email, password) {
+function findUser(email, password) {
   for (let i = 0; i < usersList.length; i++) {
     const { email: registeredEmail, senha: registeredPassword } = usersList[i];
+    console.log(registeredEmail === email.value);
+
     if (email.value === registeredEmail) {
+      console.log(email.value, "=", registeredEmail);
       if (password.value === registeredPassword) {
-        console.log("tá tudo certo");
         return usersList[i];
       }
-      console.log("senha tá errada");
       return { error: "password" };
     }
-    console.log("email não cadastrado");
-    return { error: "email" };
   }
+  return { error: "email" };
 }
 
 formLogin.addEventListener("submit", (ev) => {
   ev.preventDefault();
   showErrorMessage();
   const [email, password, submitButton] = ev.target;
-  controlButtonDisablement(submitButton);
+  controlButtonDisablement(submitButton, "Entrar");
   createAndAppendLoadingSpinner(submitButton);
   setTimeout(() => {
-    const response = getUser(email, password);
+    const response = findUser(email, password);
     if (response.error) {
-      controlButtonDisablement(submitButton);
+      controlButtonDisablement(submitButton, "Entrar");
       showErrorMessage(response);
       return;
     }

@@ -28,9 +28,20 @@
     gap: 25px;
 }
 
+
+.informacoes-pet img {
+    object-fit: cover;
+    height: 600px;
+    width: 600px;
+    border-radius: 15px;
+    background-color: blue;
+    border: 2px solid var(--corFundo);
+    /* border-spacing: 5; */
+}
+
 .lista-informacoes {
     background-color: var(--corPrimaria);
-    outline: 2px solid white;
+    outline: 2px solid var(--corFundo);
     outline-offset: 5px;
     border-radius: 15px;
     padding: 1rem;

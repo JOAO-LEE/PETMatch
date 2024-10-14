@@ -51,11 +51,6 @@ const createAdoptButton = () => {
   return adoptButton;
 };
 
-// if (!authedUser) {
-//   window.location.assign("/pages/cadastre-se/cadastre-se.html");
-//   return;
-// }
-
 const createPetImage = (foundPet) => {
   const petImage = document.createElement("img");
   petImage.src = foundPet.imagem;

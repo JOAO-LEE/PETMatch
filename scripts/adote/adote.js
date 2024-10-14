@@ -3,6 +3,8 @@ const searchInput = document.querySelector("#busca-pets");
 const searchForm = document.querySelector(".formulario-busca");
 const checkboxForm = document.querySelector(".opcoes-de-filtro");
 
+const authedUser = localStorage.getItem("auth");
+
 window.addEventListener("DOMContentLoaded", () => {
   const petList = JSON.parse(localStorage.getItem("pets"));
   showPets(petList);
@@ -107,37 +109,13 @@ const showPets = (petList) => {
         `;
     const adoptionButton = petInfoContainer.querySelector(".link-adotar");
     adoptionButton.addEventListener("click", () => {
+      if (!authedUser) {
+        window.location.assign("/pages/cadastre-se/cadastre-se.html");
+        return;
+      }
       localStorage.setItem("adocao-id", JSON.stringify(adoptionButton.id));
       window.location.assign("/pages/adocao/adocao.html");
     });
     petListContainer.appendChild(petInfoContainer);
   }
 };
-
-// adoptionButton.setAttribute("data-pet-nome", pet.nome);
-// adoptionButton.setAttribute("data-pet-peso", pet.peso);
-// adoptionButton.setAttribute("data-pet-idade", pet.idadeAproximada);
-// adoptionButton.setAttribute("data-pet-sobre", pet.sobre);
-// adoptionButton.addEventListener("mouseenter", (e) => {
-// const buttonRect = e.target.getBoundingClientRect();
-// const mouseX = e.clientX - buttonRect.left;
-// const mouseY = e.clientY - buttonRect.top;
-// adoptionButton.style.setProperty("--mouseX", `${mouseX}px`);
-// adoptionButton.style.setProperty("--mouseY", `${mouseY}px`);
-// adoptionButton.style.setProperty(
-//   "--pet-nome",
-//   `'${adoptionButton.getAttribute("data-pet-nome")}'`
-// );
-// adoptionButton.style.setProperty(
-//   "--pet-peso",
-//   `'${adoptionButton.getAttribute("data-pet-peso")}'`
-// );
-// adoptionButton.style.setProperty(
-//   "--pet-idade",
-//   `'${adoptionButton.getAttribute("data-pet-idade")}'`
-// );
-// adoptionButton.style.setProperty(
-//   "--pet-sobre",
-//   `'${adoptionButton.getAttribute("data-pet-sobre")}'`
-// );
-// });

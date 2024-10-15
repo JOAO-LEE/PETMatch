@@ -1,5 +1,4 @@
 const regexNome = /^[A-Za-zÀ-ÖØ-öø-ÿ\s]+$/;
 const regexCPF = /^\d{11}$/;
-const regexEmail = /^[a-z0-9.]+@[a-z0-9]+.[a-z]{2,}$/i;
-
+const regexEmail = /^[\w-\.]+@([\w-]+\.)+[\w-]{2,4}$/i;
 export { regexNome, regexCPF, regexEmail };

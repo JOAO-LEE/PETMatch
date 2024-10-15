@@ -129,7 +129,9 @@ const renderSchedulePetsInfo = () => {
     scheduledPetsContainer.appendChild(schedulesHeaderTitle);
     return;
   }
-  scheduledPetsContainer.innerText = "Pets que você agendou visita:";
+  schedulesHeaderTitle.innerText = "Pets que você agendou visita:";
+  scheduledPetsContainer.appendChild(schedulesHeaderTitle);
+
   const scheduleList = createSchedulePetsList();
   scheduledPetsContainer.appendChild(scheduleList);
 };

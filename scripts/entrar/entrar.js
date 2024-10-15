@@ -6,6 +6,7 @@ import {
 import {
   hasFormError,
   errorMessageHandler,
+  handleFormErrorsReset,
 } from "../common/utils/errorHandlers.js";
 
 const formLogin = document.querySelector("#form-login");
@@ -14,12 +15,18 @@ const getUsers = () => JSON.parse(localStorage.getItem("usuarios"));
 const usersList = getUsers();
 
 const showErrorMessage = (errorType) => {
-  if (!errorType) {
-    const existentError = hasFormError(formLogin);
-    console.log(existentError);
-    // existentError && existentError.remove();
-    return;
-  }
+  // if (!errorType) {
+  //   const existentError = Array.from(
+  //     hasFormError(formLogin, ".erro-autenticacao-login")
+  //   );
+  //   if (existentError.length) {
+  //     existentError.forEach((error) => {
+  //       error.remove();
+  //     });
+  //   }
+  //   return;
+  // }
+
   const errorSpan = document.createElement("span");
   const [inputEmail, inputPassword] = inputContainer.children;
   const { error } = errorType;
@@ -28,12 +35,16 @@ const showErrorMessage = (errorType) => {
     case "password":
       const errorPassword = errorMessageHandler(errorSpan, "Senha incorreta.");
       inputPassword.appendChild(errorPassword);
+      inputPassword.classList.remove("normal-label");
+      inputPassword.classList.add("error-label");
       break;
     case "email":
       const errorEmail = errorMessageHandler(
         errorSpan,
         "Email não cadastrado."
       );
+      inputEmail.classList.remove("normal-label");
+      inputEmail.classList.add("error-label");
       inputEmail.appendChild(errorEmail);
     default:
       break;
@@ -58,7 +69,8 @@ function findUser(email, password) {
 
 formLogin.addEventListener("submit", (ev) => {
   ev.preventDefault();
-  showErrorMessage();
+  // showErrorMessage();
+  handleFormErrorsReset(ev.target);
   const [email, password, submitButton] = ev.target;
   controlButtonDisablement(submitButton, "Entrar");
   createAndAppendLoadingSpinner(submitButton);

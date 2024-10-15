@@ -6,6 +6,7 @@ import {
 import {
   hasFormError,
   errorMessageHandler,
+  handleFormErrorsReset,
 } from "../common/utils/errorHandlers.js";
 import { regexCPF, regexEmail, regexNome } from "../common/utils/formRegex.js";
 import { getRandomPic } from "../common/utils/randomPicGenerator.js";
@@ -54,30 +55,6 @@ registerForm.addEventListener("submit", async (e) => {
     controlButtonDisablement(submitButton, "Cadastrar");
   }, 2000);
 });
-
-const handleFormErrorsReset = (form) => {
-  const formErrorMessages = Array.from(
-    hasFormError(form, ".erro-autenticacao-login")
-  );
-
-  if (formErrorMessages.length) {
-    formErrorMessages.forEach((el) => {
-      el.remove();
-    });
-  }
-
-  const formLabelErrors = Array.from(hasFormError(form, ".error-label"));
-
-  if (formLabelErrors.length) {
-    formLabelErrors.forEach((label) => {
-      const hasErrorMessage = label.classList.contains("error-label");
-      if (hasErrorMessage) {
-        label.classList.remove("error-label");
-        label.classList.add("normal-label");
-      }
-    });
-  }
-};
 
 const verifyFormFields = ({ nameInput, cpfInput, emailInput }) => {
   const nameTest = regexNome.test(nameInput.value.trim());

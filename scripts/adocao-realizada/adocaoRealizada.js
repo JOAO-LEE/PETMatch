@@ -1,5 +1,7 @@
 const containerAdoptionInfo = document.querySelector(".informacao-adocao");
 const adoptionNotice = document.querySelector(".aviso-adocao");
+const petContainer = document.querySelector(".container-pet");
+const petInformationContainer = document.querySelector(".informacao-pet");
 
 const authedUser = JSON.parse(localStorage.getItem("auth"));
 const scheduledPetInfo = JSON.parse(
@@ -15,7 +17,30 @@ document.addEventListener("DOMContentLoaded", () => {
   const remainingPets = removeScheduledPet();
   updatePetList(remainingPets);
   updateUserSchedule();
+  createPetInfoList();
+  createPetImage();
 });
+
+const createPetImage = () => {
+  const petImage = document.createElement("img");
+
+  petImage.classList.add("imagem-pet");
+  petImage.src = scheduledPetInfo.imagem;
+  petImage.alt = `Imagem do pet ${scheduledPetInfo.nome}`;
+  petContainer.appendChild(petImage);
+};
+
+const createPetInfoList = () => {
+  const petInfoList = document.createElement("ul");
+  const { id, imagem, ...petInfo } = scheduledPetInfo;
+  const petInfoArray = Object.values(petInfo);
+  for (const element of petInfoArray) {
+    const petInfo = document.createElement("li");
+    petInfo.innerText = element;
+    petInfoList.appendChild(petInfo);
+  }
+  petInformationContainer.appendChild(petInfoList);
+};
 
 const updateUserSchedule = () => {
   const isPetScheduled = isPetAlreadyScheduled();

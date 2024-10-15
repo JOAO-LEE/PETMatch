@@ -9,6 +9,11 @@ import {
   handleFormErrorsReset,
 } from "../common/utils/errorHandlers.js";
 
+const authedUser = localStorage.getItem("auth");
+if (authedUser) {
+  window.location.assign("/pages/home/home.html");
+}
+
 const formLogin = document.querySelector("#form-login");
 const inputContainer = document.querySelector(".input-group-entrar");
 const getUsers = () => JSON.parse(localStorage.getItem("usuarios"));

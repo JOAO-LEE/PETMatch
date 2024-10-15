@@ -9,6 +9,12 @@ import {
 } from "../common/utils/errorHandlers.js";
 import { regexCPF, regexEmail, regexNome } from "../common/utils/formRegex.js";
 import { getRandomPic } from "../common/utils/randomPicGenerator.js";
+
+const authedUser = localStorage.getItem("auth");
+if (authedUser) {
+  window.location.assign("/pages/home/home.html");
+}
+
 const registerForm = document.querySelector("#cadastro");
 const passwordField = document.querySelector("#senha");
 const usuarios = JSON.parse(localStorage.getItem("usuarios"));

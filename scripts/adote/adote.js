@@ -82,12 +82,15 @@ const filterPetsByNameOrCity = (searchTerm) => {
     showPets(filteredPets);
     return;
   }
-  petListContainer.innerHTML = `<p>Nenhum pet encontrado</p>`;
+  petListContainer.replaceChildren(createNotFoundPet());
 };
 
 const createNotFoundPet = () => {
   const notFoundWrapper = document.createElement("div");
-  notFoundWrapper.innerHTML = `<p>Nenhum pet encontrado</p>`;
+  notFoundWrapper.classList.add("container-resultado-vazio");
+  const notFoundParagraph = document.createElement("p");
+  notFoundParagraph.innerText = "Nenhum pet encontrado.";
+  notFoundWrapper.appendChild(notFoundParagraph);
   return notFoundWrapper;
 };
 

@@ -179,6 +179,13 @@ main {
   scroll-snap-align: start;
 }
 
+.container-resultado-vazio {
+  color: var(--corPrimaria);
+  text-align: center;
+  grid-column: 3 span;
+  padding: 10px;
+}
+
 .pet-info {
   padding: .5rem;
   display: flex;
@@ -186,7 +193,6 @@ main {
   gap: .5rem;
   transition: scale 250ms linear, filter 250ms ease-in-out;
   width: 300px;
-
 }
 
 .pet-info img {

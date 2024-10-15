@@ -48,7 +48,6 @@ function findUser(email, password) {
   for (let i = 0; i < usersList.length; i++) {
     const { email: registeredEmail, senha: registeredPassword } = usersList[i];
     if (email.value === registeredEmail) {
-      console.log(email.value, "=", registeredEmail);
       if (password.value === registeredPassword) {
         return usersList[i];
       }

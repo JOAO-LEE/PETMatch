@@ -34,5 +34,4 @@ document.addEventListener("DOMContentLoaded", () => {
     return;
   }
   createAuthLinks();
-  console.log("não tá logado");
 });

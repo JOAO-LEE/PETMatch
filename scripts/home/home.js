@@ -7,6 +7,7 @@ window.addEventListener("DOMContentLoaded", () => {
   }
   const usersList = localStorage.getItem("usuarios");
   if (usersList === null) {
-    localStorage.setItem("pets", JSON.stringify(users));
+    console.log("oi");
+    localStorage.setItem("usuarios", JSON.stringify(users));
   }
 });

@@ -21,10 +21,11 @@
     <link rel="preconnect" href="https://fonts.googleapis.com">
     <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
     <link href="https://fonts.googleapis.com/css2?family=Inter:ital,opsz,wght@0,14..32,100..900;1,14..32,100..900&display=swap" rel="stylesheet">
-<script src="/scripts/common/auth/header-handle.js" defer></script>
-    <script type="module" src="/scripts/common/auth/login.js" defer></script>
+    <script src="/scripts/common/auth/header-handle.js" defer></script>
+    <script type="module" src="/scripts/entrar/entrar.js" defer></script>
     <script type="module" src="/scripts/common/auth/authentication.js" defer></script>
-  
+    <script type="module" src="/scripts/common/utils/errorHandlers.js" defer></script>
+    <script type="module" src="/scripts/common/utils/buttonControl.js" defer></script>
     <title>Entrar - PETMatch</title>
 </head>
 <body>
@@ -66,11 +67,11 @@
                   </div>                              
                 </div>
                 <div class="input-group-entrar">
-                  <label for="email" class="input-box">
+                  <label for="email" class="input-box normal-label">
                       <i class="ph ph-user"></i>
                         <input id="email" type="email" name="login" placeholder="E-mail exemplo@exemplo.com.br" required>
                     </label>
-                  <label for="senha" class="input-box">
+                  <label for="senha" class="input-box normal-label">
                     <i class="ph ph-lock-simple"></i>
                       <input id="senha" type="password" name="senha" placeholder="Senha" required>
                   </label>

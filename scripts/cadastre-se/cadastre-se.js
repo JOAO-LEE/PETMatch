@@ -4,7 +4,6 @@ import {
   createAndAppendLoadingSpinner,
 } from "../common/utils/buttonControl.js";
 import {
-  hasFormError,
   errorMessageHandler,
   handleFormErrorsReset,
 } from "../common/utils/errorHandlers.js";
@@ -156,30 +155,3 @@ const verifyUser = (cpf, email) => {
   }
   return null;
 };
-
-// localStorage.setItem(
-//   "usuarios",
-//   JSON.stringify([
-//     {
-//       nomeCompleto: "Katia Silva Veloso",
-//       cpf: "12345678910",
-//       endereco: "Rua das Garças, n92, Maria da Graça, Rio de Janeiro",
-//       email: "katiaveloso@gmail.com",
-//       senha: "123456",
-//     },
-//     {
-//       nomeCompleto: "Sergio Buzaranho",
-//       cpf: "14991823765",
-//       endereco: "Rua das Garças, n92, Maria da Graça, Rio de Janeiro",
-//       email: "sergiobuzaranho@gmail.com",
-//       senha: "123456",
-//     },
-//     {
-//       nomeCompleto: "João Vitor Ferreira Lima",
-//       cpf: "98765432100",
-//       endereco: "Rua das Garças, n92, Maria da Graça, Rio de Janeiro",
-//       email: "joaovitor_123@gmail.com",
-//       senha: "123456",
-//     },
-//   ])
-// );

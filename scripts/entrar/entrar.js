@@ -15,18 +15,6 @@ const getUsers = () => JSON.parse(localStorage.getItem("usuarios"));
 const usersList = getUsers();
 
 const showErrorMessage = (errorType) => {
-  // if (!errorType) {
-  //   const existentError = Array.from(
-  //     hasFormError(formLogin, ".erro-autenticacao-login")
-  //   );
-  //   if (existentError.length) {
-  //     existentError.forEach((error) => {
-  //       error.remove();
-  //     });
-  //   }
-  //   return;
-  // }
-
   const errorSpan = document.createElement("span");
   const [inputEmail, inputPassword] = inputContainer.children;
   const { error } = errorType;
@@ -54,8 +42,6 @@ const showErrorMessage = (errorType) => {
 function findUser(email, password) {
   for (let i = 0; i < usersList.length; i++) {
     const { email: registeredEmail, senha: registeredPassword } = usersList[i];
-    console.log(registeredEmail === email.value);
-
     if (email.value === registeredEmail) {
       console.log(email.value, "=", registeredEmail);
       if (password.value === registeredPassword) {
@@ -69,7 +55,6 @@ function findUser(email, password) {
 
 formLogin.addEventListener("submit", (ev) => {
   ev.preventDefault();
-  // showErrorMessage();
   handleFormErrorsReset(ev.target);
   const [email, password, submitButton] = ev.target;
   controlButtonDisablement(submitButton, "Entrar");

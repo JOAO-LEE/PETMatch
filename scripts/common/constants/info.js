@@ -315,3 +315,30 @@ export const pets = [
     imagem: "/assets/adote/cao-12.jpeg",
   },
 ];
+
+export const users = [
+  {
+    nomeCompleto: "Katia Silva Veloso",
+    cpf: "12345678910",
+    endereco: "Rua das Garças, n92, Maria da Graça, Rio de Janeiro",
+    email: "katiaveloso@gmail.com",
+    senha: "123456",
+    agendamentos: [],
+  },
+  {
+    nomeCompleto: "Sergio Buzaranho",
+    cpf: "14991823765",
+    endereco: "Rua das Garças, n92, Maria da Graça, Rio de Janeiro",
+    email: "sergiobuzaranho@gmail.com",
+    senha: "123456",
+    agendamentos: [],
+  },
+  {
+    nomeCompleto: "João Vitor Ferreira Lima",
+    cpf: "98765432100",
+    endereco: "Rua das Garças, n92, Maria da Graça, Rio de Janeiro",
+    email: "joaovitor_mdk@gmail.com",
+    senha: "123456",
+    agendamentos: [],
+  },
+];

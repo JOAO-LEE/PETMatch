@@ -1,9 +1,12 @@
-import { pets } from "../common/constants/info.js";
+import { pets, users } from "../common/constants/info.js";
 
 window.addEventListener("DOMContentLoaded", () => {
-  const listaPets = localStorage.getItem("pets");
-  if (listaPets === null) {
-    const petsString = JSON.stringify(pets);
-    localStorage.setItem("pets", petsString);
+  const petsList = localStorage.getItem("pets");
+  if (petsList === null) {
+    localStorage.setItem("pets", JSON.stringify(pets));
+  }
+  const usersList = localStorage.getItem("usuarios");
+  if (usersList === null) {
+    localStorage.setItem("pets", JSON.stringify(users));
   }
 });

@@ -17,8 +17,6 @@ Para criação do layout foi utilizado o Figma. Para ver o layout completo, cliq
    </details>
 </div>
 
-<br>
-
 ### Banco de Dados
 O diagrama de relacionamento, a criação das tabelas e suas consultas encontram-se no repositório abaixo: <br>
 **https://github.com/katiasveloso/banco_de_dados_Petmatch**

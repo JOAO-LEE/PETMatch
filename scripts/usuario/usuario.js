@@ -27,7 +27,7 @@ logoutButton.addEventListener("click", (ev) => {
   saveUserChanges();
   setTimeout(() => {
     localStorage.removeItem("auth");
-    window.location.assign("index.html");
+    window.location.assign("/index.html");
   }, 2000);
 });
 

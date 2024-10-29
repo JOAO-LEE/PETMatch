@@ -71,6 +71,6 @@ formLogin.addEventListener("submit", (ev) => {
       return;
     }
     authenticateUser(response);
-    window.location.assign("index.html");
+    window.location.assign("/index.html");
   }, 2000);
 });

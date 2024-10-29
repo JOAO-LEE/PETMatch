@@ -71,8 +71,10 @@ const filterPetsByNameOrCity = (searchTerm) => {
   let filteredPets = [];
   for (let index = 0; index < petList.length; index++) {
     const pet = petList[index];
-    const matchName = pet.nome.toLowerCase().includes(searchTerm);
-    const matchAddress = pet.local.toLowerCase().includes(searchTerm);
+    const matchName = pet.nome.toLowerCase().includes(searchTerm.toLowerCase());
+    const matchAddress = pet.local
+      .toLowerCase()
+      .includes(searchTerm.toLowerCase());
     if (matchName || matchAddress) {
       filteredPets.push(pet);
     }

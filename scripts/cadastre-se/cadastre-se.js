@@ -53,7 +53,7 @@ registerForm.addEventListener("submit", async (e) => {
         passwordInput,
       };
       await createUser(userInfo);
-      window.location.assign("index.html");
+      window.location.assign("/index.html");
       return;
     }
     registerFormError(response.error);

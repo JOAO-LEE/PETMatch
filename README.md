@@ -17,6 +17,12 @@ Para criação do layout foi utilizado o Figma. Para ver o layout completo, cliq
    </details>
 </div>
 
+<br>
+
+**O projeto já se encontra em produção. Veja o deploy abaixo:** <br> 
+**https://pet-match-gamma.vercel.app**
+
+
 ## Colaboradores 
 - [**Alice Bennett**](https://github.com/LiceBennett)
 - [**Gabriela Senna**](https://github.com/gabisennaa)

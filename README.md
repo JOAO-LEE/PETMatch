@@ -19,6 +19,11 @@ Para criação do layout foi utilizado o Figma. Para ver o layout completo, cliq
 
 <br>
 
+
+**O banco de dados referente a aplicação, as tabelas e suas consultas encontra-se no repositório abaixo**: <br>
+**https://github.com/katiasveloso/banco_de_dados_Petmatch**
+<br>
+
 **O projeto já se encontra em produção. Veja o deploy abaixo:** <br> 
 **https://pet-match-gamma.vercel.app**
 

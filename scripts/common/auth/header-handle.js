@@ -14,7 +14,7 @@ const createUserContainer = ({ nomeCompleto, imagem }) => {
 
 const createAuthLinks = () => {
   const authLinks = [
-    { title: "Entrar", link: "/pages/entrar/entrar.html" },
+    { title: "Entrar", link: "/index.html" },
     { title: "Cadastre-se", link: "/pages/cadastre-se/cadastre-se.html" },
   ];
 

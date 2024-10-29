@@ -10,7 +10,7 @@ const scheduledPetInfo = JSON.parse(
 const allPets = JSON.parse(localStorage.getItem("pets"));
 
 if (!authedUser || !scheduledPetInfo) {
-  window.location.assign("/pages/home/home.html");
+  window.location.assign("index.html");
 }
 
 document.addEventListener("DOMContentLoaded", () => {

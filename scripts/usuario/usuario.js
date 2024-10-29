@@ -10,7 +10,7 @@ let passwordShow = true;
 const authedUser = JSON.parse(localStorage.getItem("auth"));
 
 if (!authedUser) {
-  window.location.assign("/pages/home/home.html");
+  window.location.assign("/index.html");
 }
 
 const { auth, imagem, senha, agendamentos, ...userInfo } = authedUser;

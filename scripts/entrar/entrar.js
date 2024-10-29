@@ -11,7 +11,7 @@ import {
 
 const authedUser = localStorage.getItem("auth");
 if (authedUser) {
-  window.location.assign("/pages/home/home.html");
+  window.location.assign("/index.html");
 }
 
 const formLogin = document.querySelector("#form-login");
@@ -71,6 +71,6 @@ formLogin.addEventListener("submit", (ev) => {
       return;
     }
     authenticateUser(response);
-    window.location.assign("/pages/home/home.html");
+    window.location.assign("index.html");
   }, 2000);
 });
